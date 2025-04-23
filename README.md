@@ -1,24 +1,24 @@
-# pharmacy_shop
+# Pharmacy Shop Web View
 
-## Project setup
+A Vue.js application that displays a list of nearby pharmacies with their information and "Order Now" functionality.
+
+## Project Setup
+
+### Installation
+
+1. Install dependencies:
 ```
 npm install
 ```
 
-### Compiles and hot-reloads for development
+2. Compile and hot-reload for development:
 ```
 npm run serve
 ```
 
-### Compiles and minifies for production
+3. Compile and minify for production:
 ```
 npm run build
 ```
 
-### Lints and fixes files
-```
-npm run lint
-```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
