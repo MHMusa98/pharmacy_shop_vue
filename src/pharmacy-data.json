@@ -1,0 +1,64 @@
+{
+    "pharmacies": [
+      {
+        "id": 1,
+        "name": "HealthPlus Pharmacy",
+        "logo": "health-plus.png",
+        "address": "123 Medical Center Ave, Suite 101, Healthcare City, HC 12345",
+        "rating": 4.8,
+        "reviews": 452,
+        "hours": "8:00 AM - 10:00 PM",
+        "services": ["Prescription Filling", "Medical Supplies", "Health Consultations"]
+      },
+      {
+        "id": 2,
+        "name": "A K Medical Hall",
+        "logo": "wellness.png",
+        "address": "50 DIT Plot Gendaria, Dhaka 1204",
+        "rating": 4.8,
+        "reviews": 412,
+        "hours": "8:00 AM - 10:00 PM",
+        "services": ["Prescription Filling", "Health Consultations", "Medical Supplies"]
+      },
+      {
+        "id": 3,
+        "name": "Community Health Pharmacy",
+        "logo": "community-health.png",
+        "address": "789 Care Street, Wellbeing Plaza, WP 34567",
+        "rating": 4.9,
+        "reviews": 527,
+        "hours": "7:00 AM - 9:00 PM",
+        "services": ["Prescription Filling", "Health Screening", "Medication Management"]
+      },
+      {
+        "id": 4,
+        "name": "QuickMeds Pharmacy",
+        "logo": "quick-meds.png",
+        "address": "321 Fast Relief Blvd, Remedy Center, RC 45678",
+        "rating": 4.5,
+        "reviews": 289,
+        "hours": "8:00 AM - 8:00 PM",
+        "services": ["Prescription Filling", "Drive-Thru Service", "Online Refills"]
+      },
+      {
+        "id": 5,
+        "name": "Wellness Pharmacy",
+        "logo": "wellness.png",
+        "address": "555 Health Avenue, Vitality Square, VS 56789",
+        "rating": 4.7,
+        "reviews": 412,
+        "hours": "8:00 AM - 10:00 PM",
+        "services": ["Prescription Filling", "Natural Remedies", "Health Education"]
+      },
+      {
+        "id": 6,
+        "name": "MediCare Pharmacy",
+        "logo": "medicare.png",
+        "address": "456 Wellness Road, Medical District, MD 23456",
+        "rating": 4.6,
+        "reviews": 318,
+        "hours": "24 Hours",
+        "services": ["Prescription Filling", "Vaccinations", "Home Delivery"]
+      }
+    ]
+  }
