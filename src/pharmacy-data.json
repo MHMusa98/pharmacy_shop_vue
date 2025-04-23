@@ -3,7 +3,7 @@
       {
         "id": 1,
         "name": "HealthPlus Pharmacy",
-        "logo": "health-plus.png",
+        "logo": "image/Ph01.jpg",
         "address": "123 Medical Center Ave, Suite 101, Healthcare City, HC 12345",
         "rating": 4.8,
         "reviews": 452,
@@ -13,7 +13,7 @@
       {
         "id": 2,
         "name": "A K Medical Hall",
-        "logo": "wellness.png",
+        "logo": "image/Ph02.jpg",
         "address": "50 DIT Plot Gendaria, Dhaka 1204",
         "rating": 4.8,
         "reviews": 412,
@@ -23,7 +23,7 @@
       {
         "id": 3,
         "name": "Community Health Pharmacy",
-        "logo": "community-health.png",
+        "logo": "image/Ph03.jpg",
         "address": "789 Care Street, Wellbeing Plaza, WP 34567",
         "rating": 4.9,
         "reviews": 527,
@@ -33,7 +33,7 @@
       {
         "id": 4,
         "name": "QuickMeds Pharmacy",
-        "logo": "quick-meds.png",
+        "logo": "image/Ph04.png",
         "address": "321 Fast Relief Blvd, Remedy Center, RC 45678",
         "rating": 4.5,
         "reviews": 289,
@@ -43,7 +43,7 @@
       {
         "id": 5,
         "name": "Wellness Pharmacy",
-        "logo": "wellness.png",
+        "logo": "image/Ph04.png",
         "address": "555 Health Avenue, Vitality Square, VS 56789",
         "rating": 4.7,
         "reviews": 412,
@@ -53,7 +53,7 @@
       {
         "id": 6,
         "name": "MediCare Pharmacy",
-        "logo": "medicare.png",
+        "logo": "image/Ph04.png",
         "address": "456 Wellness Road, Medical District, MD 23456",
         "rating": 4.6,
         "reviews": 318,

@@ -55,10 +55,16 @@
   
       <!-- Pharmacy listings -->
       <div class="pharmacy-list">
+
         <div v-for="pharmacy in pharmacies" :key="pharmacy.id" class="pharmacy-item">
           <div class="pharmacy-img">
-            <div class="placeholder-img">💊</div>
+            <!-- <div class="placeholder-img">💊</div>  -->
+            <img :src="pharmacy.logo" alt="Pharmacy image" class="placeholder-img"/>
           </div>
+          
+          <!-- <div class="pharmacy-img">
+                <img :src="pharmacy.logo" :alt="pharmacy.name" class="pharmacy-logo" />
+          </div> -->
           <div class="pharmacy-info">
             <div class="pharmacy-header">
               <h3>{{ pharmacy.name }}</h3>
@@ -84,6 +90,11 @@
             <button class="order-button">Order Now</button>
           </div>
         </div>
+        <footer class="footer">
+          <p>&copy; 2025 HealthCare. All rights reserved.</p>
+          <p>Contact us at: info@healthcare.com</p>
+          <p>Follow us on social media</p>
+        </footer>
       </div>
     </div>
   </template>
@@ -99,6 +110,11 @@
         searchQuery: ''
       }
     },
+    // methods: {
+    // getLogoPath(logoFile) {
+    //   return new URL(`@/assets/${logoFile}`, import.meta.url).href
+    // }
+    // },
     created() {
       // Load pharmacy data when component is created
       this.pharmacies = pharmacyData.pharmacies
@@ -359,5 +375,17 @@
     font-size: 14px;
     font-weight: bold;
     cursor: pointer;
+  }
+
+  .footer {
+    background-color: #000000;
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+    font-size: 14px;
+  }
+  
+  .footer p {
+    margin: 5px 0;
   }
   </style>
