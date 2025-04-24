@@ -1,6 +1,10 @@
 .DS_Store
 node_modules
 /dist
+/components/PharmacyList_Search.vue
+/components/PharmacyList_Search.vue.map
+/components/PharmacyList_Search.vue.d.ts
+/components/PharmacyList_Search.vue.d.ts.map
 
 
 # local env files

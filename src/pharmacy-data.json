@@ -1,64 +1,81 @@
 {
     "pharmacies": [
       {
-        "id": 1,
-        "name": "HealthPlus Pharmacy",
-        "logo": "image/Ph01.jpg",
-        "address": "123 Medical Center Ave, Suite 101, Healthcare City, HC 12345",
-        "rating": 4.8,
-        "reviews": 452,
-        "hours": "8:00 AM - 10:00 PM",
-        "services": ["Prescription Filling", "Medical Supplies", "Health Consultations"]
-      },
-      {
-        "id": 2,
+        "id": "pharm1",
         "name": "A K Medical Hall",
-        "logo": "image/Ph02.jpg",
-        "address": "50 DIT Plot Gendaria, Dhaka 1204",
+        "logo": "image/Ph01.jpg",
         "rating": 4.8,
-        "reviews": 412,
+        "reviews": 125,
+        "address": "50 DIT Plot Gendaria, Dhaka 1204",
         "hours": "8:00 AM - 10:00 PM",
-        "services": ["Prescription Filling", "Health Consultations", "Medical Supplies"]
+        "services": ["Prescription", "Delivery", "Consultation"],
+        "distance": 0.5
       },
       {
-        "id": 3,
-        "name": "Community Health Pharmacy",
+        "id": "pharm2",
+        "name": "HealthPlus Pharmacy",
+        "logo": "image/Ph02.jpg",
+        "rating": 4.5,
+        "reviews": 98,
+        "address": "456 Oak Avenue, Midtown, Sylhet 10002",
+        "hours": "24 Hours",
+        "services": ["Prescription", "Delivery", "Vaccination"],
+        "distance": 1.2
+      },
+      {
+        "id": "pharm3",
+        "name": "WellLife Drugstore",
         "logo": "image/Ph03.jpg",
-        "address": "789 Care Street, Wellbeing Plaza, WP 34567",
-        "rating": 4.9,
-        "reviews": 527,
-        "hours": "7:00 AM - 9:00 PM",
-        "services": ["Prescription Filling", "Health Screening", "Medication Management"]
+        "rating": 4.6,
+        "reviews": 211,
+        "address": "789 Pine Road, Uptown, Chittagong 10003",
+        "hours": "9:00 AM - 9:00 PM",
+        "services": ["Prescription", "Health Screening", "Consultation"],
+        "distance": 0.8
       },
       {
-        "id": 4,
+        "id": "pharm4",
         "name": "QuickMeds Pharmacy",
         "logo": "image/Ph04.png",
         "address": "321 Fast Relief Blvd, Remedy Center, RC 45678",
         "rating": 4.5,
         "reviews": 289,
         "hours": "8:00 AM - 8:00 PM",
-        "services": ["Prescription Filling", "Drive-Thru Service", "Online Refills"]
+        "services": ["Prescription Filling", "Drive-Thru Service", "Online Refills"],
+        "distance": 0.8
       },
       {
-        "id": 5,
+        "id": "pharm5",
         "name": "Wellness Pharmacy",
-        "logo": "image/Ph04.png",
-        "address": "555 Health Avenue, Vitality Square, VS 56789",
+        "logo": "image/Ph05.png",
+        "address": "555 Health Avenue, Vitality Square, Chittagong 56789",
         "rating": 4.7,
         "reviews": 412,
         "hours": "8:00 AM - 10:00 PM",
-        "services": ["Prescription Filling", "Natural Remedies", "Health Education"]
+        "services": ["Prescription Filling", "Natural Remedies", "Health Education"],
+        "distance": 0.8
       },
       {
-        "id": 6,
+        "id": "pharm6",
         "name": "MediCare Pharmacy",
-        "logo": "image/Ph04.png",
-        "address": "456 Wellness Road, Medical District, MD 23456",
+        "logo": "image/Ph06.jpg",
+        "address": "456 Wellness Road, Medical District, Dhaka 23456",
         "rating": 4.6,
         "reviews": 318,
         "hours": "24 Hours",
-        "services": ["Prescription Filling", "Vaccinations", "Home Delivery"]
+        "services": ["Prescription Filling", "Vaccinations", "Home Delivery"],
+        "distance": 0.8
+      },
+      {
+        "id": "pharm7",
+        "name": "HoggWartz Pharmacy",
+        "logo": "image/Ph07.png",
+        "address": "321 Fast Relief Blvd, Remedy Center, Sylhet 45678",
+        "rating": 4.5,
+        "reviews": 289,
+        "hours": "8:00 AM - 8:00 PM",
+        "services": ["Prescription Filling", "Drive-Thru Service", "Medical Supplies"],
+        "distance": 0.8
       }
     ]
   }

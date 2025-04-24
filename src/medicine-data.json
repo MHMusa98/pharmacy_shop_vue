@@ -1,0 +1,868 @@
+{
+  "medicines": [
+    {
+      "id": "med1",
+      "pharmacyId": "pharm1",
+      "name": "Paracetamol 500mg",
+      "category": "Pain Relief",
+      "price": 5.99,
+      "description": "For relief of mild to moderate pain and fever."
+    },
+    {
+      "id": "med2",
+      "pharmacyId": "pharm1",
+      "name": "Ibuprofen 200mg",
+      "category": "Pain Relief",
+      "price": 6.49,
+      "description": "Anti-inflammatory medication for pain and swelling."
+    },
+    {
+      "id": "med3",
+      "pharmacyId": "pharm1",
+      "name": "Cetirizine 10mg",
+      "category": "Allergy",
+      "price": 8.99,
+      "description": "For relief of allergy symptoms including hay fever."
+    },
+    {
+      "id": "med4",
+      "pharmacyId": "pharm2",
+      "name": "Amoxicillin 500mg",
+      "category": "Antibiotics",
+      "price": 12.99,
+      "description": "Prescription-only antibiotic for bacterial infections."
+    },
+    {
+      "id": "med5",
+      "pharmacyId": "pharm2",
+      "name": "Vitamin D3 1000IU",
+      "category": "Vitamins",
+      "price": 9.99,
+      "description": "Supports bone health and immune function."
+    },
+    {
+      "id": "med6",
+      "pharmacyId": "pharm3",
+      "name": "Multivitamin Complex",
+      "category": "Vitamins",
+      "price": 14.99,
+      "description": "Daily supplement with essential vitamins and minerals."
+    },
+    {
+      "id": "med7",
+      "pharmacyId": "pharm3",
+      "name": "Loratadine 10mg",
+      "category": "Allergy",
+      "price": 7.49,
+      "description": "Non-drowsy relief from allergy symptoms."
+    },
+    {
+      "id": "med8",
+      "pharmacyId": "pharm1",
+      "name": "Aspirin 81mg",
+      "category": "Pain Relief",
+      "price": 4.99,
+      "description": "Low-dose aspirin for heart health."
+    },
+    {
+      "id": "med9",
+      "pharmacyId": "pharm6",
+      "name": "DemoMedicine 9",
+      "category": "Digestive Health",
+      "price": 24.34,
+      "description": "Aids in digestion and gut health."
+    },
+    {
+      "id": "med10",
+      "pharmacyId": "pharm3",
+      "name": "DemoMedicine 10",
+      "category": "Vitamins",
+      "price": 25.33,
+      "description": "Supports general health and wellness."
+    },
+    {
+      "id": "med11",
+      "pharmacyId": "pharm5",
+      "name": "DemoMedicine 11",
+      "category": "Cold & Flu",
+      "price": 22.27,
+      "description": "Relieves symptoms of cold and flu."
+    },
+    {
+      "id": "med12",
+      "pharmacyId": "pharm6",
+      "name": "DemoMedicine 12",
+      "category": "Digestive Health",
+      "price": 25.72,
+      "description": "Aids in digestion and gut health."
+    },
+    {
+      "id": "med13",
+      "pharmacyId": "pharm5",
+      "name": "DemoMedicine 13",
+      "category": "Allergy",
+      "price": 29.52,
+      "description": "Helps alleviate allergy symptoms."
+    },
+    {
+      "id": "med14",
+      "pharmacyId": "pharm1",
+      "name": "DemoMedicine 14",
+      "category": "Cold & Flu",
+      "price": 5.84,
+      "description": "Relieves symptoms of cold and flu."
+    },
+    {
+      "id": "med15",
+      "pharmacyId": "pharm6",
+      "name": "DemoMedicine 15",
+      "category": "Allergy",
+      "price": 18.95,
+      "description": "Helps alleviate allergy symptoms."
+    },
+    {
+      "id": "med16",
+      "pharmacyId": "pharm5",
+      "name": "DemoMedicine 16",
+      "category": "Allergy",
+      "price": 28.21,
+      "description": "Helps alleviate allergy symptoms."
+    },
+    {
+      "id": "med17",
+      "pharmacyId": "pharm4",
+      "name": "DemoMedicine 17",
+      "category": "Antibiotics",
+      "price": 5.61,
+      "description": "Prescription medication for bacterial infections."
+    },
+    {
+      "id": "med18",
+      "pharmacyId": "pharm7",
+      "name": "DemoMedicine 18",
+      "category": "Allergy",
+      "price": 18.58,
+      "description": "Helps alleviate allergy symptoms."
+    },
+    {
+      "id": "med19",
+      "pharmacyId": "pharm1",
+      "name": "DemoMedicine 19",
+      "category": "Pain Relief",
+      "price": 13.31,
+      "description": "Effective for managing mild to moderate pain."
+    },
+    {
+      "id": "med20",
+      "pharmacyId": "pharm1",
+      "name": "DemoMedicine 20",
+      "category": "Antibiotics",
+      "price": 15.47,
+      "description": "Prescription medication for bacterial infections."
+    },
+    {
+      "id": "med21",
+      "pharmacyId": "pharm1",
+      "name": "DemoMedicine 21",
+      "category": "Cold & Flu",
+      "price": 5.11,
+      "description": "Relieves symptoms of cold and flu."
+    },
+    {
+      "id": "med22",
+      "pharmacyId": "pharm7",
+      "name": "DemoMedicine 22",
+      "category": "Antibiotics",
+      "price": 19.45,
+      "description": "Prescription medication for bacterial infections."
+    },
+    {
+      "id": "med23",
+      "pharmacyId": "pharm2",
+      "name": "DemoMedicine 23",
+      "category": "Allergy",
+      "price": 28.43,
+      "description": "Helps alleviate allergy symptoms."
+    },
+    {
+      "id": "med24",
+      "pharmacyId": "pharm5",
+      "name": "DemoMedicine 24",
+      "category": "Cold & Flu",
+      "price": 9.76,
+      "description": "Relieves symptoms of cold and flu."
+    },
+    {
+      "id": "med25",
+      "pharmacyId": "pharm4",
+      "name": "DemoMedicine 25",
+      "category": "Cold & Flu",
+      "price": 8.61,
+      "description": "Relieves symptoms of cold and flu."
+    },
+    {
+      "id": "med26",
+      "pharmacyId": "pharm2",
+      "name": "DemoMedicine 26",
+      "category": "Skin Care",
+      "price": 6.43,
+      "description": "Used for various skin conditions."
+    },
+    {
+      "id": "med27",
+      "pharmacyId": "pharm2",
+      "name": "DemoMedicine 27",
+      "category": "Antibiotics",
+      "price": 5.11,
+      "description": "Prescription medication for bacterial infections."
+    },
+    {
+      "id": "med28",
+      "pharmacyId": "pharm7",
+      "name": "DemoMedicine 28",
+      "category": "Antibiotics",
+      "price": 25.47,
+      "description": "Prescription medication for bacterial infections."
+    },
+    {
+      "id": "med29",
+      "pharmacyId": "pharm3",
+      "name": "DemoMedicine 29",
+      "category": "Vitamins",
+      "price": 7.01,
+      "description": "Supports general health and wellness."
+    },
+    {
+      "id": "med30",
+      "pharmacyId": "pharm4",
+      "name": "DemoMedicine 30",
+      "category": "Cold & Flu",
+      "price": 26.59,
+      "description": "Relieves symptoms of cold and flu."
+    },
+    {
+      "id": "med31",
+      "pharmacyId": "pharm6",
+      "name": "DemoMedicine 31",
+      "category": "Digestive Health",
+      "price": 18.79,
+      "description": "Aids in digestion and gut health."
+    },
+    {
+      "id": "med32",
+      "pharmacyId": "pharm3",
+      "name": "DemoMedicine 32",
+      "category": "Allergy",
+      "price": 8.45,
+      "description": "Helps alleviate allergy symptoms."
+    },
+    {
+      "id": "med33",
+      "pharmacyId": "pharm6",
+      "name": "DemoMedicine 33",
+      "category": "Digestive Health",
+      "price": 27.64,
+      "description": "Aids in digestion and gut health."
+    },
+    {
+      "id": "med34",
+      "pharmacyId": "pharm1",
+      "name": "DemoMedicine 34",
+      "category": "Digestive Health",
+      "price": 28.76,
+      "description": "Aids in digestion and gut health."
+    },
+    {
+      "id": "med35",
+      "pharmacyId": "pharm3",
+      "name": "DemoMedicine 35",
+      "category": "Vitamins",
+      "price": 8.45,
+      "description": "Supports general health and wellness."
+    },
+    {
+      "id": "med36",
+      "pharmacyId": "pharm4",
+      "name": "DemoMedicine 36",
+      "category": "Skin Care",
+      "price": 21.96,
+      "description": "Used for various skin conditions."
+    },
+    {
+      "id": "med37",
+      "pharmacyId": "pharm5",
+      "name": "DemoMedicine 37",
+      "category": "Cold & Flu",
+      "price": 20.43,
+      "description": "Relieves symptoms of cold and flu."
+    },
+    {
+      "id": "med38",
+      "pharmacyId": "pharm7",
+      "name": "DemoMedicine 38",
+      "category": "Digestive Health",
+      "price": 28.91,
+      "description": "Aids in digestion and gut health."
+    },
+    {
+      "id": "med39",
+      "pharmacyId": "pharm7",
+      "name": "DemoMedicine 39",
+      "category": "Allergy",
+      "price": 5.31,
+      "description": "Helps alleviate allergy symptoms."
+    },
+    {
+      "id": "med40",
+      "pharmacyId": "pharm1",
+      "name": "DemoMedicine 40",
+      "category": "Cold & Flu",
+      "price": 7.86,
+      "description": "Relieves symptoms of cold and flu."
+    },
+    {
+      "id": "med41",
+      "pharmacyId": "pharm6",
+      "name": "DemoMedicine 41",
+      "category": "Allergy",
+      "price": 8.94,
+      "description": "Helps alleviate allergy symptoms."
+    },
+    {
+      "id": "med42",
+      "pharmacyId": "pharm5",
+      "name": "DemoMedicine 42",
+      "category": "Antibiotics",
+      "price": 25.32,
+      "description": "Prescription medication for bacterial infections."
+    },
+    {
+      "id": "med43",
+      "pharmacyId": "pharm6",
+      "name": "DemoMedicine 43",
+      "category": "Vitamins",
+      "price": 26.95,
+      "description": "Supports general health and wellness."
+    },
+    {
+      "id": "med44",
+      "pharmacyId": "pharm7",
+      "name": "DemoMedicine 44",
+      "category": "Digestive Health",
+      "price": 26.35,
+      "description": "Aids in digestion and gut health."
+    },
+    {
+      "id": "med45",
+      "pharmacyId": "pharm2",
+      "name": "DemoMedicine 45",
+      "category": "Digestive Health",
+      "price": 15.76,
+      "description": "Aids in digestion and gut health."
+    },
+    {
+      "id": "med46",
+      "pharmacyId": "pharm7",
+      "name": "DemoMedicine 46",
+      "category": "Allergy",
+      "price": 22.95,
+      "description": "Helps alleviate allergy symptoms."
+    },
+    {
+      "id": "med47",
+      "pharmacyId": "pharm2",
+      "name": "DemoMedicine 47",
+      "category": "Vitamins",
+      "price": 4.42,
+      "description": "Supports general health and wellness."
+    },
+    {
+      "id": "med48",
+      "pharmacyId": "pharm1",
+      "name": "DemoMedicine 48",
+      "category": "Pain Relief",
+      "price": 25.53,
+      "description": "Effective for managing mild to moderate pain."
+    },
+    {
+      "id": "med49",
+      "pharmacyId": "pharm5",
+      "name": "DemoMedicine 49",
+      "category": "Digestive Health",
+      "price": 25.1,
+      "description": "Aids in digestion and gut health."
+    },
+    {
+      "id": "med50",
+      "pharmacyId": "pharm7",
+      "name": "DemoMedicine 50",
+      "category": "Antibiotics",
+      "price": 29.52,
+      "description": "Prescription medication for bacterial infections."
+    },
+    {
+      "id": "med51",
+      "pharmacyId": "pharm1",
+      "name": "DemoMedicine 51",
+      "category": "Digestive Health",
+      "price": 5.41,
+      "description": "Aids in digestion and gut health."
+    },
+    {
+      "id": "med52",
+      "pharmacyId": "pharm4",
+      "name": "DemoMedicine 52",
+      "category": "Pain Relief",
+      "price": 20.82,
+      "description": "Effective for managing mild to moderate pain."
+    },
+    {
+      "id": "med53",
+      "pharmacyId": "pharm5",
+      "name": "DemoMedicine 53",
+      "category": "Cold & Flu",
+      "price": 8.23,
+      "description": "Relieves symptoms of cold and flu."
+    },
+    {
+      "id": "med54",
+      "pharmacyId": "pharm1",
+      "name": "DemoMedicine 54",
+      "category": "Digestive Health",
+      "price": 22.5,
+      "description": "Aids in digestion and gut health."
+    },
+    {
+      "id": "med55",
+      "pharmacyId": "pharm2",
+      "name": "DemoMedicine 55",
+      "category": "Pain Relief",
+      "price": 21.99,
+      "description": "Effective for managing mild to moderate pain."
+    },
+    {
+      "id": "med56",
+      "pharmacyId": "pharm7",
+      "name": "DemoMedicine 56",
+      "category": "Pain Relief",
+      "price": 27.91,
+      "description": "Effective for managing mild to moderate pain."
+    },
+    {
+      "id": "med57",
+      "pharmacyId": "pharm3",
+      "name": "DemoMedicine 57",
+      "category": "Skin Care",
+      "price": 28.84,
+      "description": "Used for various skin conditions."
+    },
+    {
+      "id": "med58",
+      "pharmacyId": "pharm3",
+      "name": "DemoMedicine 58",
+      "category": "Cold & Flu",
+      "price": 5.51,
+      "description": "Relieves symptoms of cold and flu."
+    },
+    {
+      "id": "med59",
+      "pharmacyId": "pharm6",
+      "name": "DemoMedicine 59",
+      "category": "Allergy",
+      "price": 11.76,
+      "description": "Helps alleviate allergy symptoms."
+    },
+    {
+      "id": "med60",
+      "pharmacyId": "pharm3",
+      "name": "DemoMedicine 60",
+      "category": "Pain Relief",
+      "price": 22.92,
+      "description": "Effective for managing mild to moderate pain."
+    },
+    {
+      "id": "med61",
+      "pharmacyId": "pharm2",
+      "name": "DemoMedicine 61",
+      "category": "Vitamins",
+      "price": 11.4,
+      "description": "Supports general health and wellness."
+    },
+    {
+      "id": "med62",
+      "pharmacyId": "pharm1",
+      "name": "DemoMedicine 62",
+      "category": "Cold & Flu",
+      "price": 16.26,
+      "description": "Relieves symptoms of cold and flu."
+    },
+    {
+      "id": "med63",
+      "pharmacyId": "pharm5",
+      "name": "DemoMedicine 63",
+      "category": "Pain Relief",
+      "price": 10.37,
+      "description": "Effective for managing mild to moderate pain."
+    },
+    {
+      "id": "med64",
+      "pharmacyId": "pharm2",
+      "name": "DemoMedicine 64",
+      "category": "Skin Care",
+      "price": 12.96,
+      "description": "Used for various skin conditions."
+    },
+    {
+      "id": "med65",
+      "pharmacyId": "pharm4",
+      "name": "DemoMedicine 65",
+      "category": "Vitamins",
+      "price": 14.73,
+      "description": "Supports general health and wellness."
+    },
+    {
+      "id": "med66",
+      "pharmacyId": "pharm7",
+      "name": "DemoMedicine 66",
+      "category": "Digestive Health",
+      "price": 28.89,
+      "description": "Aids in digestion and gut health."
+    },
+    {
+      "id": "med67",
+      "pharmacyId": "pharm7",
+      "name": "DemoMedicine 67",
+      "category": "Digestive Health",
+      "price": 15.98,
+      "description": "Aids in digestion and gut health."
+    },
+    {
+      "id": "med68",
+      "pharmacyId": "pharm6",
+      "name": "DemoMedicine 68",
+      "category": "Vitamins",
+      "price": 17.44,
+      "description": "Supports general health and wellness."
+    },
+    {
+      "id": "med69",
+      "pharmacyId": "pharm5",
+      "name": "DemoMedicine 69",
+      "category": "Digestive Health",
+      "price": 9.01,
+      "description": "Aids in digestion and gut health."
+    },
+    {
+      "id": "med70",
+      "pharmacyId": "pharm1",
+      "name": "DemoMedicine 70",
+      "category": "Cold & Flu",
+      "price": 15.46,
+      "description": "Relieves symptoms of cold and flu."
+    },
+    {
+      "id": "med71",
+      "pharmacyId": "pharm2",
+      "name": "DemoMedicine 71",
+      "category": "Pain Relief",
+      "price": 9.39,
+      "description": "Effective for managing mild to moderate pain."
+    },
+    {
+      "id": "med72",
+      "pharmacyId": "pharm1",
+      "name": "DemoMedicine 72",
+      "category": "Allergy",
+      "price": 26.03,
+      "description": "Helps alleviate allergy symptoms."
+    },
+    {
+      "id": "med73",
+      "pharmacyId": "pharm4",
+      "name": "DemoMedicine 73",
+      "category": "Antibiotics",
+      "price": 15.8,
+      "description": "Prescription medication for bacterial infections."
+    },
+    {
+      "id": "med74",
+      "pharmacyId": "pharm6",
+      "name": "DemoMedicine 74",
+      "category": "Pain Relief",
+      "price": 5.19,
+      "description": "Effective for managing mild to moderate pain."
+    },
+    {
+      "id": "med75",
+      "pharmacyId": "pharm1",
+      "name": "DemoMedicine 75",
+      "category": "Vitamins",
+      "price": 26.45,
+      "description": "Supports general health and wellness."
+    },
+    {
+      "id": "med76",
+      "pharmacyId": "pharm1",
+      "name": "DemoMedicine 76",
+      "category": "Digestive Health",
+      "price": 12.65,
+      "description": "Aids in digestion and gut health."
+    },
+    {
+      "id": "med77",
+      "pharmacyId": "pharm4",
+      "name": "DemoMedicine 77",
+      "category": "Cold & Flu",
+      "price": 5.25,
+      "description": "Relieves symptoms of cold and flu."
+    },
+    {
+      "id": "med78",
+      "pharmacyId": "pharm1",
+      "name": "DemoMedicine 78",
+      "category": "Vitamins",
+      "price": 12.29,
+      "description": "Supports general health and wellness."
+    },
+    {
+      "id": "med79",
+      "pharmacyId": "pharm6",
+      "name": "DemoMedicine 79",
+      "category": "Pain Relief",
+      "price": 29.47,
+      "description": "Effective for managing mild to moderate pain."
+    },
+    {
+      "id": "med80",
+      "pharmacyId": "pharm6",
+      "name": "DemoMedicine 80",
+      "category": "Cold & Flu",
+      "price": 26.46,
+      "description": "Relieves symptoms of cold and flu."
+    },
+    {
+      "id": "med81",
+      "pharmacyId": "pharm6",
+      "name": "DemoMedicine 81",
+      "category": "Cold & Flu",
+      "price": 5.48,
+      "description": "Relieves symptoms of cold and flu."
+    },
+    {
+      "id": "med82",
+      "pharmacyId": "pharm3",
+      "name": "DemoMedicine 82",
+      "category": "Digestive Health",
+      "price": 19.86,
+      "description": "Aids in digestion and gut health."
+    },
+    {
+      "id": "med83",
+      "pharmacyId": "pharm7",
+      "name": "DemoMedicine 83",
+      "category": "Digestive Health",
+      "price": 20.93,
+      "description": "Aids in digestion and gut health."
+    },
+    {
+      "id": "med84",
+      "pharmacyId": "pharm4",
+      "name": "DemoMedicine 84",
+      "category": "Skin Care",
+      "price": 29.93,
+      "description": "Used for various skin conditions."
+    },
+    {
+      "id": "med85",
+      "pharmacyId": "pharm6",
+      "name": "DemoMedicine 85",
+      "category": "Allergy",
+      "price": 17.99,
+      "description": "Helps alleviate allergy symptoms."
+    },
+    {
+      "id": "med86",
+      "pharmacyId": "pharm6",
+      "name": "DemoMedicine 86",
+      "category": "Cold & Flu",
+      "price": 4.92,
+      "description": "Relieves symptoms of cold and flu."
+    },
+    {
+      "id": "med87",
+      "pharmacyId": "pharm5",
+      "name": "DemoMedicine 87",
+      "category": "Digestive Health",
+      "price": 15.25,
+      "description": "Aids in digestion and gut health."
+    },
+    {
+      "id": "med88",
+      "pharmacyId": "pharm5",
+      "name": "DemoMedicine 88",
+      "category": "Allergy",
+      "price": 28.45,
+      "description": "Helps alleviate allergy symptoms."
+    },
+    {
+      "id": "med89",
+      "pharmacyId": "pharm1",
+      "name": "DemoMedicine 89",
+      "category": "Antibiotics",
+      "price": 24.78,
+      "description": "Prescription medication for bacterial infections."
+    },
+    {
+      "id": "med90",
+      "pharmacyId": "pharm7",
+      "name": "DemoMedicine 90",
+      "category": "Digestive Health",
+      "price": 23.88,
+      "description": "Aids in digestion and gut health."
+    },
+    {
+      "id": "med91",
+      "pharmacyId": "pharm7",
+      "name": "DemoMedicine 91",
+      "category": "Antibiotics",
+      "price": 23.04,
+      "description": "Prescription medication for bacterial infections."
+    },
+    {
+      "id": "med92",
+      "pharmacyId": "pharm5",
+      "name": "DemoMedicine 92",
+      "category": "Vitamins",
+      "price": 23.19,
+      "description": "Supports general health and wellness."
+    },
+    {
+      "id": "med93",
+      "pharmacyId": "pharm2",
+      "name": "DemoMedicine 93",
+      "category": "Skin Care",
+      "price": 5.17,
+      "description": "Used for various skin conditions."
+    },
+    {
+      "id": "med94",
+      "pharmacyId": "pharm3",
+      "name": "DemoMedicine 94",
+      "category": "Digestive Health",
+      "price": 24.56,
+      "description": "Aids in digestion and gut health."
+    },
+    {
+      "id": "med95",
+      "pharmacyId": "pharm2",
+      "name": "DemoMedicine 95",
+      "category": "Allergy",
+      "price": 18.31,
+      "description": "Helps alleviate allergy symptoms."
+    },
+    {
+      "id": "med96",
+      "pharmacyId": "pharm1",
+      "name": "DemoMedicine 96",
+      "category": "Allergy",
+      "price": 20.89,
+      "description": "Helps alleviate allergy symptoms."
+    },
+    {
+      "id": "med97",
+      "pharmacyId": "pharm5",
+      "name": "DemoMedicine 97",
+      "category": "Pain Relief",
+      "price": 8.83,
+      "description": "Effective for managing mild to moderate pain."
+    },
+    {
+      "id": "med98",
+      "pharmacyId": "pharm1",
+      "name": "DemoMedicine 98",
+      "category": "Skin Care",
+      "price": 12.87,
+      "description": "Used for various skin conditions."
+    },
+    {
+      "id": "med99",
+      "pharmacyId": "pharm7",
+      "name": "DemoMedicine 99",
+      "category": "Digestive Health",
+      "price": 15.42,
+      "description": "Aids in digestion and gut health."
+    },
+    {
+      "id": "med100",
+      "pharmacyId": "pharm3",
+      "name": "DemoMedicine 100",
+      "category": "Antibiotics",
+      "price": 16.93,
+      "description": "Prescription medication for bacterial infections."
+    },
+    {
+      "id": "med101",
+      "pharmacyId": "pharm3",
+      "name": "DemoMedicine 101",
+      "category": "Vitamins",
+      "price": 29.85,
+      "description": "Supports general health and wellness."
+    },
+    {
+      "id": "med102",
+      "pharmacyId": "pharm7",
+      "name": "DemoMedicine 102",
+      "category": "Digestive Health",
+      "price": 26.68,
+      "description": "Aids in digestion and gut health."
+    },
+    {
+      "id": "med103",
+      "pharmacyId": "pharm3",
+      "name": "DemoMedicine 103",
+      "category": "Pain Relief",
+      "price": 25.48,
+      "description": "Effective for managing mild to moderate pain."
+    },
+    {
+      "id": "med104",
+      "pharmacyId": "pharm7",
+      "name": "DemoMedicine 104",
+      "category": "Allergy",
+      "price": 29.16,
+      "description": "Helps alleviate allergy symptoms."
+    },
+    {
+      "id": "med105",
+      "pharmacyId": "pharm7",
+      "name": "DemoMedicine 105",
+      "category": "Antibiotics",
+      "price": 4.07,
+      "description": "Prescription medication for bacterial infections."
+    },
+    {
+      "id": "med106",
+      "pharmacyId": "pharm1",
+      "name": "DemoMedicine 106",
+      "category": "Cold & Flu",
+      "price": 23.87,
+      "description": "Relieves symptoms of cold and flu."
+    },
+    {
+      "id": "med107",
+      "pharmacyId": "pharm7",
+      "name": "DemoMedicine 107",
+      "category": "Skin Care",
+      "price": 23.93,
+      "description": "Used for various skin conditions."
+    },
+    {
+      "id": "med108",
+      "pharmacyId": "pharm3",
+      "name": "DemoMedicine 108",
+      "category": "Cold & Flu",
+      "price": 15.75,
+      "description": "Relieves symptoms of cold and flu."
+    }
+  ]
+}
