@@ -1,23 +1,33 @@
+// router/index.js
+
 import { createRouter, createWebHistory } from 'vue-router'
-import CheckoutNow from '@/components/CheckoutNow.vue'
-import PharmacyList from '@/components/PharmacyList.vue'
-import MedicineList from '@/components/MedicineList.vue'
+import PharmacyList from '../components/PharmacyList.vue'
+import MedicineList from '../components/MedicineList.vue'
+import CheckoutNow from '../components/CheckoutNow.vue'
 
 const routes = [
-  {
-    path: '/medicine-list',
-    name: 'MedicineList',
-    component: MedicineList
-  },
   {
     path: '/',
     name: 'PharmacyList',
     component: PharmacyList
   },
   {
-    path: '/ck',
-    name: 'CheckoutNow',
-    component: CheckoutNow
+    path: '/medicine/:pharmacyId',
+    name: 'MedicineList',
+    component: MedicineList,
+    props: route => ({
+      selectedPharmacyId: route.params.pharmacyId,
+      selectedPharmacy: route.params.pharmacy || {}
+    })
+  },
+  {
+    path: '/checkout',
+    name: 'Checkout',
+    component: CheckoutNow,
+    props: route => ({
+      cartItems: route.params.cartItems || [],
+      pharmacy: route.params.pharmacy || {}
+    })
   }
 ]
 

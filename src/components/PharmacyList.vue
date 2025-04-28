@@ -1,21 +1,21 @@
+<!-- PharmacyList.vue -->
+ 
 <template>
   <div class="pharmacy-app">
-    <!-- Show pharmacy list if not in medicine view -->
-    <div v-if="!showMedicineList">
-      <!-- Header with status bar -->
-      <div class="status-bar">
-       <!-- {{ product_data[0]}} // from Kamrul Vai API Call -->
+    <!-- Header with status bar -->
+    <div class="status-bar">
+      <!-- {{ product_data[0]}} // from Kamrul Vai API Call -->
+    </div>
+
+    <!-- Header -->
+    <div class="header">
+      <h1>Nearby Pharmacies</h1>
+      <div class="search-bar">
+        <input type="text" placeholder="Search pharmacies..." v-model="searchQuery" />
       </div>
-  
-      <!-- Header -->
-      <div class="header">
-        <h1>Nearby Pharmacies</h1>
-        <div class="search-bar">
-          <input type="text" placeholder="Search pharmacies..." v-model="searchQuery" />
-        </div>
-      </div>
-  
-      <!-- Filter options -->
+    </div>
+
+    <!-- Filter options -->
     <div class="filter-options">
       <div class="filter-item" @click="toggleDropdown('city')">
         <span>All City</span>
@@ -37,118 +37,71 @@
           <div class="dropdown-item" @click.stop="selectService('Consultation')">Consultation</div>
         </div>
       </div>
-      <!-- <div class="filter-item" @click="toggleDropdown('sorting')">
-        <span>Smart Sorting</span>
-        <i class="down-arrow" :class="{ 'rotated': activeDropdown === 'sorting' }"></i>
-        <div class="dropdown-menu" v-show="activeDropdown === 'sorting'">
-          <div class="dropdown-item" @click.stop="setSorting('Prescription Filling')">Prescription Filling</div>
-          <div class="dropdown-item" @click.stop="setSorting('Distance')">By Distance</div>
-          <div class="dropdown-item" @click.stop="setSorting('All City')">All City</div>
-        </div>
-      </div> -->
       <div>
-
       </div>
-      <!-- <div class="filter-item" @click="toggleDropdown('filters')">
-        <span>Filters</span>
-        <i class="down-arrow" :class="{ 'rotated': activeDropdown === 'filters' }"></i>
-        <div class="dropdown-menu" v-show="activeDropdown === 'filters'">
-          <div class="dropdown-item" @click.stop="applyFilter('Open Now')">Open Now</div>
-          <div class="dropdown-item" @click.stop="applyFilter('Delivery')">Delivery</div>
-          <div class="dropdown-item" @click.stop="applyFilter('Popular')">Popular</div>
-          <div class="dropdown-item" @click.stop="applyFilter('24 Hours')">24 Hours</div>
-        </div>
-      </div> -->
       <div>
-
-      </div>
-    </div>
-  
-      <!-- Secondary filters -->
-      <div class="secondary-filters">
-        <div class="filter-tag active">Open Now</div>
-        <div class="filter-tag">Delivery</div>
-        <div class="filter-tag featured">Popular</div>
-        <div class="filter-tag">24 Hours</div>
-      </div>
-  
-      <!-- Pharmacy listings -->
-      <div class="pharmacy-list">
-        <div v-for="pharmacy in filteredPharmacies" :key="pharmacy.id" class="pharmacy-item">
-          <div class="pharmacy-img">
-            <img :src="pharmacy.logo" alt="Pharmacy image" class="placeholder-img"/>
-          </div>
-          
-          <div class="pharmacy-info">
-            <div class="pharmacy-header">
-              <h3>{{ pharmacy.name }}</h3>
-              <div class="pharmacy-badges">
-                <span class="badge delivery">Delivery</span>
-              </div>
-            </div>
-            <div class="rating">
-              <div class="stars">★★★★★</div>
-              <span class="score">{{ pharmacy.rating }}</span>
-              <span class="reviews">({{ pharmacy.reviews }} reviews)</span>
-            </div>
-            <div class="address">{{ pharmacy.address }}</div>
-            <div class="badges">
-              <span class="open-now">Open Now</span>
-              <span class="hours">{{ pharmacy.hours }}</span>
-            </div>
-            <div class="services">
-              <div v-for="(service, i) in pharmacy.services" :key="i" class="service-pill">
-                {{ service }}
-              </div>
-            </div>
-            <!-- <nav>
-              <router-link to="/medicine-list">
-                <button class="order-button" >Order Now</button>
-              </router-link>
-            </nav> -->
-            <button class="order-button" @click="orderNow(pharmacy)">Order Now</button>
-          </div>
-        </div>
-        <footer class="footer">
-          <p>&copy; 2025 HealthCare. All rights reserved.</p>
-          <p>Contact us at: info@healthcare.com</p>
-          <p>Follow us on social media</p>
-        </footer>
       </div>
     </div>
 
-    <!-- Show Medicine List component when order button is clicked -->
-    <medicine-list 
-      v-else
-      :selected-pharmacy-id="selectedPharmacy ? selectedPharmacy.id : ''"
-      :selected-pharmacy="selectedPharmacy"
-      @back="showMedicineList = false"
-    />
+    <!-- Secondary filters -->
+    <div class="secondary-filters">
+      <div class="filter-tag active">Open Now</div>
+      <div class="filter-tag">Delivery</div>
+      <div class="filter-tag featured">Popular</div>
+      <div class="filter-tag">24 Hours</div>
+    </div>
+
+    <!-- Pharmacy listings -->
+    <div class="pharmacy-list">
+      <div v-for="pharmacy in filteredPharmacies" :key="pharmacy.id" class="pharmacy-item">
+        <div class="pharmacy-img">
+          <img :src="pharmacy.logo" alt="Pharmacy image" class="placeholder-img"/>
+        </div>
+        
+        <div class="pharmacy-info">
+          <div class="pharmacy-header">
+            <h3>{{ pharmacy.name }}</h3>
+            <div class="pharmacy-badges">
+              <span class="badge delivery">Delivery</span>
+            </div>
+          </div>
+          <div class="rating">
+            <div class="stars">★★★★★</div>
+            <span class="score">{{ pharmacy.rating }}</span>
+            <span class="reviews">({{ pharmacy.reviews }} reviews)</span>
+          </div>
+          <div class="address">{{ pharmacy.address }}</div>
+          <div class="badges">
+            <span class="open-now">Open Now</span>
+            <span class="hours">{{ pharmacy.hours }}</span>
+          </div>
+          <div class="services">
+            <div v-for="(service, i) in pharmacy.services" :key="i" class="service-pill">
+              {{ service }}
+            </div>
+          </div>
+          <button class="order-button" @click="orderNow(pharmacy)">Order Now</button>
+        </div>
+      </div>
+      <footer class="footer">
+        <p>&copy; 2025 HealthCare. All rights reserved.</p>
+        <p>Contact us at: info@healthcare.com</p>
+        <p>Follow us on social media</p>
+      </footer>
+    </div>
   </div>
 </template>
   
 <script>
 import pharmacyData from '@/pharmacy-data.json'
-import MedicineList from './MedicineList.vue'
-
-// from Kamrul Vai API Call
-// const res = await fetch("https://fakestoreapi.com/products");
-// const product_data = await res.json();
-// console.log(product_data);
 
 export default {
   name: 'PharmacyList',
-  components: {
-    MedicineList
-  },
-
   data() {
     return {
       // product_data: product_data, // from Kamrul Vai API Call
       pharmacies: [],
       searchQuery: '',
-      showMedicineList: false,
-      selectedPharmacy: null,
       activeCategory: 'medicines',
       activeDropdown: null,
       selectedCity: 'All City',
@@ -170,11 +123,11 @@ export default {
       }
       
       // Apply city filter
-     if (this.selectedCity !== 'All City') {
+      if (this.selectedCity !== 'All City') {
         result = result.filter(pharmacy => 
-         pharmacy.address.includes(this.selectedCity)
-       );
-     }
+          pharmacy.address.includes(this.selectedCity)
+        );
+      }
       
       // Apply service filter
       if (this.selectedService !== 'All Services') {
@@ -183,40 +136,20 @@ export default {
         );
       }
       
-      // // Apply active filters
-      // if (this.activeFilters.includes('Open Now')) {
-      //   result = result.filter(pharmacy => pharmacy.isOpen);
-      // }
-      
-      // if (this.activeFilters.includes('Delivery')) {
-      //   result = result.filter(pharmacy => pharmacy.delivery);
-      // }
-      
-      // if (this.activeFilters.includes('Popular')) {
-      //   result = result.filter(pharmacy => pharmacy.popular);
-      // }
-      
-      // if (this.activeFilters.includes('24 Hours')) {
-      //   result = result.filter(pharmacy => pharmacy.hours24);
-      // }
-      
-      // // Apply sorting
-      // if (this.selectedSorting === 'Rating') {
-      //   result.sort((a, b) => b.rating - a.rating);
-      // } else if (this.selectedSorting === 'Distance') {
-      //   result.sort((a, b) => a.distance - b.distance);
-      // } else if (this.selectedSorting === 'Alphabetical') {
-      //   result.sort((a, b) => a.name.localeCompare(b.name));
-      // }
-      
       return result;
     }
   },
   methods: {
     orderNow(pharmacy) {
       console.log('Order button clicked for pharmacy:', pharmacy.name, 'ID:', pharmacy.id)
-      this.selectedPharmacy = pharmacy
-      this.showMedicineList = true
+      // Navigate to medicine list with pharmacy information
+      this.$router.push({
+        name: 'MedicineList',
+        params: {
+          pharmacyId: pharmacy.id,
+          pharmacy: pharmacy
+        }
+      })
     },
     setActiveCategory(category) {
       this.activeCategory = category;
@@ -256,17 +189,6 @@ export default {
       }
       console.log(`Filter toggled: ${filter}, Active filters: ${this.activeFilters.join(', ')}`);
     },
-    handleOrderClick(pharmacy) {
-      console.log('Order Now clicked for:', pharmacy.name);
-      this.$router.push({
-        name: 'OrderPage',
-        params: { pharmacyId: pharmacy.id }
-      });
-    },
-    handleDeliveryClick(pharmacy) {
-      console.log('Delivery clicked for:', pharmacy.name);
-      alert(`Delivery available for ${pharmacy.name}!`);
-    },
     // Close dropdowns when clicking outside
     closeDropdowns(event) {
       if (!event.target.closest('.filter-item')) {
@@ -295,7 +217,6 @@ export default {
 </script>
   
 <style scoped>
-/* Your existing styles remain the same */
 .pharmacy-app {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
   background-color: #000;
