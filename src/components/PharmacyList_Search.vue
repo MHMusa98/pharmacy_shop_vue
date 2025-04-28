@@ -2,7 +2,6 @@
   <div class="pharmacy-app">
     <!-- Header with status bar -->
     <div class="status-bar">
-     
     </div>
 
     <!-- Header -->

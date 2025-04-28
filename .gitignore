@@ -1,11 +1,11 @@
 .DS_Store
 node_modules
 /dist
+
 /components/PharmacyList_Search.vue
 /components/PharmacyList_Search.vue.map
 /components/PharmacyList_Search.vue.d.ts
 /components/PharmacyList_Search.vue.d.ts.map
-
 
 # local env files
 .env.local
@@ -25,3 +25,8 @@ pnpm-debug.log*
 *.njsproj
 *.sln
 *.sw?
+src/AppCopy.vue
+src/router/index copy.js
+src/main copy.js
+src/components/PharmacyList_Search.vue
+

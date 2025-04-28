@@ -4,7 +4,7 @@
     <div v-if="!showMedicineList">
       <!-- Header with status bar -->
       <div class="status-bar">
-       
+       <!-- {{ product_data[0]}} // from Kamrul Vai API Call -->
       </div>
   
       <!-- Header -->
@@ -101,6 +101,11 @@
                 {{ service }}
               </div>
             </div>
+            <!-- <nav>
+              <router-link to="/medicine-list">
+                <button class="order-button" >Order Now</button>
+              </router-link>
+            </nav> -->
             <button class="order-button" @click="orderNow(pharmacy)">Order Now</button>
           </div>
         </div>
@@ -125,14 +130,21 @@
 <script>
 import pharmacyData from '@/pharmacy-data.json'
 import MedicineList from './MedicineList.vue'
-  
+
+// from Kamrul Vai API Call
+// const res = await fetch("https://fakestoreapi.com/products");
+// const product_data = await res.json();
+// console.log(product_data);
+
 export default {
   name: 'PharmacyList',
   components: {
     MedicineList
   },
+
   data() {
     return {
+      // product_data: product_data, // from Kamrul Vai API Call
       pharmacies: [],
       searchQuery: '',
       showMedicineList: false,

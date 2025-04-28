@@ -1,19 +1,13 @@
 <template>
   <div id="app">
-    <PharmacyList />
+    <router-view />
   </div>
 </template>
 
-<script>
-import PharmacyList from './components/PharmacyList.vue'
+<script setup>
 
-export default {
-  name: 'App',
-  components: {
-    PharmacyList
-  }
-}
 </script>
+
 
 <style>
 body {

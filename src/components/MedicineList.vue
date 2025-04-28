@@ -1,4 +1,5 @@
 <template>
+  
     <div class="medicine-list-view">
       <div class="header">
         <div class="back-button" @click="goBack">
@@ -72,16 +73,26 @@
           <span>{{ totalItems }} items</span>
           <span class="total-price">${{ totalPrice.toFixed(2) }}</span>
         </div>
-        <button class="checkout-button">Proceed to Checkout</button>
+        <!-- <button class="checkout-button" @click="CheckoutNow()">Proceed to Checkout</button> -->
+        <nav>
+          <router-link to="/ck">
+            <button class="checkout-button">Proceed to Checkout</button>
+          </router-link>
+        </nav>
+
       </div>
     </div>
   </template>
   
   <script>
   import medicineData from '@/medicine-data.json'
+  // import CheckoutNow from './CheckoutNow.vue'
   
   export default {
     name: 'MedicineList',
+    // components: {
+    //   CheckoutNow
+    // },
     props: {
       selectedPharmacyId: {
         type: String,
@@ -96,6 +107,7 @@
       return {
         allMedicines: [],
         medicines: [],
+        showCheckoutNow: false,
         searchQuery: '',
         selectedCategory: null,
         cartItems: [],
@@ -133,6 +145,11 @@
       }
     },
     methods: {
+      CheckoutNow() {
+      // console.log('Checkout button clicked for pharmacy:', pharmacy.name, 'ID:', pharmacy.id)
+      // this.selectedPharmacy = pharmacy
+      this.showCheckoutNow = true
+      },
       goBack() {
         this.$emit('back')
       },
