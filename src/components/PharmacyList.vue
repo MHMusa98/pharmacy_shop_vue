@@ -10,15 +10,15 @@
     <!-- Header -->
     <div class="header">
       <h1>Nearby Pharmacies</h1>
-      <div class="search-bar">
+      <!-- <div class="search-bar">
         <input type="text" placeholder="Search pharmacies..." v-model="searchQuery" />
-      </div>
+      </div> -->
     </div>
 
     <!-- Filter options -->
     <div class="filter-options">
       <div class="filter-item" @click="toggleDropdown('city')">
-        <span>All City</span>
+        <span>{{ selectedCity }}</span>
         <i class="down-arrow" :class="{ 'rotated': activeDropdown === 'city' }"></i>
         <div class="dropdown-menu" v-show="activeDropdown === 'city'">
           <div class="dropdown-item" @click.stop="selectCity('All City')">All City</div>
@@ -27,7 +27,10 @@
           <div class="dropdown-item" @click.stop="selectCity('Sylhet')">Sylhet</div>
         </div>
       </div>
-      <div class="filter-item" @click="toggleDropdown('services')">
+      <div class="search-bar">
+        <input type="text" placeholder="Search pharmacies..." v-model="searchQuery" />
+      </div>
+      <!-- <div class="filter-item" @click="toggleDropdown('services')">
         <span>Services</span>
         <i class="down-arrow" :class="{ 'rotated': activeDropdown === 'services' }"></i>
         <div class="dropdown-menu" v-show="activeDropdown === 'services'">
@@ -35,8 +38,8 @@
           <div class="dropdown-item" @click.stop="selectService('Prescription')">Prescription</div>
           <div class="dropdown-item" @click.stop="selectService('Medical Supplies')">Medical Supplies</div>
           <div class="dropdown-item" @click.stop="selectService('Consultation')">Consultation</div>
-        </div>
-      </div>
+        </div> -->
+        
       <div>
       </div>
       <div>
@@ -44,12 +47,12 @@
     </div>
 
     <!-- Secondary filters -->
-    <div class="secondary-filters">
+    <!-- <div class="secondary-filters">
       <div class="filter-tag active">Open Now</div>
       <div class="filter-tag">Delivery</div>
       <div class="filter-tag featured">Popular</div>
       <div class="filter-tag">24 Hours</div>
-    </div>
+    </div> -->
 
     <!-- Pharmacy listings -->
     <div class="pharmacy-list">
@@ -75,19 +78,19 @@
             <span class="open-now">Open Now</span>
             <span class="hours">{{ pharmacy.hours }}</span>
           </div>
-          <div class="services">
+          <!-- <div class="services">
             <div v-for="(service, i) in pharmacy.services" :key="i" class="service-pill">
               {{ service }}
             </div>
-          </div>
+          </div> -->
           <button class="order-button" @click="orderNow(pharmacy)">Order Now</button>
         </div>
       </div>
-      <footer class="footer">
+      <!-- <footer class="footer">
         <p>&copy; 2025 HealthCare. All rights reserved.</p>
         <p>Contact us at: info@healthcare.com</p>
         <p>Follow us on social media</p>
-      </footer>
+      </footer> -->
     </div>
   </div>
 </template>
@@ -100,11 +103,11 @@ export default {
   data() {
     return {
       // product_data: product_data, // from Kamrul Vai API Call
+      selectedCity: 'All City',
       pharmacies: [],
       searchQuery: '',
       activeCategory: 'medicines',
       activeDropdown: null,
-      selectedCity: 'All City',
       selectedService: 'All Services',
       selectedSorting: 'Rating',
       activeFilters: ['Open Now']
@@ -246,18 +249,21 @@ export default {
 }
   
 .header {
-  padding: 16px;
+  padding: 5px;
+  margin-bottom: 0px;
+  padding-bottom: 0px;
 }
   
 .header h1 {
-  margin: 0 0 16px 0;
+  margin: 0 0 8px 0;
   font-size: 24px;
-  color: #fff;
+  color: #3aa757;
 }
   
 .search-bar {
-  width: 100%;
+  width: 85%;
   margin-bottom: 12px;
+  height: 20px;
 }
   
 .search-bar input {

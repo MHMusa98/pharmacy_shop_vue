@@ -3,25 +3,26 @@
 <template>
   <div class="medicine-list-view">
     <div class="header">
-      <div class="back-button" @click="goBack">
+      <!-- <div class="back-button" @click="goBack">
         <span>&larr;</span>
-      </div>
-      <h1>{{ localSelectedPharmacy.name || selectedPharmacy.name }} - Medicines</h1>
+      </div> -->
+      <!-- <h1>{{ localSelectedPharmacy.name || selectedPharmacy.name }} - Medicines</h1> -->
+       <h1>Search Medicines</h1>
     </div>
 
     <!-- Debug info - remove in production -->
-    <div class="debug-info" v-if="debugMode">
+    <!-- <div class="debug-info" v-if="debugMode">
       <p>Selected Pharmacy ID: {{ selectedPharmacyId }}</p>
       <p>Total Medicines Loaded: {{ allMedicines.length }}</p>
       <p>Filtered Medicines: {{ medicines.length }}</p>
       <button @click="loadAllMedicines">Show All Medicines</button>
-    </div>
+    </div> -->
 
     <div class="search-bar">
       <input type="text" placeholder="Search medicines..." v-model="searchQuery" />
     </div>
 
-    <div class="category-filters" v-if="categories.length > 0">
+    <!-- <div class="category-filters" v-if="categories.length > 0">
       <div 
         v-for="(category, index) in categories" 
         :key="index"
@@ -31,7 +32,7 @@
         {{ category }}
       </div>
       <div class="category-pill" @click="selectedCategory = null">All</div>
-    </div>
+    </div> -->
 
     <!-- No medicines message -->
     <div class="no-medicines" v-if="filteredMedicines.length === 0">
@@ -55,11 +56,15 @@
             <span class="price">${{ medicine.price.toFixed(2) }}</span>
           </div>
           <p class="description">{{ medicine.description }}</p>
+          <div>
+            <p class="medicine_quantity_details">10 Tablets (1 strips)</p>
+          </div>
           <div class="medicine-actions">
             <div class="quantity-selector">
               <button @click="decreaseQuantity(medicine)">-</button>
               <span>{{ getQuantity(medicine) }}</span>
               <button @click="increaseQuantity(medicine)">+</button>
+              <p class="medicine_quantity">Strips</p>
             </div>
             <button class="add-to-cart" @click="addToCart(medicine)">
               Add to Cart
@@ -279,12 +284,13 @@ export default {
   
 .header h1 {
   margin: 0;
+  color: #3aa757;
   font-size: 20px;
   flex: 1;
 }
   
 .search-bar {
-  padding: 0 16px 12px;
+  padding: 8px 16px 8px;
 }
   
 .search-bar input {
@@ -377,7 +383,7 @@ export default {
 .description {
   font-size: 12px;
   color: #ccc;
-  margin-bottom: 12px;
+  margin: 0 0 8px 0;  
   line-height: 1.4;
 }
   
@@ -478,5 +484,22 @@ export default {
   margin-top: 16px;
   font-size: 14px;
   cursor: pointer;
+}
+
+.medicine_quantity_details {
+  font-size: 12px;
+  font-weight: bold;
+  color: #ccc;
+  margin: auto;
+  text-align: left;
+}
+
+.medicine_quantity {
+  font-size: 12px;
+  color: #ccc;
+  margin-top: 6px;
+  padding-top: 4px;
+  padding-left: 4px;
+  text-align: center;
 }
 </style>

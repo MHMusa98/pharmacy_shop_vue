@@ -3,16 +3,16 @@
 <template>
   <div class="checkout-view">
     <div class="header">
-      <div class="back-button" @click="goBack">
+      <!-- <div class="back-button" @click="goBack">
         <span>&larr;</span>
-      </div>
+      </div> -->
       <h1>Checkout</h1>
     </div>
 
     <!-- Order Summary -->
     <div class="order-summary">
       <h2>Order Summary</h2>
-      <div class="pharmacy-info">
+      <!-- <div class="pharmacy-info">
         <div class="pharmacy-img">
           <div class="placeholder-img">💊</div>
         </div>
@@ -20,7 +20,7 @@
           <h3>{{ localPharmacy.name }}</h3>
           <p class="address">{{ localPharmacy.address }}</p>
         </div>
-      </div>
+      </div> -->
 
       <!-- Items in cart -->
       <div class="cart-items">
@@ -67,13 +67,13 @@
     <!-- Delivery Information -->
     <div class="delivery-info">
       <h2>Delivery Information</h2>
-      <div class="delivery-date">
+      <!-- <div class="delivery-date">
         <label>Delivery Date</label>
         <div class="date-selector">
           <input type="date" v-model="deliveryDate" />
         </div>
-      </div>
-      <div class="delivery-time">
+      </div> -->
+      <!-- <div class="delivery-time">
         <label>Delivery Time</label>
         <div class="time-selector">
           <select v-model="deliveryTime">
@@ -82,23 +82,23 @@
             <option value="evening">Evening (5pm - 9pm)</option>
           </select>
         </div>
-      </div>
+      </div> -->
       <div class="address-field">
-        <label>Delivery Address</label>
+        <label>Shipping Address</label>
         <textarea 
           v-model="deliveryAddress" 
-          placeholder="Enter your complete delivery address"
+          placeholder="Enter your address..."
           rows="3"
         ></textarea>
       </div>
-      <div class="notes-field">
+      <!-- <div class="notes-field">
         <label>Order Notes (Optional)</label>
         <textarea 
           v-model="orderNotes" 
           placeholder="Any special instructions for delivery"
           rows="2"
         ></textarea>
-      </div>
+      </div> -->
     </div>
 
     <!-- Payment Method -->
@@ -298,6 +298,7 @@ export default {
 
 .header {
   display: flex;
+  color: #3aa757;
   align-items: center;
   padding: 16px;
   position: sticky;
