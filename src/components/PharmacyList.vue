@@ -4,15 +4,14 @@
   <div class="pharmacy-app">
     <!-- Header with status bar -->
     <div class="status-bar">
-      <!-- {{ product_data[0]}} // from Kamrul Vai API Call -->
     </div>
 
     <!-- Header -->
     <div class="header">
       <h1>Nearby Pharmacies</h1>
-      <!-- <div class="search-bar">
-        <input type="text" placeholder="Search pharmacies..." v-model="searchQuery" />
-      </div> -->
+      <div v-if="locationStatus" class="location-status" :class="locationStatus.type">
+        {{ locationStatus.message }}
+      </div>
     </div>
 
     <!-- Filter options -->
@@ -30,33 +29,42 @@
       <div class="search-bar">
         <input type="text" placeholder="Search pharmacies..." v-model="searchQuery" />
       </div>
-      <!-- <div class="filter-item" @click="toggleDropdown('services')">
-        <span>Services</span>
-        <i class="down-arrow" :class="{ 'rotated': activeDropdown === 'services' }"></i>
-        <div class="dropdown-menu" v-show="activeDropdown === 'services'">
-          <div class="dropdown-item" @click.stop="selectService('All Services')">All Services</div>
-          <div class="dropdown-item" @click.stop="selectService('Prescription')">Prescription</div>
-          <div class="dropdown-item" @click.stop="selectService('Medical Supplies')">Medical Supplies</div>
-          <div class="dropdown-item" @click.stop="selectService('Consultation')">Consultation</div>
-        </div> -->
-        
       <div>
       </div>
       <div>
       </div>
     </div>
 
-    <!-- Secondary filters -->
-    <!-- <div class="secondary-filters">
-      <div class="filter-tag active">Open Now</div>
-      <div class="filter-tag">Delivery</div>
-      <div class="filter-tag featured">Popular</div>
-      <div class="filter-tag">24 Hours</div>
-    </div> -->
+    <!-- Location controls -->
+    <div class="location-controls">
+      <button class="location-button" @click="requestLocation" :disabled="isLocationLoading">
+        <span v-if="isLocationLoading">Getting location...</span>
+        <span v-else>{{ userLocation ? 'Refresh location' : 'Use my location' }}</span>
+      </button>
+      <div v-if="userLocation" class="location-info">
+        <span class="location-label">Showing nearby pharmacies</span>
+        <!-- <span class="location-label">Showing pharmacies within {{ maxDistance }}km</span> -->
+        <input 
+          type="range" 
+          min="0" 
+          max="250" 
+          v-model.number="maxDistance" 
+          class="distance-slider"
+          @change="updatePharmacyDistances"
+        />
+      </div>
+    </div>
 
     <!-- Pharmacy listings -->
     <div class="pharmacy-list">
-      <div v-for="pharmacy in filteredPharmacies" :key="pharmacy.id" class="pharmacy-item">
+      <div v-if="isLocationLoading" class="loading-indicator">
+        <div class="loading-spinner"></div>
+        <p>Finding nearby pharmacies...</p>
+      </div>
+      <div v-else-if="filteredPharmacies.length === 0" class="no-results">
+        <p>No pharmacies found. Try adjusting your search or location settings.</p>
+      </div>
+      <div v-else v-for="pharmacy in filteredPharmacies" :key="pharmacy.id" class="pharmacy-item">
         <div class="pharmacy-img">
           <img :src="pharmacy.logo" alt="Pharmacy image" class="placeholder-img"/>
         </div>
@@ -66,6 +74,7 @@
             <h3>{{ pharmacy.name }}</h3>
             <div class="pharmacy-badges">
               <span class="badge delivery">Delivery</span>
+              <span v-if="pharmacy.distance" class="badge distance">{{ pharmacy.distance.toFixed(1) }}km</span>
             </div>
           </div>
           <div class="rating">
@@ -78,19 +87,9 @@
             <span class="open-now">Open Now</span>
             <span class="hours">{{ pharmacy.hours }}</span>
           </div>
-          <!-- <div class="services">
-            <div v-for="(service, i) in pharmacy.services" :key="i" class="service-pill">
-              {{ service }}
-            </div>
-          </div> -->
           <button class="order-button" @click="orderNow(pharmacy)">Order Now</button>
         </div>
       </div>
-      <!-- <footer class="footer">
-        <p>&copy; 2025 HealthCare. All rights reserved.</p>
-        <p>Contact us at: info@healthcare.com</p>
-        <p>Follow us on social media</p>
-      </footer> -->
     </div>
   </div>
 </template>
@@ -102,7 +101,6 @@ export default {
   name: 'PharmacyList',
   data() {
     return {
-      // product_data: product_data, // from Kamrul Vai API Call
       selectedCity: 'All City',
       pharmacies: [],
       searchQuery: '',
@@ -110,7 +108,11 @@ export default {
       activeDropdown: null,
       selectedService: 'All Services',
       selectedSorting: 'Rating',
-      activeFilters: ['Open Now']
+      activeFilters: ['Open Now'],
+      userLocation: null,
+      isLocationLoading: false,
+      locationStatus: null,
+      maxDistance: 250 // Default 5km radius
     }
   },
   computed: {
@@ -132,13 +134,15 @@ export default {
         );
       }
       
-      // Apply service filter
-      if (this.selectedService !== 'All Services') {
-        result = result.filter(pharmacy => 
-          pharmacy.services.includes(this.selectedService)
-        );
+      // Apply location-based filter if user location is available
+      if (this.userLocation) {
+        result = result.filter(pharmacy => {
+          return pharmacy.distance !== undefined && pharmacy.distance <= this.maxDistance;
+        });
+        
+        // Sort by distance when location is available
+        result.sort((a, b) => a.distance - b.distance);
       }
-      
       return result;
     }
   },
@@ -154,10 +158,6 @@ export default {
         }
       })
     },
-    setActiveCategory(category) {
-      this.activeCategory = category;
-      console.log(`Category changed to: ${category}`);
-    },
     toggleDropdown(dropdown) {
       if (this.activeDropdown === dropdown) {
         this.activeDropdown = null;
@@ -170,33 +170,105 @@ export default {
       this.activeDropdown = null;
       console.log(`City selected: ${city}`);
     },
-    selectService(service) {
-      this.selectedService = service;
-      this.activeDropdown = null;
-      console.log(`Service selected: ${service}`);
-    },
-    setSorting(sorting) {
-      this.selectedSorting = sorting;
-      this.activeDropdown = null;
-      console.log(`Sorting changed to: ${sorting}`);
-    },
-    applyFilter(filter) {
-      this.toggleFilter(filter);
-      this.activeDropdown = null;
-    },
-    toggleFilter(filter) {
-      if (this.activeFilters.includes(filter)) {
-        this.activeFilters = this.activeFilters.filter(f => f !== filter);
-      } else {
-        this.activeFilters.push(filter);
-      }
-      console.log(`Filter toggled: ${filter}, Active filters: ${this.activeFilters.join(', ')}`);
-    },
     // Close dropdowns when clicking outside
     closeDropdowns(event) {
       if (!event.target.closest('.filter-item')) {
         this.activeDropdown = null;
       }
+    },
+    // Location methods
+    requestLocation() {
+      this.isLocationLoading = true;
+      this.locationStatus = { type: 'info', message: 'Requesting your location...' };
+      
+      // Check if geolocation is available
+      if (!navigator.geolocation) {
+        this.locationStatus = { type: 'error', message: 'Geolocation is not supported by your browser' };
+        this.isLocationLoading = false;
+        return;
+      }
+      
+      // Request current position
+      navigator.geolocation.getCurrentPosition(
+        this.handleLocationSuccess,
+        this.handleLocationError,
+        { enableHighAccuracy: true, timeout: 10000, maximumAge: 0 }
+      );
+    },
+    handleLocationSuccess(position) {
+      const { latitude, longitude } = position.coords;
+      console.log('Location obtained:', latitude, longitude);
+      
+      this.userLocation = { lat: latitude, lng: longitude };
+      this.locationStatus = { type: 'success', message: 'Location obtained successfully' };
+      
+      // Calculate distances for each pharmacy
+      this.updatePharmacyDistances();
+      
+      this.isLocationLoading = false;
+      
+      // Clear status message after a delay
+      setTimeout(() => {
+        this.locationStatus = null;
+      }, 2000);
+    },
+    handleLocationError(error) {
+      console.error('Error getting location:', error);
+      
+      let errorMessage = 'Failed to get your location';
+      
+      switch(error.code) {
+        case error.PERMISSION_DENIED:
+          errorMessage = 'Location permission denied. Please allow location access.';
+          break;
+        case error.POSITION_UNAVAILABLE:
+          errorMessage = 'Location information is unavailable.';
+          break;
+        case error.TIMEOUT:
+          errorMessage = 'Location request timed out.';
+          break;
+        case error.UNKNOWN_ERROR:
+          errorMessage = 'An unknown error occurred.';
+          break;
+      }
+      
+      this.locationStatus = { type: 'error', message: errorMessage };
+      this.isLocationLoading = false;
+    },
+    updatePharmacyDistances() {
+      if (!this.userLocation) return;
+      
+      this.pharmacies.forEach(pharmacy => {
+        // Use pharmacy coordinates from latitude and longitude fields
+        if (pharmacy.coordinates && pharmacy.coordinates.lat && pharmacy.coordinates.lng) {
+          pharmacy.distance = this.calculateDistance(
+            this.userLocation.lat, 
+            this.userLocation.lng,
+            pharmacy.coordinates.lat,
+            pharmacy.coordinates.lng
+          );
+        } else {
+          // Fallback to a default distance if coordinates are missing
+          console.warn(`Missing coordinates for pharmacy: ${pharmacy.name}`);
+          pharmacy.distance = 999; // Set a large distance so it appears at the end
+        }
+      });
+    },
+    calculateDistance(lat1, lon1, lat2, lon2) {
+      // Haversine formula to calculate distance between two points
+      const R = 6371; // Radius of the earth in km
+      const dLat = this.deg2rad(lat2 - lat1);
+      const dLon = this.deg2rad(lon2 - lon1);
+      const a = 
+        Math.sin(dLat/2) * Math.sin(dLat/2) +
+        Math.cos(this.deg2rad(lat1)) * Math.cos(this.deg2rad(lat2)) * 
+        Math.sin(dLon/2) * Math.sin(dLon/2);
+      const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a)); 
+      const distance = R * c; // Distance in km
+      return distance;
+    },
+    deg2rad(deg) {
+      return deg * (Math.PI/180);
     }
   },
   created() {
@@ -208,13 +280,40 @@ export default {
           pharmacy.id = 'pharm' + Math.floor(Math.random() * 1000)
           console.warn('Added missing ID to pharmacy:', pharmacy.name)
         }
+        
+        // Use the pharmacy's latitude and longitude data
+        // The data is already in pharmacy-data.json
+        pharmacy.coordinates = {
+          lat: pharmacy.latitude || 23.8103,
+          lng: pharmacy.longitude || 90.4125
+        };
+        
         return pharmacy
       })
       console.log('Loaded', this.pharmacies.length, 'pharmacies')
+      
+      // Location permission will be requested in the created hook
     } else {
       console.error('Pharmacy data not found or has incorrect format')
       this.pharmacies = []
     }
+    
+    // Add event listener to close dropdowns when clicking outside
+    document.addEventListener('click', this.closeDropdowns);
+    
+    // Check if the browser supports geolocation
+    if (navigator.geolocation) {
+      // Request location permission automatically on component creation
+      setTimeout(() => {
+        this.requestLocation();
+      }, 1000);
+    } else {
+      this.locationStatus = { type: 'error', message: 'Geolocation is not supported by your browser' };
+    }
+  },
+  beforeUnmount() {
+    // Remove event listener when component is destroyed
+    document.removeEventListener('click', this.closeDropdowns);
   }
 }
 </script>
@@ -259,6 +358,25 @@ export default {
   font-size: 24px;
   color: #3aa757;
 }
+
+.location-status {
+  font-size: 12px;
+  padding: 6px 10px;
+  border-radius: 4px;
+  margin-bottom: 10px;
+}
+
+.location-status.info {
+  background-color: #2d4e9a;
+}
+
+.location-status.success {
+  background-color: #3aa757;
+}
+
+.location-status.error {
+  background-color: #e74c3c;
+}
   
 .search-bar {
   width: 85%;
@@ -274,6 +392,96 @@ export default {
   background-color: #333;
   color: #fff;
   box-sizing: border-box;
+}
+
+.location-controls {
+  display: flex;
+  flex-direction: column;
+  padding: 0 8px 12px;
+  border-bottom: 1px solid #333;
+}
+
+.location-button {
+  background-color: #2d4e9a;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 8px 16px;
+  font-size: 14px;
+  cursor: pointer;
+  margin-bottom: 8px;
+}
+
+.location-button:disabled {
+  background-color: #444;
+  cursor: not-allowed;
+}
+
+.location-info {
+  display: flex;
+  flex-direction: column;
+  font-size: 12px;
+  color: #ccc;
+}
+
+.location-label {
+  margin-bottom: 4px;
+}
+
+.distance-slider {
+  width: 100%;
+  background-color: #333;
+  height: 4px;
+  outline: none;
+  -webkit-appearance: none;
+  border-radius: 2px;
+}
+
+.distance-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #3aa757;
+  cursor: pointer;
+}
+
+.distance-slider::-moz-range-thumb {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #3aa757;
+  cursor: pointer;
+  border: none;
+}
+
+.loading-indicator {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 0;
+}
+
+.loading-spinner {
+  width: 40px;
+  height: 40px;
+  border: 3px solid #333;
+  border-top: 3px solid #3aa757;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 16px;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.no-results {
+  padding: 40px 20px;
+  text-align: center;
+  color: #ccc;
 }
   
 .category-nav {
@@ -442,6 +650,10 @@ export default {
   border-radius: 2px;
   background-color: #3aa757;
   color: #fff;
+}
+
+.badge.distance {
+  background-color: #2d4e9a;
 }
   
 .rating {

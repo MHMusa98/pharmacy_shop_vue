@@ -29,6 +29,11 @@
             <h4>{{ item.medicine.name }}</h4>
             <div class="item-meta">
               <span class="category">{{ item.medicine.category }}</span>
+              
+            </div>
+            
+            <div class="item-meta2">
+              <span class="medicine_quantity_details">10 Tablets (1 strips)</span>
               <span class="price">${{ item.medicine.price.toFixed(2) }}</span>
             </div>
           </div>
@@ -37,6 +42,7 @@
               <button @click="decreaseQuantity(item.medicine)">-</button>
               <span>{{ item.quantity }}</span>
               <button @click="increaseQuantity(item.medicine)">+</button>
+              <p class="medicine_quantity">Strips</p>
             </div>
             <div class="item-total">${{ (item.medicine.price * item.quantity).toFixed(2) }}</div>
           </div>
@@ -67,12 +73,12 @@
     <!-- Delivery Information -->
     <div class="delivery-info">
       <h2>Delivery Information</h2>
-      <!-- <div class="delivery-date">
-        <label>Delivery Date</label>
-        <div class="date-selector">
-          <input type="date" v-model="deliveryDate" />
+      <div class="contact-number">
+        <label>Mobile Number</label>
+        <div >
+          <input type="tel" placeholder="Enter your mobile number"/>
         </div>
-      </div> -->
+      </div>
       <!-- <div class="delivery-time">
         <label>Delivery Time</label>
         <div class="time-selector">
@@ -87,7 +93,7 @@
         <label>Shipping Address</label>
         <textarea 
           v-model="deliveryAddress" 
-          placeholder="Enter your address..."
+          placeholder="Enter your shipping address"
           rows="3"
         ></textarea>
       </div>
@@ -396,6 +402,18 @@ h2 {
   font-size: 12px;
 }
 
+.item-meta2 {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  margin: 0 0 0 0;
+  text-align: left;
+}
+
+.item-meta2 span {
+  margin: 3px 0 0 0;
+}
+
 .category {
   color: #ccc;
 }
@@ -479,6 +497,22 @@ label {
 }
 
 .date-selector input, .time-selector select, textarea {
+  width: 100%;
+  padding: 10px;
+  border-radius: 4px;
+  border: none;
+  background-color: #333;
+  color: #fff;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+
+.contact-number {
+  padding: 0 16px;
+  margin-bottom: 16px;
+}
+
+.contact-number input, .time-selector select, textarea {
   width: 100%;
   padding: 10px;
   border-radius: 4px;
@@ -596,5 +630,22 @@ label {
   font-weight: bold;
   cursor: pointer;
   margin-top: 16px;
+}
+
+.medicine_quantity_details {
+  font-size: 12px;
+  font-weight: bold;
+  color: #ccc;
+  margin: auto;
+  text-align: left;
+}
+
+.medicine_quantity {
+  font-size: 12px;
+  color: #ccc;
+  margin-top: 6px;
+  padding-top: 4px;
+  padding-left: 4px;
+  text-align: center;
 }
 </style>

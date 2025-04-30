@@ -174,7 +174,14 @@ export default {
       }
     },
     addToCart(medicine) {
-      this.increaseQuantity(medicine)
+      //this.//increaseQuantity(medicine)
+      const existingItem = this.cartItems.find(item => item.medicine.id === medicine.id)
+      if (!existingItem) {
+        this.cartItems.push({
+          medicine: medicine,
+          quantity: 1
+        })     
+      }
     },
     loadAllMedicines() {
       // Show all medicines regardless of pharmacy
