@@ -1,0 +1,88 @@
+{
+  "orders": [
+    {
+      "id": "5368",
+      "orderId": "ORD-124185",
+      "customer": {
+        "mobileNumber": "01739421188",
+        "deliveryAddress": "50 DIT Plot Gandaria Dhaka-1204."
+      },
+      "pharmacy": {},
+      "items": [
+        {
+          "medicineId": "med9",
+          "medicineName": "DemoMedicine 9",
+          "price": 24.34,
+          "quantity": 2,
+          "subtotal": 48.68
+        },
+        {
+          "medicineId": "med12",
+          "medicineName": "DemoMedicine 12",
+          "price": 25.72,
+          "quantity": 2,
+          "subtotal": 51.44
+        }
+      ],
+      "payment": {
+        "method": "cash",
+        "subtotal": 100.12,
+        "deliveryFee": 5,
+        "tax": 5.006,
+        "total": 110.126
+      },
+      "orderDate": "2025-05-03T04:19:23.835Z",
+      "deliveryDate": "2025-05-03",
+      "status": "pending"
+    },
+    {
+      "id": "1cc4",
+      "orderId": "ORD-554430",
+      "customer": {
+        "mobileNumber": "01521253960",
+        "deliveryAddress": "5588 JKI Dhk 322423"
+      },
+      "pharmacy": {},
+      "items": [
+        {
+          "medicineId": "med1",
+          "medicineName": "Paracetamol 500mg",
+          "price": 5.99,
+          "quantity": 2,
+          "subtotal": 11.98
+        },
+        {
+          "medicineId": "med2",
+          "medicineName": "Ibuprofen 200mg",
+          "price": 6.49,
+          "quantity": 3,
+          "subtotal": 19.47
+        },
+        {
+          "medicineId": "med8",
+          "medicineName": "Aspirin 81mg",
+          "price": 4.99,
+          "quantity": 3,
+          "subtotal": 14.97
+        },
+        {
+          "medicineId": "med19",
+          "medicineName": "DemoMedicine 19",
+          "price": 13.31,
+          "quantity": 4,
+          "subtotal": 53.24
+        }
+      ],
+      "payment": {
+        "method": "cash",
+        "subtotal": 99.66,
+        "deliveryFee": 5,
+        "tax": 4.9830000000000005,
+        "total": 109.643
+      },
+      "orderDate": "2025-05-03T04:24:08.281Z",
+      "deliveryDate": "2025-05-03",
+      "status": "pending"
+    }
+  ]
+}

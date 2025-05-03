@@ -3,24 +3,12 @@
 <template>
   <div class="checkout-view">
     <div class="header">
-      <!-- <div class="back-button" @click="goBack">
-        <span>&larr;</span>
-      </div> -->
       <h1>Checkout</h1>
     </div>
 
     <!-- Order Summary -->
     <div class="order-summary">
       <h2>Order Summary</h2>
-      <!-- <div class="pharmacy-info">
-        <div class="pharmacy-img">
-          <div class="placeholder-img">💊</div>
-        </div>
-        <div class="info">
-          <h3>{{ localPharmacy.name }}</h3>
-          <p class="address">{{ localPharmacy.address }}</p>
-        </div>
-      </div> -->
 
       <!-- Items in cart -->
       <div class="cart-items">
@@ -75,20 +63,10 @@
       <h2>Delivery Information</h2>
       <div class="contact-number">
         <label>Mobile Number</label>
-        <div >
-          <input type="tel" placeholder="Enter your mobile number"/>
+        <div>
+          <input type="tel" v-model="mobileNumber" placeholder="Enter your mobile number"/>
         </div>
       </div>
-      <!-- <div class="delivery-time">
-        <label>Delivery Time</label>
-        <div class="time-selector">
-          <select v-model="deliveryTime">
-            <option value="morning">Morning (9am - 12pm)</option>
-            <option value="afternoon">Afternoon (12pm - 5pm)</option>
-            <option value="evening">Evening (5pm - 9pm)</option>
-          </select>
-        </div>
-      </div> -->
       <div class="address-field">
         <label>Shipping Address</label>
         <textarea 
@@ -97,14 +75,6 @@
           rows="3"
         ></textarea>
       </div>
-      <!-- <div class="notes-field">
-        <label>Order Notes (Optional)</label>
-        <textarea 
-          v-model="orderNotes" 
-          placeholder="Any special instructions for delivery"
-          rows="2"
-        ></textarea>
-      </div> -->
     </div>
 
     <!-- Payment Method -->
@@ -140,7 +110,9 @@
 
     <!-- Place Order Button -->
     <div class="place-order">
-      <button class="place-order-button" @click="placeOrder">Place Order</button>
+      <button class="place-order-button" @click="placeOrder" :disabled="isSubmitting">
+        {{ isSubmitting ? 'Processing...' : 'Place Order' }}
+      </button>
     </div>
 
     <!-- Order Success Modal -->
@@ -153,10 +125,21 @@
         <button class="close-button" @click="closeModal">Continue Shopping</button>
       </div>
     </div>
+
+    <!-- Error Modal -->
+    <div class="modal" v-if="showErrorModal">
+      <div class="modal-content error">
+        <div class="error-icon">❌</div>
+        <h2>Order Placement Failed</h2>
+        <p>{{ errorMessage }}</p>
+        <button class="close-button" @click="closeErrorModal">Try Again</button>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
+import apiConfig from '/apiConfig.js'; // Update this path to match your project structure
 export default {
   name: 'CheckoutNow',
   props: {
@@ -176,12 +159,17 @@ export default {
       deliveryDate: new Date().toISOString().substr(0, 10),
       deliveryTime: 'morning',
       deliveryAddress: '',
+      mobileNumber: '',
       orderNotes: '',
       paymentMethod: 'cash',
       deliveryFee: 5.00,
       taxRate: 0.05,
       showOrderSuccess: false,
-      orderId: ''
+      showErrorModal: false,
+      errorMessage: '',
+      orderId: '',
+      isSubmitting: false,
+      apiBaseUrl: apiConfig.apiBaseUrl
     }
   },
   computed: {
@@ -229,25 +217,119 @@ export default {
         this.$emit('update:cartItems', [...this.localCartItems])
       }
     },
-    placeOrder() {
+    async placeOrder() {
       // Validate form fields
       if (!this.deliveryAddress) {
         alert('Please enter a delivery address')
         return
       }
 
-      // Generate a random order ID
-      this.orderId = 'ORD-' + Math.floor(100000 + Math.random() * 900000)
-      this.showOrderSuccess = true
-      
-      // Clear session storage after successful order
-      sessionStorage.removeItem('cartItems')
-      sessionStorage.removeItem('pharmacy')
+      if (!this.mobileNumber) {
+        alert('Please enter a mobile number')
+        return
+      }
+
+      try {
+        this.isSubmitting = true;
+        // Generate a random order ID
+        this.orderId = 'ORD-' + Math.floor(100000 + Math.random() * 900000)
+        
+        // Prepare order data to send to backend
+        const orderData = {
+          orderId: this.orderId,
+          customer: {
+            mobileNumber: this.mobileNumber,
+            deliveryAddress: this.deliveryAddress
+          },
+          pharmacy: this.localPharmacy,
+          items: this.localCartItems.map(item => ({
+            medicineId: item.medicine.id,
+            medicineName: item.medicine.name,
+            price: item.medicine.price,
+            quantity: item.quantity,
+            subtotal: item.medicine.price * item.quantity
+          })),
+          payment: {
+            method: this.paymentMethod,
+            subtotal: this.subtotal,
+            deliveryFee: this.deliveryFee,
+            tax: this.tax,
+            total: this.total
+          },
+          orderDate: new Date().toISOString(),
+          deliveryDate: this.deliveryDate,
+          status: 'pending'
+        }
+
+        // Log for debugging
+        console.log('Sending order data:', orderData);
+
+        try {
+          // Try to send order data to mock API or real backend
+          const response = await fetch(`${this.apiBaseUrl}/orders`, {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(orderData)
+          });
+
+          if (!response.ok) {
+            throw new Error(`Server responded with status: ${response.status}`);
+          }
+
+          const data = await response.json();
+          console.log('Order placed successfully:', data);
+          
+        } catch (apiError) {
+          console.warn('API request failed. Falling back to localStorage:', apiError);
+          
+          // Store in localStorage as fallback
+          const savedOrders = JSON.parse(localStorage.getItem('savedOrders') || '[]');
+          savedOrders.push(orderData);
+          localStorage.setItem('savedOrders', JSON.stringify(savedOrders));
+          console.log('Order saved to localStorage. Total orders:', savedOrders.length);
+        }
+        
+        // Show success modal regardless - for development purposes
+        this.showOrderSuccess = true;
+        
+        // Clear session storage after successful order
+        sessionStorage.removeItem('cartItems');
+        sessionStorage.removeItem('pharmacy');
+
+      } catch (error) {
+        console.error('Error placing order:', error);
+        this.errorMessage = 'Failed to place your order. Please try again later.';
+        this.showErrorModal = true;
+      } finally {
+        this.isSubmitting = false;
+      }
     },
     closeModal() {
-      this.showOrderSuccess = false
+      this.showOrderSuccess = false;
       // Navigate back to pharmacy list
-      this.$router.push('/')
+      this.$router.push('/');
+    },
+    closeErrorModal() {
+      this.showErrorModal = false;
+    },
+    
+    // Method to fetch all past orders - for testing purposes
+    async fetchPastOrders() {
+      try {
+        const response = await fetch(`${this.apiBaseUrl}/orders`);
+        if (!response.ok) {
+          throw new Error(`Failed to fetch orders: ${response.status}`);
+        }
+        
+        const orders = await response.json();
+        console.log('Past orders:', orders);
+        return orders;
+      } catch (error) {
+        console.error('Error fetching past orders:', error);
+        return [];
+      }
     },
     loadDataFromSessionStorage() {
       // Try to get cart items from session storage
