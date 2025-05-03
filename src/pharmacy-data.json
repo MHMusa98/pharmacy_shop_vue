@@ -76,7 +76,7 @@
       "contact": "+8801711000106",
       "status": "Open now",
       "latitude": 23.7545,
-      "longitude": 90.3760
+      "longitude": 90.376
     },
     {
       "id": "pharm7",
@@ -94,7 +94,7 @@
     {
       "id": "pharm8",
       "name": "Pharmacy 8",
-      "logo": "image/Ph008.jpg",
+      "logo": "image/Ph01.jpg",
       "rating": 4.9,
       "reviews": 139,
       "address": "140 Road, Area 2, Dhaka 1210",
@@ -107,7 +107,7 @@
     {
       "id": "pharm9",
       "name": "Pharmacy 9",
-      "logo": "image/Ph009.jpg",
+      "logo": "iimage/Ph01.jpg",
       "rating": 4.1,
       "reviews": 126,
       "address": "15 Road, Area 5, Dhaka 1224",
@@ -120,7 +120,7 @@
     {
       "id": "pharm10",
       "name": "Pharmacy 10",
-      "logo": "image/Ph010.jpg",
+      "logo": "image/Ph001.jpg",
       "rating": 4.0,
       "reviews": 141,
       "address": "108 Road, Area 44, Dhaka 1223",
@@ -133,7 +133,7 @@
     {
       "id": "pharm11",
       "name": "Pharmacy 11",
-      "logo": "image/Ph011.jpg",
+      "logo": "image/Ph001.jpg",
       "rating": 4.2,
       "reviews": 146,
       "address": "190 Road, Area 3, Dhaka 1216",
@@ -146,7 +146,7 @@
     {
       "id": "pharm12",
       "name": "Pharmacy 12",
-      "logo": "image/Ph012.jpg",
+      "logo": "image/Ph001.jpg",
       "rating": 4.1,
       "reviews": 44,
       "address": "101 Road, Area 40, Dhaka 1230",
@@ -159,7 +159,7 @@
     {
       "id": "pharm13",
       "name": "Pharmacy 13",
-      "logo": "image/Ph013.jpg",
+      "logo": "image/Ph007.jpg",
       "rating": 3.7,
       "reviews": 75,
       "address": "49 Road, Area 41, Dhaka 1214",
@@ -172,7 +172,7 @@
     {
       "id": "pharm14",
       "name": "Pharmacy 14",
-      "logo": "image/Ph014.jpg",
+      "logo": "image/Ph002.jpg",
       "rating": 3.7,
       "reviews": 48,
       "address": "163 Road, Area 33, Dhaka 1224",
@@ -185,7 +185,7 @@
     {
       "id": "pharm15",
       "name": "Pharmacy 15",
-      "logo": "image/Ph015.jpg",
+      "logo": "image/Ph02.jpg",
       "rating": 4.2,
       "reviews": 73,
       "address": "58 Road, Area 44, Dhaka 1200",
@@ -198,7 +198,7 @@
     {
       "id": "pharm16",
       "name": "Pharmacy 16",
-      "logo": "image/Ph016.jpg",
+      "logo": "image/Ph005.jpg",
       "rating": 4.2,
       "reviews": 88,
       "address": "167 Road, Area 31, Dhaka 1217",
@@ -211,7 +211,7 @@
     {
       "id": "pharm17",
       "name": "Pharmacy 17",
-      "logo": "image/Ph017.jpg",
+      "logo": "image/Ph004.jpg",
       "rating": 4.7,
       "reviews": 167,
       "address": "139 Road, Area 24, Dhaka 1208",
@@ -224,7 +224,7 @@
     {
       "id": "pharm18",
       "name": "Pharmacy 18",
-      "logo": "image/Ph018.jpg",
+      "logo": "image/Ph007.jpg",
       "rating": 3.9,
       "reviews": 88,
       "address": "118 Road, Area 8, Dhaka 1211",
@@ -237,7 +237,7 @@
     {
       "id": "pharm19",
       "name": "Pharmacy 19",
-      "logo": "image/Ph019.jpg",
+      "logo": "image/Ph001.jpg",
       "rating": 4.7,
       "reviews": 46,
       "address": "91 Road, Area 1, Dhaka 1226",
@@ -250,7 +250,7 @@
     {
       "id": "pharm20",
       "name": "Pharmacy 20",
-      "logo": "image/Ph020.jpg",
+      "logo": "image/Ph005.jpg",
       "rating": 3.5,
       "reviews": 89,
       "address": "19 Road, Area 45, Dhaka 1209",
@@ -263,7 +263,7 @@
     {
       "id": "pharm21",
       "name": "Pharmacy 21",
-      "logo": "image/Ph021.jpg",
+      "logo": "image/Ph006.jpg",
       "rating": 4.6,
       "reviews": 42,
       "address": "86 Road, Area 48, Dhaka 1202",
@@ -276,7 +276,7 @@
     {
       "id": "pharm22",
       "name": "Pharmacy 22",
-      "logo": "image/Ph022.jpg",
+      "logo": "image/Ph004.jpg",
       "rating": 4.4,
       "reviews": 172,
       "address": "172 Road, Area 2, Dhaka 1213",
@@ -484,7 +484,7 @@
     {
       "id": "pharm38",
       "name": "Pharmacy 38",
-      "logo": "image/Ph038.jpg",
+      "logo": "image/Ph06.jpg",
       "rating": 4.4,
       "reviews": 38,
       "address": "15 Road, Area 32, Dhaka 1229",
@@ -692,7 +692,7 @@
     {
       "id": "pharm54",
       "name": "Pharmacy 54",
-      "logo": "image/Ph054.jpg",
+      "logo": "image/Ph01.jpg",
       "rating": 4.4,
       "reviews": 127,
       "address": "38 Road, Area 31, Dhaka 1206",
@@ -783,7 +783,7 @@
     {
       "id": "pharm61",
       "name": "Pharmacy 61",
-      "logo": "image/Ph061.jpg",
+      "logo": "image/Ph07.png",
       "rating": 4.2,
       "reviews": 95,
       "address": "60 Road, Area 19, Dhaka 1202",
@@ -835,7 +835,7 @@
     {
       "id": "pharm65",
       "name": "Pharmacy 65",
-      "logo": "image/Ph065.jpg",
+      "logo": "image/Ph06.jpg",
       "rating": 4.8,
       "reviews": 28,
       "address": "42 Road, Area 30, Dhaka 1229",
@@ -1342,7 +1342,7 @@
     {
       "id": "pharm104",
       "name": "Pharmacy 104",
-      "logo": "image/Ph104.jpg",
+      "logo": "image/Ph04.png",
       "rating": 4.0,
       "reviews": 31,
       "address": "46 Road, Area 33, Dhaka 1230",
@@ -1706,7 +1706,7 @@
     {
       "id": "pharm132",
       "name": "Pharmacy 132",
-      "logo": "image/Ph132.jpg",
+      "logo": "image/Ph05.png",
       "rating": 3.6,
       "reviews": 177,
       "address": "36 Road, Area 17, Dhaka 1229",
@@ -1849,7 +1849,7 @@
     {
       "id": "pharm143",
       "name": "Pharmacy 143",
-      "logo": "image/Ph143.jpg",
+      "logo": "image/Ph05.png",
       "rating": 4.2,
       "reviews": 31,
       "address": "129 Road, Area 11, Dhaka 1218",
@@ -1940,7 +1940,7 @@
     {
       "id": "pharm150",
       "name": "Pharmacy 150",
-      "logo": "image/Ph150.jpg",
+      "logo": "image/Ph01.jpg",
       "rating": 3.7,
       "reviews": 181,
       "address": "105 Road, Area 34, Dhaka 1224",

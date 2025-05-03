@@ -863,6 +863,4006 @@
       "category": "Cold & Flu",
       "price": 15.75,
       "description": "Relieves symptoms of cold and flu."
+    },
+    {
+      "id": "med1",
+      "pharmacyId": "pharm22",
+      "name": "Azithromycin 500mg",
+      "category": "Pain Relief",
+      "price": 3.84,
+      "description": "Treats acid reflux and heartburn."
+    },
+    {
+      "id": "med2",
+      "pharmacyId": "pharm66",
+      "name": "Atorvastatin 10mg",
+      "category": "Allergy",
+      "price": 8.28,
+      "description": "Treats acid reflux and heartburn."
+    },
+    {
+      "id": "med3",
+      "pharmacyId": "pharm129",
+      "name": "Atorvastatin 10mg",
+      "category": "Antibiotic",
+      "price": 19.07,
+      "description": "Treats acid reflux and heartburn."
+    },
+    {
+      "id": "med4",
+      "pharmacyId": "pharm144",
+      "name": "Atorvastatin 10mg",
+      "category": "Allergy",
+      "price": 5.97,
+      "description": "Relieves allergy symptoms."
+    },
+    {
+      "id": "med5",
+      "pharmacyId": "pharm56",
+      "name": "Aspirin 100mg",
+      "category": "Antibiotic",
+      "price": 13.52,
+      "description": "Used for bacterial infections."
+    },
+    {
+      "id": "med6",
+      "pharmacyId": "pharm130",
+      "name": "Loratadine 10mg",
+      "category": "Allergy",
+      "price": 16.4,
+      "description": "Used for treating pain and fever."
+    },
+    {
+      "id": "med7",
+      "pharmacyId": "pharm119",
+      "name": "Metformin 500mg",
+      "category": "Cholesterol",
+      "price": 9.8,
+      "description": "Treats acid reflux and heartburn."
+    },
+    {
+      "id": "med8",
+      "pharmacyId": "pharm127",
+      "name": "Omeprazole 20mg",
+      "category": "Allergy",
+      "price": 24.46,
+      "description": "Treats acid reflux and heartburn."
+    },
+    {
+      "id": "med9",
+      "pharmacyId": "pharm132",
+      "name": "Atorvastatin 10mg",
+      "category": "Allergy",
+      "price": 16.52,
+      "description": "Used for treating pain and fever."
+    },
+    {
+      "id": "med10",
+      "pharmacyId": "pharm72",
+      "name": "Cetirizine 10mg",
+      "category": "Digestive Health",
+      "price": 5.77,
+      "description": "Treats acid reflux and heartburn."
+    },
+    {
+      "id": "med11",
+      "pharmacyId": "pharm40",
+      "name": "Atorvastatin 10mg",
+      "category": "Allergy",
+      "price": 16.21,
+      "description": "Helps manage cholesterol levels."
+    },
+    {
+      "id": "med12",
+      "pharmacyId": "pharm107",
+      "name": "Aspirin 100mg",
+      "category": "Digestive Health",
+      "price": 22.88,
+      "description": "Used for treating pain and fever."
+    },
+    {
+      "id": "med13",
+      "pharmacyId": "pharm137",
+      "name": "Omeprazole 20mg",
+      "category": "Allergy",
+      "price": 12.81,
+      "description": "Used for treating pain and fever."
+    },
+    {
+      "id": "med14",
+      "pharmacyId": "pharm91",
+      "name": "Loratadine 10mg",
+      "category": "Antibiotic",
+      "price": 11.21,
+      "description": "Used for treating pain and fever."
+    },
+    {
+      "id": "med15",
+      "pharmacyId": "pharm140",
+      "name": "Paracetamol 500mg",
+      "category": "Allergy",
+      "price": 14.68,
+      "description": "Used for bacterial infections."
+    },
+    {
+      "id": "med16",
+      "pharmacyId": "pharm115",
+      "name": "Omeprazole 20mg",
+      "category": "Pain Relief",
+      "price": 18.59,
+      "description": "Treats acid reflux and heartburn."
+    },
+    {
+      "id": "med17",
+      "pharmacyId": "pharm93",
+      "name": "Metformin 500mg",
+      "category": "Digestive Health",
+      "price": 8.69,
+      "description": "Treats acid reflux and heartburn."
+    },
+    {
+      "id": "med18",
+      "pharmacyId": "pharm40",
+      "name": "Aspirin 100mg",
+      "category": "Cholesterol",
+      "price": 3.85,
+      "description": "Used for bacterial infections."
+    },
+    {
+      "id": "med19",
+      "pharmacyId": "pharm88",
+      "name": "Metformin 500mg",
+      "category": "Pain Relief",
+      "price": 18.07,
+      "description": "Relieves allergy symptoms."
+    },
+    {
+      "id": "med20",
+      "pharmacyId": "pharm101",
+      "name": "Metformin 500mg",
+      "category": "Digestive Health",
+      "price": 8.65,
+      "description": "Used for treating pain and fever."
+    },
+    {
+      "id": "med21",
+      "pharmacyId": "pharm92",
+      "name": "Atorvastatin 10mg",
+      "category": "Pain Relief",
+      "price": 8.57,
+      "description": "Treats acid reflux and heartburn."
+    },
+    {
+      "id": "med22",
+      "pharmacyId": "pharm70",
+      "name": "Amoxicillin 250mg",
+      "category": "Allergy",
+      "price": 14.78,
+      "description": "Treats acid reflux and heartburn."
+    },
+    {
+      "id": "med23",
+      "pharmacyId": "pharm146",
+      "name": "Paracetamol 500mg",
+      "category": "Allergy",
+      "price": 19.22,
+      "description": "Helps manage cholesterol levels."
+    },
+    {
+      "id": "med24",
+      "pharmacyId": "pharm134",
+      "name": "Loratadine 10mg",
+      "category": "Cholesterol",
+      "price": 4.89,
+      "description": "Relieves allergy symptoms."
+    },
+    {
+      "id": "med25",
+      "pharmacyId": "pharm71",
+      "name": "Loratadine 10mg",
+      "category": "Pain Relief",
+      "price": 15.06,
+      "description": "Used for treating pain and fever."
+    },
+    {
+      "id": "med26",
+      "pharmacyId": "pharm139",
+      "name": "Metformin 500mg",
+      "category": "Antibiotic",
+      "price": 15.75,
+      "description": "Used for bacterial infections."
+    },
+    {
+      "id": "med27",
+      "pharmacyId": "pharm80",
+      "name": "Ibuprofen 200mg",
+      "category": "Allergy",
+      "price": 14.07,
+      "description": "Used for treating pain and fever."
+    },
+    {
+      "id": "med28",
+      "pharmacyId": "pharm37",
+      "name": "Azithromycin 500mg",
+      "category": "Pain Relief",
+      "price": 18.92,
+      "description": "Relieves allergy symptoms."
+    },
+    {
+      "id": "med29",
+      "pharmacyId": "pharm29",
+      "name": "Cetirizine 10mg",
+      "category": "Cholesterol",
+      "price": 17.53,
+      "description": "Relieves allergy symptoms."
+    },
+    {
+      "id": "med30",
+      "pharmacyId": "pharm107",
+      "name": "Cetirizine 10mg",
+      "category": "Pain Relief",
+      "price": 17.14,
+      "description": "Treats acid reflux and heartburn."
+    },
+    {
+      "id": "med31",
+      "pharmacyId": "pharm60",
+      "name": "Omeprazole 20mg",
+      "category": "Allergy",
+      "price": 24.51,
+      "description": "Relieves allergy symptoms."
+    },
+    {
+      "id": "med32",
+      "pharmacyId": "pharm51",
+      "name": "Paracetamol 500mg",
+      "category": "Digestive Health",
+      "price": 4.4,
+      "description": "Helps manage cholesterol levels."
+    },
+    {
+      "id": "med33",
+      "pharmacyId": "pharm123",
+      "name": "Paracetamol 500mg",
+      "category": "Digestive Health",
+      "price": 11.75,
+      "description": "Used for bacterial infections."
+    },
+    {
+      "id": "med34",
+      "pharmacyId": "pharm11",
+      "name": "Loratadine 10mg",
+      "category": "Antibiotic",
+      "price": 15.11,
+      "description": "Helps manage cholesterol levels."
+    },
+    {
+      "id": "med35",
+      "pharmacyId": "pharm22",
+      "name": "Metformin 500mg",
+      "category": "Digestive Health",
+      "price": 10.96,
+      "description": "Used for bacterial infections."
+    },
+    {
+      "id": "med36",
+      "pharmacyId": "pharm62",
+      "name": "Paracetamol 500mg",
+      "category": "Digestive Health",
+      "price": 7.34,
+      "description": "Helps manage cholesterol levels."
+    },
+    {
+      "id": "med37",
+      "pharmacyId": "pharm124",
+      "name": "Loratadine 10mg",
+      "category": "Digestive Health",
+      "price": 24.62,
+      "description": "Helps manage cholesterol levels."
+    },
+    {
+      "id": "med38",
+      "pharmacyId": "pharm95",
+      "name": "Omeprazole 20mg",
+      "category": "Antibiotic",
+      "price": 16.64,
+      "description": "Helps manage cholesterol levels."
+    },
+    {
+      "id": "med39",
+      "pharmacyId": "pharm119",
+      "name": "Amoxicillin 250mg",
+      "category": "Digestive Health",
+      "price": 8.26,
+      "description": "Helps manage cholesterol levels."
+    },
+    {
+      "id": "med40",
+      "pharmacyId": "pharm146",
+      "name": "Ibuprofen 200mg",
+      "category": "Antibiotic",
+      "price": 13.93,
+      "description": "Relieves allergy symptoms."
+    },
+    {
+      "id": "med41",
+      "pharmacyId": "pharm82",
+      "name": "Loratadine 10mg",
+      "category": "Allergy",
+      "price": 4.56,
+      "description": "Relieves allergy symptoms."
+    },
+    {
+      "id": "med42",
+      "pharmacyId": "pharm119",
+      "name": "Amoxicillin 250mg",
+      "category": "Allergy",
+      "price": 3.88,
+      "description": "Used for treating pain and fever."
+    },
+    {
+      "id": "med43",
+      "pharmacyId": "pharm92",
+      "name": "Loratadine 10mg",
+      "category": "Antibiotic",
+      "price": 20.4,
+      "description": "Treats acid reflux and heartburn."
+    },
+    {
+      "id": "med44",
+      "pharmacyId": "pharm19",
+      "name": "Azithromycin 500mg",
+      "category": "Pain Relief",
+      "price": 16.71,
+      "description": "Relieves allergy symptoms."
+    },
+    {
+      "id": "med45",
+      "pharmacyId": "pharm126",
+      "name": "Ibuprofen 200mg",
+      "category": "Allergy",
+      "price": 16.0,
+      "description": "Relieves allergy symptoms."
+    },
+    {
+      "id": "med46",
+      "pharmacyId": "pharm140",
+      "name": "Ibuprofen 200mg",
+      "category": "Digestive Health",
+      "price": 23.51,
+      "description": "Helps manage cholesterol levels."
+    },
+    {
+      "id": "med47",
+      "pharmacyId": "pharm31",
+      "name": "Loratadine 10mg",
+      "category": "Cholesterol",
+      "price": 5.79,
+      "description": "Used for treating pain and fever."
+    },
+    {
+      "id": "med48",
+      "pharmacyId": "pharm78",
+      "name": "Loratadine 10mg",
+      "category": "Allergy",
+      "price": 18.35,
+      "description": "Treats acid reflux and heartburn."
+    },
+    {
+      "id": "med49",
+      "pharmacyId": "pharm29",
+      "name": "Loratadine 10mg",
+      "category": "Cholesterol",
+      "price": 7.63,
+      "description": "Relieves allergy symptoms."
+    },
+    {
+      "id": "med50",
+      "pharmacyId": "pharm39",
+      "name": "Omeprazole 20mg",
+      "category": "Allergy",
+      "price": 8.69,
+      "description": "Helps manage cholesterol levels."
+    },
+    {
+      "id": "med51",
+      "pharmacyId": "pharm85",
+      "name": "Azithromycin 500mg",
+      "category": "Digestive Health",
+      "price": 17.68,
+      "description": "Relieves allergy symptoms."
+    },
+    {
+      "id": "med52",
+      "pharmacyId": "pharm114",
+      "name": "Aspirin 100mg",
+      "category": "Allergy",
+      "price": 5.31,
+      "description": "Used for bacterial infections."
+    },
+    {
+      "id": "med53",
+      "pharmacyId": "pharm130",
+      "name": "Omeprazole 20mg",
+      "category": "Cholesterol",
+      "price": 11.63,
+      "description": "Used for bacterial infections."
+    },
+    {
+      "id": "med54",
+      "pharmacyId": "pharm22",
+      "name": "Metformin 500mg",
+      "category": "Digestive Health",
+      "price": 5.97,
+      "description": "Helps manage cholesterol levels."
+    },
+    {
+      "id": "med55",
+      "pharmacyId": "pharm64",
+      "name": "Azithromycin 500mg",
+      "category": "Allergy",
+      "price": 24.42,
+      "description": "Relieves allergy symptoms."
+    },
+    {
+      "id": "med56",
+      "pharmacyId": "pharm27",
+      "name": "Amoxicillin 250mg",
+      "category": "Digestive Health",
+      "price": 18.41,
+      "description": "Treats acid reflux and heartburn."
+    },
+    {
+      "id": "med57",
+      "pharmacyId": "pharm74",
+      "name": "Amoxicillin 250mg",
+      "category": "Pain Relief",
+      "price": 4.33,
+      "description": "Used for treating pain and fever."
+    },
+    {
+      "id": "med58",
+      "pharmacyId": "pharm44",
+      "name": "Omeprazole 20mg",
+      "category": "Antibiotic",
+      "price": 22.12,
+      "description": "Relieves allergy symptoms."
+    },
+    {
+      "id": "med59",
+      "pharmacyId": "pharm78",
+      "name": "Metformin 500mg",
+      "category": "Pain Relief",
+      "price": 6.63,
+      "description": "Treats acid reflux and heartburn."
+    },
+    {
+      "id": "med60",
+      "pharmacyId": "pharm84",
+      "name": "Cetirizine 10mg",
+      "category": "Allergy",
+      "price": 18.37,
+      "description": "Treats acid reflux and heartburn."
+    },
+    {
+      "id": "med61",
+      "pharmacyId": "pharm81",
+      "name": "Metformin 500mg",
+      "category": "Digestive Health",
+      "price": 6.23,
+      "description": "Helps manage cholesterol levels."
+    },
+    {
+      "id": "med62",
+      "pharmacyId": "pharm99",
+      "name": "Azithromycin 500mg",
+      "category": "Digestive Health",
+      "price": 14.07,
+      "description": "Helps manage cholesterol levels."
+    },
+    {
+      "id": "med63",
+      "pharmacyId": "pharm70",
+      "name": "Omeprazole 20mg",
+      "category": "Allergy",
+      "price": 18.14,
+      "description": "Helps manage cholesterol levels."
+    },
+    {
+      "id": "med64",
+      "pharmacyId": "pharm134",
+      "name": "Omeprazole 20mg",
+      "category": "Antibiotic",
+      "price": 13.43,
+      "description": "Treats acid reflux and heartburn."
+    },
+    {
+      "id": "med65",
+      "pharmacyId": "pharm129",
+      "name": "Metformin 500mg",
+      "category": "Allergy",
+      "price": 21.54,
+      "description": "Helps manage cholesterol levels."
+    },
+    {
+      "id": "med66",
+      "pharmacyId": "pharm119",
+      "name": "Aspirin 100mg",
+      "category": "Cholesterol",
+      "price": 6.87,
+      "description": "Relieves allergy symptoms."
+    },
+    {
+      "id": "med67",
+      "pharmacyId": "pharm11",
+      "name": "Aspirin 100mg",
+      "category": "Digestive Health",
+      "price": 9.97,
+      "description": "Used for bacterial infections."
+    },
+    {
+      "id": "med68",
+      "pharmacyId": "pharm127",
+      "name": "Aspirin 100mg",
+      "category": "Allergy",
+      "price": 8.73,
+      "description": "Relieves allergy symptoms."
+    },
+    {
+      "id": "med69",
+      "pharmacyId": "pharm51",
+      "name": "Metformin 500mg",
+      "category": "Digestive Health",
+      "price": 23.26,
+      "description": "Used for bacterial infections."
+    },
+    {
+      "id": "med70",
+      "pharmacyId": "pharm15",
+      "name": "Omeprazole 20mg",
+      "category": "Cholesterol",
+      "price": 5.72,
+      "description": "Relieves allergy symptoms."
+    },
+    {
+      "id": "med71",
+      "pharmacyId": "pharm9",
+      "name": "Ibuprofen 200mg",
+      "category": "Cholesterol",
+      "price": 5.11,
+      "description": "Used for treating pain and fever."
+    },
+    {
+      "id": "med72",
+      "pharmacyId": "pharm26",
+      "name": "Azithromycin 500mg",
+      "category": "Pain Relief",
+      "price": 24.03,
+      "description": "Relieves allergy symptoms."
+    },
+    {
+      "id": "med73",
+      "pharmacyId": "pharm9",
+      "name": "Metformin 500mg",
+      "category": "Pain Relief",
+      "price": 24.77,
+      "description": "Helps manage cholesterol levels."
+    },
+    {
+      "id": "med74",
+      "pharmacyId": "pharm144",
+      "name": "Paracetamol 500mg",
+      "category": "Allergy",
+      "price": 17.36,
+      "description": "Used for bacterial infections."
+    },
+    {
+      "id": "med75",
+      "pharmacyId": "pharm130",
+      "name": "Cetirizine 10mg",
+      "category": "Digestive Health",
+      "price": 23.72,
+      "description": "Helps manage cholesterol levels."
+    },
+    {
+      "id": "med76",
+      "pharmacyId": "pharm147",
+      "name": "Ibuprofen 200mg",
+      "category": "Allergy",
+      "price": 15.58,
+      "description": "Treats acid reflux and heartburn."
+    },
+    {
+      "id": "med77",
+      "pharmacyId": "pharm56",
+      "name": "Cetirizine 10mg",
+      "category": "Antibiotic",
+      "price": 10.12,
+      "description": "Used for treating pain and fever."
+    },
+    {
+      "id": "med78",
+      "pharmacyId": "pharm95",
+      "name": "Aspirin 100mg",
+      "category": "Cholesterol",
+      "price": 11.81,
+      "description": "Used for treating pain and fever."
+    },
+    {
+      "id": "med79",
+      "pharmacyId": "pharm63",
+      "name": "Ibuprofen 200mg",
+      "category": "Pain Relief",
+      "price": 21.16,
+      "description": "Treats acid reflux and heartburn."
+    },
+    {
+      "id": "med80",
+      "pharmacyId": "pharm82",
+      "name": "Loratadine 10mg",
+      "category": "Cholesterol",
+      "price": 4.28,
+      "description": "Relieves allergy symptoms."
+    },
+    {
+      "id": "med81",
+      "pharmacyId": "pharm55",
+      "name": "Atorvastatin 10mg",
+      "category": "Pain Relief",
+      "price": 4.21,
+      "description": "Used for treating pain and fever."
+    },
+    {
+      "id": "med82",
+      "pharmacyId": "pharm117",
+      "name": "Loratadine 10mg",
+      "category": "Antibiotic",
+      "price": 12.78,
+      "description": "Used for bacterial infections."
+    },
+    {
+      "id": "med83",
+      "pharmacyId": "pharm84",
+      "name": "Cetirizine 10mg",
+      "category": "Allergy",
+      "price": 23.25,
+      "description": "Relieves allergy symptoms."
+    },
+    {
+      "id": "med84",
+      "pharmacyId": "pharm97",
+      "name": "Atorvastatin 10mg",
+      "category": "Digestive Health",
+      "price": 7.83,
+      "description": "Helps manage cholesterol levels."
+    },
+    {
+      "id": "med85",
+      "pharmacyId": "pharm132",
+      "name": "Loratadine 10mg",
+      "category": "Antibiotic",
+      "price": 6.83,
+      "description": "Treats acid reflux and heartburn."
+    },
+    {
+      "id": "med86",
+      "pharmacyId": "pharm76",
+      "name": "Omeprazole 20mg",
+      "category": "Antibiotic",
+      "price": 12.48,
+      "description": "Used for treating pain and fever."
+    },
+    {
+      "id": "med87",
+      "pharmacyId": "pharm113",
+      "name": "Azithromycin 500mg",
+      "category": "Digestive Health",
+      "price": 19.33,
+      "description": "Relieves allergy symptoms."
+    },
+    {
+      "id": "med88",
+      "pharmacyId": "pharm54",
+      "name": "Omeprazole 20mg",
+      "category": "Allergy",
+      "price": 11.68,
+      "description": "Used for treating pain and fever."
+    },
+    {
+      "id": "med89",
+      "pharmacyId": "pharm84",
+      "name": "Loratadine 10mg",
+      "category": "Pain Relief",
+      "price": 18.5,
+      "description": "Used for treating pain and fever."
+    },
+    {
+      "id": "med90",
+      "pharmacyId": "pharm77",
+      "name": "Loratadine 10mg",
+      "category": "Digestive Health",
+      "price": 10.16,
+      "description": "Used for bacterial infections."
+    },
+    {
+      "id": "med91",
+      "pharmacyId": "pharm120",
+      "name": "Omeprazole 20mg",
+      "category": "Pain Relief",
+      "price": 11.68,
+      "description": "Used for bacterial infections."
+    },
+    {
+      "id": "med92",
+      "pharmacyId": "pharm147",
+      "name": "Atorvastatin 10mg",
+      "category": "Digestive Health",
+      "price": 17.54,
+      "description": "Helps manage cholesterol levels."
+    },
+    {
+      "id": "med93",
+      "pharmacyId": "pharm111",
+      "name": "Omeprazole 20mg",
+      "category": "Antibiotic",
+      "price": 18.81,
+      "description": "Treats acid reflux and heartburn."
+    },
+    {
+      "id": "med94",
+      "pharmacyId": "pharm73",
+      "name": "Cetirizine 10mg",
+      "category": "Cholesterol",
+      "price": 21.71,
+      "description": "Used for treating pain and fever."
+    },
+    {
+      "id": "med95",
+      "pharmacyId": "pharm52",
+      "name": "Azithromycin 500mg",
+      "category": "Antibiotic",
+      "price": 5.06,
+      "description": "Helps manage cholesterol levels."
+    },
+    {
+      "id": "med96",
+      "pharmacyId": "pharm138",
+      "name": "Azithromycin 500mg",
+      "category": "Antibiotic",
+      "price": 6.0,
+      "description": "Used for bacterial infections."
+    },
+    {
+      "id": "med97",
+      "pharmacyId": "pharm51",
+      "name": "Loratadine 10mg",
+      "category": "Antibiotic",
+      "price": 5.42,
+      "description": "Helps manage cholesterol levels."
+    },
+    {
+      "id": "med98",
+      "pharmacyId": "pharm115",
+      "name": "Omeprazole 20mg",
+      "category": "Pain Relief",
+      "price": 10.13,
+      "description": "Relieves allergy symptoms."
+    },
+    {
+      "id": "med99",
+      "pharmacyId": "pharm37",
+      "name": "Loratadine 10mg",
+      "category": "Allergy",
+      "price": 21.74,
+      "description": "Helps manage cholesterol levels."
+    },
+    {
+      "id": "med100",
+      "pharmacyId": "pharm38",
+      "name": "Cetirizine 10mg",
+      "category": "Pain Relief",
+      "price": 9.95,
+      "description": "Treats acid reflux and heartburn."
+    },
+    {
+      "id": "med101",
+      "pharmacyId": "pharm36",
+      "name": "Loratadine 10mg",
+      "category": "Pain Relief",
+      "price": 7.49,
+      "description": "Relieves allergy symptoms."
+    },
+    {
+      "id": "med102",
+      "pharmacyId": "pharm50",
+      "name": "Azithromycin 500mg",
+      "category": "Antibiotic",
+      "price": 10.28,
+      "description": "Used for treating pain and fever."
+    },
+    {
+      "id": "med103",
+      "pharmacyId": "pharm52",
+      "name": "Cetirizine 10mg",
+      "category": "Digestive Health",
+      "price": 24.4,
+      "description": "Used for treating pain and fever."
+    },
+    {
+      "id": "med104",
+      "pharmacyId": "pharm147",
+      "name": "Atorvastatin 10mg",
+      "category": "Antibiotic",
+      "price": 8.83,
+      "description": "Relieves allergy symptoms."
+    },
+    {
+      "id": "med105",
+      "pharmacyId": "pharm66",
+      "name": "Metformin 500mg",
+      "category": "Allergy",
+      "price": 20.01,
+      "description": "Helps manage cholesterol levels."
+    },
+    {
+      "id": "med106",
+      "pharmacyId": "pharm54",
+      "name": "Ibuprofen 200mg",
+      "category": "Antibiotic",
+      "price": 22.63,
+      "description": "Used for bacterial infections."
+    },
+    {
+      "id": "med107",
+      "pharmacyId": "pharm101",
+      "name": "Aspirin 100mg",
+      "category": "Pain Relief",
+      "price": 19.55,
+      "description": "Treats acid reflux and heartburn."
+    },
+    {
+      "id": "med108",
+      "pharmacyId": "pharm43",
+      "name": "Azithromycin 500mg",
+      "category": "Antibiotic",
+      "price": 14.62,
+      "description": "Used for bacterial infections."
+    },
+    {
+      "id": "med109",
+      "pharmacyId": "pharm93",
+      "name": "Metformin 500mg",
+      "category": "Allergy",
+      "price": 13.95,
+      "description": "Used for treating pain and fever."
+    },
+    {
+      "id": "med110",
+      "pharmacyId": "pharm123",
+      "name": "Atorvastatin 10mg",
+      "category": "Digestive Health",
+      "price": 20.65,
+      "description": "Treats acid reflux and heartburn."
+    },
+    {
+      "id": "med111",
+      "pharmacyId": "pharm64",
+      "name": "Cetirizine 10mg",
+      "category": "Antibiotic",
+      "price": 15.72,
+      "description": "Relieves allergy symptoms."
+    },
+    {
+      "id": "med112",
+      "pharmacyId": "pharm45",
+      "name": "Cetirizine 10mg",
+      "category": "Pain Relief",
+      "price": 24.2,
+      "description": "Helps manage cholesterol levels."
+    },
+    {
+      "id": "med113",
+      "pharmacyId": "pharm125",
+      "name": "Omeprazole 20mg",
+      "category": "Pain Relief",
+      "price": 12.48,
+      "description": "Used for treating pain and fever."
+    },
+    {
+      "id": "med114",
+      "pharmacyId": "pharm69",
+      "name": "Amoxicillin 250mg",
+      "category": "Antibiotic",
+      "price": 18.82,
+      "description": "Treats acid reflux and heartburn."
+    },
+    {
+      "id": "med115",
+      "pharmacyId": "pharm79",
+      "name": "Amoxicillin 250mg",
+      "category": "Cholesterol",
+      "price": 24.92,
+      "description": "Treats acid reflux and heartburn."
+    },
+    {
+      "id": "med116",
+      "pharmacyId": "pharm21",
+      "name": "Amoxicillin 250mg",
+      "category": "Antibiotic",
+      "price": 14.66,
+      "description": "Helps manage cholesterol levels."
+    },
+    {
+      "id": "med117",
+      "pharmacyId": "pharm92",
+      "name": "Atorvastatin 10mg",
+      "category": "Antibiotic",
+      "price": 6.62,
+      "description": "Used for treating pain and fever."
+    },
+    {
+      "id": "med118",
+      "pharmacyId": "pharm110",
+      "name": "Loratadine 10mg",
+      "category": "Digestive Health",
+      "price": 6.7,
+      "description": "Used for treating pain and fever."
+    },
+    {
+      "id": "med119",
+      "pharmacyId": "pharm123",
+      "name": "Atorvastatin 10mg",
+      "category": "Cholesterol",
+      "price": 21.7,
+      "description": "Helps manage cholesterol levels."
+    },
+    {
+      "id": "med120",
+      "pharmacyId": "pharm58",
+      "name": "Metformin 500mg",
+      "category": "Antibiotic",
+      "price": 24.29,
+      "description": "Used for treating pain and fever."
+    },
+    {
+      "id": "med121",
+      "pharmacyId": "pharm101",
+      "name": "Metformin 500mg",
+      "category": "Pain Relief",
+      "price": 8.33,
+      "description": "Used for bacterial infections."
+    },
+    {
+      "id": "med122",
+      "pharmacyId": "pharm124",
+      "name": "Azithromycin 500mg",
+      "category": "Allergy",
+      "price": 12.58,
+      "description": "Used for treating pain and fever."
+    },
+    {
+      "id": "med123",
+      "pharmacyId": "pharm120",
+      "name": "Metformin 500mg",
+      "category": "Pain Relief",
+      "price": 5.74,
+      "description": "Used for treating pain and fever."
+    },
+    {
+      "id": "med124",
+      "pharmacyId": "pharm68",
+      "name": "Ibuprofen 200mg",
+      "category": "Digestive Health",
+      "price": 20.33,
+      "description": "Used for bacterial infections."
+    },
+    {
+      "id": "med125",
+      "pharmacyId": "pharm12",
+      "name": "Aspirin 100mg",
+      "category": "Antibiotic",
+      "price": 21.96,
+      "description": "Treats acid reflux and heartburn."
+    },
+    {
+      "id": "med126",
+      "pharmacyId": "pharm41",
+      "name": "Omeprazole 20mg",
+      "category": "Allergy",
+      "price": 21.64,
+      "description": "Helps manage cholesterol levels."
+    },
+    {
+      "id": "med127",
+      "pharmacyId": "pharm21",
+      "name": "Cetirizine 10mg",
+      "category": "Digestive Health",
+      "price": 3.83,
+      "description": "Used for bacterial infections."
+    },
+    {
+      "id": "med128",
+      "pharmacyId": "pharm48",
+      "name": "Omeprazole 20mg",
+      "category": "Digestive Health",
+      "price": 14.83,
+      "description": "Used for treating pain and fever."
+    },
+    {
+      "id": "med129",
+      "pharmacyId": "pharm38",
+      "name": "Omeprazole 20mg",
+      "category": "Antibiotic",
+      "price": 17.77,
+      "description": "Relieves allergy symptoms."
+    },
+    {
+      "id": "med130",
+      "pharmacyId": "pharm109",
+      "name": "Ibuprofen 200mg",
+      "category": "Antibiotic",
+      "price": 16.34,
+      "description": "Relieves allergy symptoms."
+    },
+    {
+      "id": "med131",
+      "pharmacyId": "pharm42",
+      "name": "Paracetamol 500mg",
+      "category": "Digestive Health",
+      "price": 14.91,
+      "description": "Used for treating pain and fever."
+    },
+    {
+      "id": "med132",
+      "pharmacyId": "pharm8",
+      "name": "Metformin 500mg",
+      "category": "Pain Relief",
+      "price": 7.96,
+      "description": "Used for treating pain and fever."
+    },
+    {
+      "id": "med133",
+      "pharmacyId": "pharm27",
+      "name": "Amoxicillin 250mg",
+      "category": "Antibiotic",
+      "price": 14.88,
+      "description": "Used for bacterial infections."
+    },
+    {
+      "id": "med134",
+      "pharmacyId": "pharm11",
+      "name": "Amoxicillin 250mg",
+      "category": "Pain Relief",
+      "price": 24.08,
+      "description": "Treats acid reflux and heartburn."
+    },
+    {
+      "id": "med135",
+      "pharmacyId": "pharm17",
+      "name": "Loratadine 10mg",
+      "category": "Allergy",
+      "price": 12.08,
+      "description": "Used for bacterial infections."
+    },
+    {
+      "id": "med136",
+      "pharmacyId": "pharm76",
+      "name": "Azithromycin 500mg",
+      "category": "Digestive Health",
+      "price": 19.92,
+      "description": "Used for bacterial infections."
+    },
+    {
+      "id": "med137",
+      "pharmacyId": "pharm38",
+      "name": "Aspirin 100mg",
+      "category": "Cholesterol",
+      "price": 14.87,
+      "description": "Treats acid reflux and heartburn."
+    },
+    {
+      "id": "med138",
+      "pharmacyId": "pharm42",
+      "name": "Azithromycin 500mg",
+      "category": "Cholesterol",
+      "price": 9.57,
+      "description": "Used for bacterial infections."
+    },
+    {
+      "id": "med139",
+      "pharmacyId": "pharm85",
+      "name": "Cetirizine 10mg",
+      "category": "Cholesterol",
+      "price": 9.64,
+      "description": "Helps manage cholesterol levels."
+    },
+    {
+      "id": "med140",
+      "pharmacyId": "pharm81",
+      "name": "Atorvastatin 10mg",
+      "category": "Antibiotic",
+      "price": 6.36,
+      "description": "Relieves allergy symptoms."
+    },
+    {
+      "id": "med141",
+      "pharmacyId": "pharm42",
+      "name": "Omeprazole 20mg",
+      "category": "Allergy",
+      "price": 20.98,
+      "description": "Helps manage cholesterol levels."
+    },
+    {
+      "id": "med142",
+      "pharmacyId": "pharm17",
+      "name": "Paracetamol 500mg",
+      "category": "Antibiotic",
+      "price": 9.29,
+      "description": "Helps manage cholesterol levels."
+    },
+    {
+      "id": "med143",
+      "pharmacyId": "pharm80",
+      "name": "Cetirizine 10mg",
+      "category": "Allergy",
+      "price": 7.44,
+      "description": "Used for treating pain and fever."
+    },
+    {
+      "id": "med144",
+      "pharmacyId": "pharm110",
+      "name": "Amoxicillin 250mg",
+      "category": "Pain Relief",
+      "price": 24.46,
+      "description": "Used for bacterial infections."
+    },
+    {
+      "id": "med145",
+      "pharmacyId": "pharm54",
+      "name": "Aspirin 100mg",
+      "category": "Cholesterol",
+      "price": 9.32,
+      "description": "Relieves allergy symptoms."
+    },
+    {
+      "id": "med146",
+      "pharmacyId": "pharm30",
+      "name": "Ibuprofen 200mg",
+      "category": "Antibiotic",
+      "price": 17.21,
+      "description": "Helps manage cholesterol levels."
+    },
+    {
+      "id": "med147",
+      "pharmacyId": "pharm117",
+      "name": "Aspirin 100mg",
+      "category": "Pain Relief",
+      "price": 11.88,
+      "description": "Used for treating pain and fever."
+    },
+    {
+      "id": "med148",
+      "pharmacyId": "pharm29",
+      "name": "Atorvastatin 10mg",
+      "category": "Antibiotic",
+      "price": 6.94,
+      "description": "Relieves allergy symptoms."
+    },
+    {
+      "id": "med149",
+      "pharmacyId": "pharm99",
+      "name": "Metformin 500mg",
+      "category": "Pain Relief",
+      "price": 18.74,
+      "description": "Used for treating pain and fever."
+    },
+    {
+      "id": "med150",
+      "pharmacyId": "pharm131",
+      "name": "Amoxicillin 250mg",
+      "category": "Digestive Health",
+      "price": 22.05,
+      "description": "Relieves allergy symptoms."
+    },
+    {
+      "id": "med151",
+      "pharmacyId": "pharm79",
+      "name": "Amoxicillin 250mg",
+      "category": "Pain Relief",
+      "price": 22.61,
+      "description": "Used for bacterial infections."
+    },
+    {
+      "id": "med152",
+      "pharmacyId": "pharm143",
+      "name": "Paracetamol 500mg",
+      "category": "Antibiotic",
+      "price": 6.16,
+      "description": "Treats acid reflux and heartburn."
+    },
+    {
+      "id": "med153",
+      "pharmacyId": "pharm33",
+      "name": "Azithromycin 500mg",
+      "category": "Cholesterol",
+      "price": 6.85,
+      "description": "Helps manage cholesterol levels."
+    },
+    {
+      "id": "med154",
+      "pharmacyId": "pharm97",
+      "name": "Omeprazole 20mg",
+      "category": "Allergy",
+      "price": 9.7,
+      "description": "Used for treating pain and fever."
+    },
+    {
+      "id": "med155",
+      "pharmacyId": "pharm30",
+      "name": "Cetirizine 10mg",
+      "category": "Digestive Health",
+      "price": 9.02,
+      "description": "Relieves allergy symptoms."
+    },
+    {
+      "id": "med156",
+      "pharmacyId": "pharm53",
+      "name": "Paracetamol 500mg",
+      "category": "Allergy",
+      "price": 24.85,
+      "description": "Treats acid reflux and heartburn."
+    },
+    {
+      "id": "med157",
+      "pharmacyId": "pharm127",
+      "name": "Atorvastatin 10mg",
+      "category": "Allergy",
+      "price": 21.09,
+      "description": "Relieves allergy symptoms."
+    },
+    {
+      "id": "med158",
+      "pharmacyId": "pharm11",
+      "name": "Ibuprofen 200mg",
+      "category": "Antibiotic",
+      "price": 4.11,
+      "description": "Used for treating pain and fever."
+    },
+    {
+      "id": "med159",
+      "pharmacyId": "pharm65",
+      "name": "Omeprazole 20mg",
+      "category": "Antibiotic",
+      "price": 16.74,
+      "description": "Relieves allergy symptoms."
+    },
+    {
+      "id": "med160",
+      "pharmacyId": "pharm150",
+      "name": "Aspirin 100mg",
+      "category": "Digestive Health",
+      "price": 8.16,
+      "description": "Treats acid reflux and heartburn."
+    },
+    {
+      "id": "med161",
+      "pharmacyId": "pharm108",
+      "name": "Paracetamol 500mg",
+      "category": "Antibiotic",
+      "price": 24.73,
+      "description": "Used for treating pain and fever."
+    },
+    {
+      "id": "med162",
+      "pharmacyId": "pharm138",
+      "name": "Paracetamol 500mg",
+      "category": "Cholesterol",
+      "price": 8.89,
+      "description": "Helps manage cholesterol levels."
+    },
+    {
+      "id": "med163",
+      "pharmacyId": "pharm53",
+      "name": "Azithromycin 500mg",
+      "category": "Pain Relief",
+      "price": 4.35,
+      "description": "Used for bacterial infections."
+    },
+    {
+      "id": "med164",
+      "pharmacyId": "pharm17",
+      "name": "Paracetamol 500mg",
+      "category": "Pain Relief",
+      "price": 24.35,
+      "description": "Relieves allergy symptoms."
+    },
+    {
+      "id": "med165",
+      "pharmacyId": "pharm18",
+      "name": "Metformin 500mg",
+      "category": "Pain Relief",
+      "price": 9.17,
+      "description": "Used for treating pain and fever."
+    },
+    {
+      "id": "med166",
+      "pharmacyId": "pharm10",
+      "name": "Cetirizine 10mg",
+      "category": "Antibiotic",
+      "price": 10.52,
+      "description": "Used for treating pain and fever."
+    },
+    {
+      "id": "med167",
+      "pharmacyId": "pharm121",
+      "name": "Paracetamol 500mg",
+      "category": "Cholesterol",
+      "price": 24.13,
+      "description": "Treats acid reflux and heartburn."
+    },
+    {
+      "id": "med168",
+      "pharmacyId": "pharm134",
+      "name": "Ibuprofen 200mg",
+      "category": "Allergy",
+      "price": 24.07,
+      "description": "Treats acid reflux and heartburn."
+    },
+    {
+      "id": "med169",
+      "pharmacyId": "pharm121",
+      "name": "Ibuprofen 200mg",
+      "category": "Allergy",
+      "price": 18.66,
+      "description": "Helps manage cholesterol levels."
+    },
+    {
+      "id": "med170",
+      "pharmacyId": "pharm72",
+      "name": "Amoxicillin 250mg",
+      "category": "Pain Relief",
+      "price": 3.98,
+      "description": "Relieves allergy symptoms."
+    },
+    {
+      "id": "med171",
+      "pharmacyId": "pharm63",
+      "name": "Azithromycin 500mg",
+      "category": "Cholesterol",
+      "price": 6.29,
+      "description": "Used for bacterial infections."
+    },
+    {
+      "id": "med172",
+      "pharmacyId": "pharm33",
+      "name": "Metformin 500mg",
+      "category": "Antibiotic",
+      "price": 8.36,
+      "description": "Used for treating pain and fever."
+    },
+    {
+      "id": "med173",
+      "pharmacyId": "pharm63",
+      "name": "Aspirin 100mg",
+      "category": "Allergy",
+      "price": 20.89,
+      "description": "Treats acid reflux and heartburn."
+    },
+    {
+      "id": "med174",
+      "pharmacyId": "pharm56",
+      "name": "Atorvastatin 10mg",
+      "category": "Antibiotic",
+      "price": 23.24,
+      "description": "Treats acid reflux and heartburn."
+    },
+    {
+      "id": "med175",
+      "pharmacyId": "pharm42",
+      "name": "Paracetamol 500mg",
+      "category": "Digestive Health",
+      "price": 12.22,
+      "description": "Helps manage cholesterol levels."
+    },
+    {
+      "id": "med176",
+      "pharmacyId": "pharm103",
+      "name": "Aspirin 100mg",
+      "category": "Cholesterol",
+      "price": 4.43,
+      "description": "Used for treating pain and fever."
+    },
+    {
+      "id": "med177",
+      "pharmacyId": "pharm42",
+      "name": "Loratadine 10mg",
+      "category": "Cholesterol",
+      "price": 12.01,
+      "description": "Used for treating pain and fever."
+    },
+    {
+      "id": "med178",
+      "pharmacyId": "pharm115",
+      "name": "Metformin 500mg",
+      "category": "Digestive Health",
+      "price": 11.04,
+      "description": "Treats acid reflux and heartburn."
+    },
+    {
+      "id": "med179",
+      "pharmacyId": "pharm38",
+      "name": "Metformin 500mg",
+      "category": "Digestive Health",
+      "price": 13.71,
+      "description": "Helps manage cholesterol levels."
+    },
+    {
+      "id": "med180",
+      "pharmacyId": "pharm66",
+      "name": "Azithromycin 500mg",
+      "category": "Allergy",
+      "price": 9.49,
+      "description": "Relieves allergy symptoms."
+    },
+    {
+      "id": "med181",
+      "pharmacyId": "pharm10",
+      "name": "Metformin 500mg",
+      "category": "Pain Relief",
+      "price": 12.36,
+      "description": "Helps manage cholesterol levels."
+    },
+    {
+      "id": "med182",
+      "pharmacyId": "pharm32",
+      "name": "Azithromycin 500mg",
+      "category": "Allergy",
+      "price": 14.94,
+      "description": "Relieves allergy symptoms."
+    },
+    {
+      "id": "med183",
+      "pharmacyId": "pharm127",
+      "name": "Atorvastatin 10mg",
+      "category": "Cholesterol",
+      "price": 5.58,
+      "description": "Helps manage cholesterol levels."
+    },
+    {
+      "id": "med184",
+      "pharmacyId": "pharm44",
+      "name": "Omeprazole 20mg",
+      "category": "Antibiotic",
+      "price": 23.34,
+      "description": "Treats acid reflux and heartburn."
+    },
+    {
+      "id": "med185",
+      "pharmacyId": "pharm30",
+      "name": "Atorvastatin 10mg",
+      "category": "Allergy",
+      "price": 24.01,
+      "description": "Relieves allergy symptoms."
+    },
+    {
+      "id": "med186",
+      "pharmacyId": "pharm66",
+      "name": "Amoxicillin 250mg",
+      "category": "Antibiotic",
+      "price": 18.81,
+      "description": "Treats acid reflux and heartburn."
+    },
+    {
+      "id": "med187",
+      "pharmacyId": "pharm138",
+      "name": "Loratadine 10mg",
+      "category": "Antibiotic",
+      "price": 21.54,
+      "description": "Used for bacterial infections."
+    },
+    {
+      "id": "med188",
+      "pharmacyId": "pharm81",
+      "name": "Omeprazole 20mg",
+      "category": "Digestive Health",
+      "price": 5.02,
+      "description": "Used for bacterial infections."
+    },
+    {
+      "id": "med189",
+      "pharmacyId": "pharm26",
+      "name": "Omeprazole 20mg",
+      "category": "Cholesterol",
+      "price": 18.93,
+      "description": "Used for treating pain and fever."
+    },
+    {
+      "id": "med190",
+      "pharmacyId": "pharm84",
+      "name": "Paracetamol 500mg",
+      "category": "Antibiotic",
+      "price": 3.83,
+      "description": "Helps manage cholesterol levels."
+    },
+    {
+      "id": "med191",
+      "pharmacyId": "pharm134",
+      "name": "Loratadine 10mg",
+      "category": "Digestive Health",
+      "price": 18.75,
+      "description": "Helps manage cholesterol levels."
+    },
+    {
+      "id": "med192",
+      "pharmacyId": "pharm35",
+      "name": "Aspirin 100mg",
+      "category": "Digestive Health",
+      "price": 4.31,
+      "description": "Helps manage cholesterol levels."
+    },
+    {
+      "id": "med193",
+      "pharmacyId": "pharm37",
+      "name": "Metformin 500mg",
+      "category": "Antibiotic",
+      "price": 16.63,
+      "description": "Used for treating pain and fever."
+    },
+    {
+      "id": "med194",
+      "pharmacyId": "pharm142",
+      "name": "Cetirizine 10mg",
+      "category": "Antibiotic",
+      "price": 4.94,
+      "description": "Treats acid reflux and heartburn."
+    },
+    {
+      "id": "med195",
+      "pharmacyId": "pharm137",
+      "name": "Amoxicillin 250mg",
+      "category": "Pain Relief",
+      "price": 10.62,
+      "description": "Helps manage cholesterol levels."
+    },
+    {
+      "id": "med196",
+      "pharmacyId": "pharm52",
+      "name": "Cetirizine 10mg",
+      "category": "Pain Relief",
+      "price": 16.84,
+      "description": "Used for bacterial infections."
+    },
+    {
+      "id": "med197",
+      "pharmacyId": "pharm120",
+      "name": "Azithromycin 500mg",
+      "category": "Allergy",
+      "price": 18.35,
+      "description": "Treats acid reflux and heartburn."
+    },
+    {
+      "id": "med198",
+      "pharmacyId": "pharm41",
+      "name": "Paracetamol 500mg",
+      "category": "Pain Relief",
+      "price": 8.8,
+      "description": "Used for bacterial infections."
+    },
+    {
+      "id": "med199",
+      "pharmacyId": "pharm53",
+      "name": "Atorvastatin 10mg",
+      "category": "Antibiotic",
+      "price": 22.35,
+      "description": "Used for treating pain and fever."
+    },
+    {
+      "id": "med200",
+      "pharmacyId": "pharm112",
+      "name": "Aspirin 100mg",
+      "category": "Cholesterol",
+      "price": 13.62,
+      "description": "Treats acid reflux and heartburn."
+    },
+    {
+      "id": "med201",
+      "pharmacyId": "pharm8",
+      "name": "Cetirizine 10mg",
+      "category": "Cholesterol",
+      "price": 13.36,
+      "description": "Relieves allergy symptoms."
+    },
+    {
+      "id": "med202",
+      "pharmacyId": "pharm135",
+      "name": "Paracetamol 500mg",
+      "category": "Allergy",
+      "price": 15.26,
+      "description": "Relieves allergy symptoms."
+    },
+    {
+      "id": "med203",
+      "pharmacyId": "pharm85",
+      "name": "Paracetamol 500mg",
+      "category": "Cholesterol",
+      "price": 10.01,
+      "description": "Relieves allergy symptoms."
+    },
+    {
+      "id": "med204",
+      "pharmacyId": "pharm147",
+      "name": "Azithromycin 500mg",
+      "category": "Cholesterol",
+      "price": 14.82,
+      "description": "Treats acid reflux and heartburn."
+    },
+    {
+      "id": "med205",
+      "pharmacyId": "pharm126",
+      "name": "Cetirizine 10mg",
+      "category": "Allergy",
+      "price": 22.89,
+      "description": "Treats acid reflux and heartburn."
+    },
+    {
+      "id": "med206",
+      "pharmacyId": "pharm109",
+      "name": "Metformin 500mg",
+      "category": "Digestive Health",
+      "price": 17.44,
+      "description": "Used for treating pain and fever."
+    },
+    {
+      "id": "med207",
+      "pharmacyId": "pharm66",
+      "name": "Amoxicillin 250mg",
+      "category": "Pain Relief",
+      "price": 19.0,
+      "description": "Relieves allergy symptoms."
+    },
+    {
+      "id": "med208",
+      "pharmacyId": "pharm127",
+      "name": "Ibuprofen 200mg",
+      "category": "Antibiotic",
+      "price": 6.97,
+      "description": "Relieves allergy symptoms."
+    },
+    {
+      "id": "med209",
+      "pharmacyId": "pharm136",
+      "name": "Cetirizine 10mg",
+      "category": "Allergy",
+      "price": 23.43,
+      "description": "Used for bacterial infections."
+    },
+    {
+      "id": "med210",
+      "pharmacyId": "pharm53",
+      "name": "Atorvastatin 10mg",
+      "category": "Antibiotic",
+      "price": 13.92,
+      "description": "Relieves allergy symptoms."
+    },
+    {
+      "id": "med211",
+      "pharmacyId": "pharm21",
+      "name": "Cetirizine 10mg",
+      "category": "Digestive Health",
+      "price": 8.99,
+      "description": "Treats acid reflux and heartburn."
+    },
+    {
+      "id": "med212",
+      "pharmacyId": "pharm145",
+      "name": "Omeprazole 20mg",
+      "category": "Pain Relief",
+      "price": 12.01,
+      "description": "Relieves allergy symptoms."
+    },
+    {
+      "id": "med213",
+      "pharmacyId": "pharm126",
+      "name": "Cetirizine 10mg",
+      "category": "Pain Relief",
+      "price": 6.7,
+      "description": "Used for bacterial infections."
+    },
+    {
+      "id": "med214",
+      "pharmacyId": "pharm42",
+      "name": "Azithromycin 500mg",
+      "category": "Digestive Health",
+      "price": 16.52,
+      "description": "Helps manage cholesterol levels."
+    },
+    {
+      "id": "med215",
+      "pharmacyId": "pharm14",
+      "name": "Loratadine 10mg",
+      "category": "Allergy",
+      "price": 24.43,
+      "description": "Relieves allergy symptoms."
+    },
+    {
+      "id": "med216",
+      "pharmacyId": "pharm57",
+      "name": "Amoxicillin 250mg",
+      "category": "Antibiotic",
+      "price": 22.31,
+      "description": "Helps manage cholesterol levels."
+    },
+    {
+      "id": "med217",
+      "pharmacyId": "pharm21",
+      "name": "Aspirin 100mg",
+      "category": "Digestive Health",
+      "price": 3.57,
+      "description": "Helps manage cholesterol levels."
+    },
+    {
+      "id": "med218",
+      "pharmacyId": "pharm89",
+      "name": "Cetirizine 10mg",
+      "category": "Antibiotic",
+      "price": 15.72,
+      "description": "Used for treating pain and fever."
+    },
+    {
+      "id": "med219",
+      "pharmacyId": "pharm56",
+      "name": "Loratadine 10mg",
+      "category": "Digestive Health",
+      "price": 18.59,
+      "description": "Treats acid reflux and heartburn."
+    },
+    {
+      "id": "med220",
+      "pharmacyId": "pharm26",
+      "name": "Metformin 500mg",
+      "category": "Cholesterol",
+      "price": 11.19,
+      "description": "Treats acid reflux and heartburn."
+    },
+    {
+      "id": "med221",
+      "pharmacyId": "pharm125",
+      "name": "Metformin 500mg",
+      "category": "Cholesterol",
+      "price": 8.8,
+      "description": "Helps manage cholesterol levels."
+    },
+    {
+      "id": "med222",
+      "pharmacyId": "pharm21",
+      "name": "Cetirizine 10mg",
+      "category": "Cholesterol",
+      "price": 13.95,
+      "description": "Used for bacterial infections."
+    },
+    {
+      "id": "med223",
+      "pharmacyId": "pharm52",
+      "name": "Atorvastatin 10mg",
+      "category": "Digestive Health",
+      "price": 6.61,
+      "description": "Treats acid reflux and heartburn."
+    },
+    {
+      "id": "med224",
+      "pharmacyId": "pharm84",
+      "name": "Amoxicillin 250mg",
+      "category": "Cholesterol",
+      "price": 9.5,
+      "description": "Helps manage cholesterol levels."
+    },
+    {
+      "id": "med225",
+      "pharmacyId": "pharm43",
+      "name": "Azithromycin 500mg",
+      "category": "Cholesterol",
+      "price": 19.77,
+      "description": "Helps manage cholesterol levels."
+    },
+    {
+      "id": "med226",
+      "pharmacyId": "pharm68",
+      "name": "Amoxicillin 250mg",
+      "category": "Antibiotic",
+      "price": 21.19,
+      "description": "Used for treating pain and fever."
+    },
+    {
+      "id": "med227",
+      "pharmacyId": "pharm48",
+      "name": "Omeprazole 20mg",
+      "category": "Allergy",
+      "price": 22.59,
+      "description": "Used for bacterial infections."
+    },
+    {
+      "id": "med228",
+      "pharmacyId": "pharm86",
+      "name": "Paracetamol 500mg",
+      "category": "Digestive Health",
+      "price": 7.65,
+      "description": "Used for treating pain and fever."
+    },
+    {
+      "id": "med229",
+      "pharmacyId": "pharm113",
+      "name": "Loratadine 10mg",
+      "category": "Cholesterol",
+      "price": 9.16,
+      "description": "Helps manage cholesterol levels."
+    },
+    {
+      "id": "med230",
+      "pharmacyId": "pharm10",
+      "name": "Aspirin 100mg",
+      "category": "Digestive Health",
+      "price": 17.09,
+      "description": "Helps manage cholesterol levels."
+    },
+    {
+      "id": "med231",
+      "pharmacyId": "pharm87",
+      "name": "Metformin 500mg",
+      "category": "Cholesterol",
+      "price": 4.13,
+      "description": "Treats acid reflux and heartburn."
+    },
+    {
+      "id": "med232",
+      "pharmacyId": "pharm57",
+      "name": "Metformin 500mg",
+      "category": "Antibiotic",
+      "price": 4.99,
+      "description": "Helps manage cholesterol levels."
+    },
+    {
+      "id": "med233",
+      "pharmacyId": "pharm133",
+      "name": "Omeprazole 20mg",
+      "category": "Digestive Health",
+      "price": 8.87,
+      "description": "Used for bacterial infections."
+    },
+    {
+      "id": "med234",
+      "pharmacyId": "pharm96",
+      "name": "Aspirin 100mg",
+      "category": "Antibiotic",
+      "price": 14.55,
+      "description": "Used for treating pain and fever."
+    },
+    {
+      "id": "med235",
+      "pharmacyId": "pharm117",
+      "name": "Amoxicillin 250mg",
+      "category": "Digestive Health",
+      "price": 12.0,
+      "description": "Used for treating pain and fever."
+    },
+    {
+      "id": "med236",
+      "pharmacyId": "pharm139",
+      "name": "Metformin 500mg",
+      "category": "Cholesterol",
+      "price": 5.0,
+      "description": "Used for bacterial infections."
+    },
+    {
+      "id": "med237",
+      "pharmacyId": "pharm150",
+      "name": "Amoxicillin 250mg",
+      "category": "Cholesterol",
+      "price": 17.07,
+      "description": "Helps manage cholesterol levels."
+    },
+    {
+      "id": "med238",
+      "pharmacyId": "pharm114",
+      "name": "Omeprazole 20mg",
+      "category": "Digestive Health",
+      "price": 17.04,
+      "description": "Helps manage cholesterol levels."
+    },
+    {
+      "id": "med239",
+      "pharmacyId": "pharm21",
+      "name": "Atorvastatin 10mg",
+      "category": "Antibiotic",
+      "price": 7.87,
+      "description": "Used for bacterial infections."
+    },
+    {
+      "id": "med240",
+      "pharmacyId": "pharm60",
+      "name": "Omeprazole 20mg",
+      "category": "Digestive Health",
+      "price": 18.48,
+      "description": "Helps manage cholesterol levels."
+    },
+    {
+      "id": "med241",
+      "pharmacyId": "pharm144",
+      "name": "Paracetamol 500mg",
+      "category": "Pain Relief",
+      "price": 17.15,
+      "description": "Treats acid reflux and heartburn."
+    },
+    {
+      "id": "med242",
+      "pharmacyId": "pharm40",
+      "name": "Metformin 500mg",
+      "category": "Pain Relief",
+      "price": 24.44,
+      "description": "Treats acid reflux and heartburn."
+    },
+    {
+      "id": "med243",
+      "pharmacyId": "pharm67",
+      "name": "Omeprazole 20mg",
+      "category": "Cholesterol",
+      "price": 24.95,
+      "description": "Treats acid reflux and heartburn."
+    },
+    {
+      "id": "med244",
+      "pharmacyId": "pharm125",
+      "name": "Amoxicillin 250mg",
+      "category": "Cholesterol",
+      "price": 23.76,
+      "description": "Used for bacterial infections."
+    },
+    {
+      "id": "med245",
+      "pharmacyId": "pharm97",
+      "name": "Aspirin 100mg",
+      "category": "Digestive Health",
+      "price": 5.75,
+      "description": "Treats acid reflux and heartburn."
+    },
+    {
+      "id": "med246",
+      "pharmacyId": "pharm95",
+      "name": "Cetirizine 10mg",
+      "category": "Allergy",
+      "price": 23.28,
+      "description": "Treats acid reflux and heartburn."
+    },
+    {
+      "id": "med247",
+      "pharmacyId": "pharm34",
+      "name": "Aspirin 100mg",
+      "category": "Allergy",
+      "price": 21.26,
+      "description": "Treats acid reflux and heartburn."
+    },
+    {
+      "id": "med248",
+      "pharmacyId": "pharm89",
+      "name": "Ibuprofen 200mg",
+      "category": "Allergy",
+      "price": 16.0,
+      "description": "Used for bacterial infections."
+    },
+    {
+      "id": "med249",
+      "pharmacyId": "pharm81",
+      "name": "Cetirizine 10mg",
+      "category": "Pain Relief",
+      "price": 17.95,
+      "description": "Relieves allergy symptoms."
+    },
+    {
+      "id": "med250",
+      "pharmacyId": "pharm47",
+      "name": "Amoxicillin 250mg",
+      "category": "Allergy",
+      "price": 14.61,
+      "description": "Treats acid reflux and heartburn."
+    },
+    {
+      "id": "med251",
+      "pharmacyId": "pharm83",
+      "name": "Cetirizine 10mg",
+      "category": "Pain Relief",
+      "price": 20.03,
+      "description": "Helps manage cholesterol levels."
+    },
+    {
+      "id": "med252",
+      "pharmacyId": "pharm25",
+      "name": "Amoxicillin 250mg",
+      "category": "Cholesterol",
+      "price": 24.72,
+      "description": "Helps manage cholesterol levels."
+    },
+    {
+      "id": "med253",
+      "pharmacyId": "pharm128",
+      "name": "Paracetamol 500mg",
+      "category": "Pain Relief",
+      "price": 9.86,
+      "description": "Used for treating pain and fever."
+    },
+    {
+      "id": "med254",
+      "pharmacyId": "pharm83",
+      "name": "Metformin 500mg",
+      "category": "Pain Relief",
+      "price": 10.54,
+      "description": "Used for treating pain and fever."
+    },
+    {
+      "id": "med255",
+      "pharmacyId": "pharm72",
+      "name": "Metformin 500mg",
+      "category": "Antibiotic",
+      "price": 9.63,
+      "description": "Relieves allergy symptoms."
+    },
+    {
+      "id": "med256",
+      "pharmacyId": "pharm27",
+      "name": "Aspirin 100mg",
+      "category": "Cholesterol",
+      "price": 12.38,
+      "description": "Used for treating pain and fever."
+    },
+    {
+      "id": "med257",
+      "pharmacyId": "pharm18",
+      "name": "Ibuprofen 200mg",
+      "category": "Cholesterol",
+      "price": 15.99,
+      "description": "Treats acid reflux and heartburn."
+    },
+    {
+      "id": "med258",
+      "pharmacyId": "pharm113",
+      "name": "Amoxicillin 250mg",
+      "category": "Allergy",
+      "price": 22.79,
+      "description": "Treats acid reflux and heartburn."
+    },
+    {
+      "id": "med259",
+      "pharmacyId": "pharm36",
+      "name": "Aspirin 100mg",
+      "category": "Cholesterol",
+      "price": 18.53,
+      "description": "Used for treating pain and fever."
+    },
+    {
+      "id": "med260",
+      "pharmacyId": "pharm18",
+      "name": "Loratadine 10mg",
+      "category": "Cholesterol",
+      "price": 8.46,
+      "description": "Treats acid reflux and heartburn."
+    },
+    {
+      "id": "med261",
+      "pharmacyId": "pharm97",
+      "name": "Loratadine 10mg",
+      "category": "Cholesterol",
+      "price": 10.1,
+      "description": "Used for treating pain and fever."
+    },
+    {
+      "id": "med262",
+      "pharmacyId": "pharm134",
+      "name": "Omeprazole 20mg",
+      "category": "Allergy",
+      "price": 6.25,
+      "description": "Used for bacterial infections."
+    },
+    {
+      "id": "med263",
+      "pharmacyId": "pharm100",
+      "name": "Omeprazole 20mg",
+      "category": "Cholesterol",
+      "price": 13.32,
+      "description": "Used for treating pain and fever."
+    },
+    {
+      "id": "med264",
+      "pharmacyId": "pharm15",
+      "name": "Aspirin 100mg",
+      "category": "Allergy",
+      "price": 23.51,
+      "description": "Relieves allergy symptoms."
+    },
+    {
+      "id": "med265",
+      "pharmacyId": "pharm11",
+      "name": "Ibuprofen 200mg",
+      "category": "Allergy",
+      "price": 15.03,
+      "description": "Relieves allergy symptoms."
+    },
+    {
+      "id": "med266",
+      "pharmacyId": "pharm17",
+      "name": "Paracetamol 500mg",
+      "category": "Digestive Health",
+      "price": 15.17,
+      "description": "Helps manage cholesterol levels."
+    },
+    {
+      "id": "med267",
+      "pharmacyId": "pharm78",
+      "name": "Metformin 500mg",
+      "category": "Allergy",
+      "price": 23.76,
+      "description": "Treats acid reflux and heartburn."
+    },
+    {
+      "id": "med268",
+      "pharmacyId": "pharm125",
+      "name": "Amoxicillin 250mg",
+      "category": "Pain Relief",
+      "price": 17.82,
+      "description": "Used for bacterial infections."
+    },
+    {
+      "id": "med269",
+      "pharmacyId": "pharm74",
+      "name": "Cetirizine 10mg",
+      "category": "Digestive Health",
+      "price": 10.3,
+      "description": "Used for bacterial infections."
+    },
+    {
+      "id": "med270",
+      "pharmacyId": "pharm50",
+      "name": "Amoxicillin 250mg",
+      "category": "Allergy",
+      "price": 18.58,
+      "description": "Used for bacterial infections."
+    },
+    {
+      "id": "med271",
+      "pharmacyId": "pharm145",
+      "name": "Amoxicillin 250mg",
+      "category": "Digestive Health",
+      "price": 20.1,
+      "description": "Relieves allergy symptoms."
+    },
+    {
+      "id": "med272",
+      "pharmacyId": "pharm52",
+      "name": "Loratadine 10mg",
+      "category": "Digestive Health",
+      "price": 8.62,
+      "description": "Used for treating pain and fever."
+    },
+    {
+      "id": "med273",
+      "pharmacyId": "pharm37",
+      "name": "Amoxicillin 250mg",
+      "category": "Digestive Health",
+      "price": 8.82,
+      "description": "Relieves allergy symptoms."
+    },
+    {
+      "id": "med274",
+      "pharmacyId": "pharm74",
+      "name": "Loratadine 10mg",
+      "category": "Antibiotic",
+      "price": 7.53,
+      "description": "Used for treating pain and fever."
+    },
+    {
+      "id": "med275",
+      "pharmacyId": "pharm26",
+      "name": "Paracetamol 500mg",
+      "category": "Pain Relief",
+      "price": 16.06,
+      "description": "Used for bacterial infections."
+    },
+    {
+      "id": "med276",
+      "pharmacyId": "pharm70",
+      "name": "Omeprazole 20mg",
+      "category": "Antibiotic",
+      "price": 11.49,
+      "description": "Helps manage cholesterol levels."
+    },
+    {
+      "id": "med277",
+      "pharmacyId": "pharm57",
+      "name": "Aspirin 100mg",
+      "category": "Antibiotic",
+      "price": 5.78,
+      "description": "Used for bacterial infections."
+    },
+    {
+      "id": "med278",
+      "pharmacyId": "pharm139",
+      "name": "Loratadine 10mg",
+      "category": "Digestive Health",
+      "price": 6.88,
+      "description": "Helps manage cholesterol levels."
+    },
+    {
+      "id": "med279",
+      "pharmacyId": "pharm109",
+      "name": "Metformin 500mg",
+      "category": "Digestive Health",
+      "price": 10.24,
+      "description": "Used for treating pain and fever."
+    },
+    {
+      "id": "med280",
+      "pharmacyId": "pharm39",
+      "name": "Atorvastatin 10mg",
+      "category": "Antibiotic",
+      "price": 7.3,
+      "description": "Used for bacterial infections."
+    },
+    {
+      "id": "med281",
+      "pharmacyId": "pharm92",
+      "name": "Azithromycin 500mg",
+      "category": "Antibiotic",
+      "price": 16.19,
+      "description": "Relieves allergy symptoms."
+    },
+    {
+      "id": "med282",
+      "pharmacyId": "pharm113",
+      "name": "Loratadine 10mg",
+      "category": "Antibiotic",
+      "price": 21.77,
+      "description": "Used for bacterial infections."
+    },
+    {
+      "id": "med283",
+      "pharmacyId": "pharm55",
+      "name": "Azithromycin 500mg",
+      "category": "Allergy",
+      "price": 9.96,
+      "description": "Relieves allergy symptoms."
+    },
+    {
+      "id": "med284",
+      "pharmacyId": "pharm140",
+      "name": "Ibuprofen 200mg",
+      "category": "Cholesterol",
+      "price": 7.89,
+      "description": "Helps manage cholesterol levels."
+    },
+    {
+      "id": "med285",
+      "pharmacyId": "pharm34",
+      "name": "Cetirizine 10mg",
+      "category": "Cholesterol",
+      "price": 4.05,
+      "description": "Used for treating pain and fever."
+    },
+    {
+      "id": "med286",
+      "pharmacyId": "pharm117",
+      "name": "Metformin 500mg",
+      "category": "Cholesterol",
+      "price": 22.74,
+      "description": "Used for treating pain and fever."
+    },
+    {
+      "id": "med287",
+      "pharmacyId": "pharm22",
+      "name": "Ibuprofen 200mg",
+      "category": "Allergy",
+      "price": 24.33,
+      "description": "Treats acid reflux and heartburn."
+    },
+    {
+      "id": "med288",
+      "pharmacyId": "pharm21",
+      "name": "Atorvastatin 10mg",
+      "category": "Allergy",
+      "price": 21.32,
+      "description": "Helps manage cholesterol levels."
+    },
+    {
+      "id": "med289",
+      "pharmacyId": "pharm119",
+      "name": "Atorvastatin 10mg",
+      "category": "Digestive Health",
+      "price": 6.07,
+      "description": "Used for bacterial infections."
+    },
+    {
+      "id": "med290",
+      "pharmacyId": "pharm54",
+      "name": "Atorvastatin 10mg",
+      "category": "Allergy",
+      "price": 7.4,
+      "description": "Helps manage cholesterol levels."
+    },
+    {
+      "id": "med291",
+      "pharmacyId": "pharm54",
+      "name": "Omeprazole 20mg",
+      "category": "Allergy",
+      "price": 23.82,
+      "description": "Relieves allergy symptoms."
+    },
+    {
+      "id": "med292",
+      "pharmacyId": "pharm13",
+      "name": "Cetirizine 10mg",
+      "category": "Antibiotic",
+      "price": 5.48,
+      "description": "Relieves allergy symptoms."
+    },
+    {
+      "id": "med293",
+      "pharmacyId": "pharm15",
+      "name": "Atorvastatin 10mg",
+      "category": "Cholesterol",
+      "price": 22.02,
+      "description": "Used for bacterial infections."
+    },
+    {
+      "id": "med294",
+      "pharmacyId": "pharm85",
+      "name": "Amoxicillin 250mg",
+      "category": "Cholesterol",
+      "price": 19.0,
+      "description": "Used for bacterial infections."
+    },
+    {
+      "id": "med295",
+      "pharmacyId": "pharm24",
+      "name": "Loratadine 10mg",
+      "category": "Cholesterol",
+      "price": 20.83,
+      "description": "Relieves allergy symptoms."
+    },
+    {
+      "id": "med296",
+      "pharmacyId": "pharm95",
+      "name": "Aspirin 100mg",
+      "category": "Pain Relief",
+      "price": 19.23,
+      "description": "Helps manage cholesterol levels."
+    },
+    {
+      "id": "med297",
+      "pharmacyId": "pharm65",
+      "name": "Atorvastatin 10mg",
+      "category": "Antibiotic",
+      "price": 21.13,
+      "description": "Used for bacterial infections."
+    },
+    {
+      "id": "med298",
+      "pharmacyId": "pharm15",
+      "name": "Aspirin 100mg",
+      "category": "Cholesterol",
+      "price": 24.85,
+      "description": "Treats acid reflux and heartburn."
+    },
+    {
+      "id": "med299",
+      "pharmacyId": "pharm89",
+      "name": "Cetirizine 10mg",
+      "category": "Allergy",
+      "price": 22.42,
+      "description": "Helps manage cholesterol levels."
+    },
+    {
+      "id": "med300",
+      "pharmacyId": "pharm27",
+      "name": "Atorvastatin 10mg",
+      "category": "Antibiotic",
+      "price": 21.26,
+      "description": "Used for treating pain and fever."
+    },
+    {
+      "id": "med301",
+      "pharmacyId": "pharm149",
+      "name": "Metformin 500mg",
+      "category": "Digestive Health",
+      "price": 18.0,
+      "description": "Used for bacterial infections."
+    },
+    {
+      "id": "med302",
+      "pharmacyId": "pharm68",
+      "name": "Paracetamol 500mg",
+      "category": "Allergy",
+      "price": 15.4,
+      "description": "Relieves allergy symptoms."
+    },
+    {
+      "id": "med303",
+      "pharmacyId": "pharm27",
+      "name": "Omeprazole 20mg",
+      "category": "Digestive Health",
+      "price": 9.57,
+      "description": "Helps manage cholesterol levels."
+    },
+    {
+      "id": "med304",
+      "pharmacyId": "pharm56",
+      "name": "Ibuprofen 200mg",
+      "category": "Cholesterol",
+      "price": 5.32,
+      "description": "Treats acid reflux and heartburn."
+    },
+    {
+      "id": "med305",
+      "pharmacyId": "pharm114",
+      "name": "Ibuprofen 200mg",
+      "category": "Digestive Health",
+      "price": 16.24,
+      "description": "Used for treating pain and fever."
+    },
+    {
+      "id": "med306",
+      "pharmacyId": "pharm31",
+      "name": "Amoxicillin 250mg",
+      "category": "Allergy",
+      "price": 22.91,
+      "description": "Used for bacterial infections."
+    },
+    {
+      "id": "med307",
+      "pharmacyId": "pharm140",
+      "name": "Ibuprofen 200mg",
+      "category": "Digestive Health",
+      "price": 13.45,
+      "description": "Used for bacterial infections."
+    },
+    {
+      "id": "med308",
+      "pharmacyId": "pharm28",
+      "name": "Omeprazole 20mg",
+      "category": "Antibiotic",
+      "price": 22.37,
+      "description": "Used for treating pain and fever."
+    },
+    {
+      "id": "med309",
+      "pharmacyId": "pharm27",
+      "name": "Ibuprofen 200mg",
+      "category": "Antibiotic",
+      "price": 13.28,
+      "description": "Used for bacterial infections."
+    },
+    {
+      "id": "med310",
+      "pharmacyId": "pharm38",
+      "name": "Paracetamol 500mg",
+      "category": "Pain Relief",
+      "price": 5.27,
+      "description": "Treats acid reflux and heartburn."
+    },
+    {
+      "id": "med311",
+      "pharmacyId": "pharm138",
+      "name": "Paracetamol 500mg",
+      "category": "Cholesterol",
+      "price": 18.98,
+      "description": "Used for treating pain and fever."
+    },
+    {
+      "id": "med312",
+      "pharmacyId": "pharm47",
+      "name": "Omeprazole 20mg",
+      "category": "Allergy",
+      "price": 21.13,
+      "description": "Relieves allergy symptoms."
+    },
+    {
+      "id": "med313",
+      "pharmacyId": "pharm81",
+      "name": "Omeprazole 20mg",
+      "category": "Cholesterol",
+      "price": 4.13,
+      "description": "Used for treating pain and fever."
+    },
+    {
+      "id": "med314",
+      "pharmacyId": "pharm8",
+      "name": "Cetirizine 10mg",
+      "category": "Allergy",
+      "price": 17.09,
+      "description": "Treats acid reflux and heartburn."
+    },
+    {
+      "id": "med315",
+      "pharmacyId": "pharm25",
+      "name": "Ibuprofen 200mg",
+      "category": "Cholesterol",
+      "price": 13.89,
+      "description": "Treats acid reflux and heartburn."
+    },
+    {
+      "id": "med316",
+      "pharmacyId": "pharm132",
+      "name": "Aspirin 100mg",
+      "category": "Digestive Health",
+      "price": 15.15,
+      "description": "Used for treating pain and fever."
+    },
+    {
+      "id": "med317",
+      "pharmacyId": "pharm92",
+      "name": "Amoxicillin 250mg",
+      "category": "Digestive Health",
+      "price": 13.93,
+      "description": "Treats acid reflux and heartburn."
+    },
+    {
+      "id": "med318",
+      "pharmacyId": "pharm67",
+      "name": "Loratadine 10mg",
+      "category": "Antibiotic",
+      "price": 19.48,
+      "description": "Used for bacterial infections."
+    },
+    {
+      "id": "med319",
+      "pharmacyId": "pharm65",
+      "name": "Azithromycin 500mg",
+      "category": "Cholesterol",
+      "price": 19.21,
+      "description": "Relieves allergy symptoms."
+    },
+    {
+      "id": "med320",
+      "pharmacyId": "pharm30",
+      "name": "Amoxicillin 250mg",
+      "category": "Digestive Health",
+      "price": 11.24,
+      "description": "Used for treating pain and fever."
+    },
+    {
+      "id": "med321",
+      "pharmacyId": "pharm87",
+      "name": "Metformin 500mg",
+      "category": "Pain Relief",
+      "price": 7.02,
+      "description": "Relieves allergy symptoms."
+    },
+    {
+      "id": "med322",
+      "pharmacyId": "pharm146",
+      "name": "Omeprazole 20mg",
+      "category": "Allergy",
+      "price": 22.26,
+      "description": "Relieves allergy symptoms."
+    },
+    {
+      "id": "med323",
+      "pharmacyId": "pharm26",
+      "name": "Loratadine 10mg",
+      "category": "Digestive Health",
+      "price": 23.8,
+      "description": "Treats acid reflux and heartburn."
+    },
+    {
+      "id": "med324",
+      "pharmacyId": "pharm64",
+      "name": "Cetirizine 10mg",
+      "category": "Antibiotic",
+      "price": 24.26,
+      "description": "Relieves allergy symptoms."
+    },
+    {
+      "id": "med325",
+      "pharmacyId": "pharm95",
+      "name": "Atorvastatin 10mg",
+      "category": "Pain Relief",
+      "price": 5.69,
+      "description": "Used for treating pain and fever."
+    },
+    {
+      "id": "med326",
+      "pharmacyId": "pharm8",
+      "name": "Atorvastatin 10mg",
+      "category": "Cholesterol",
+      "price": 17.37,
+      "description": "Used for treating pain and fever."
+    },
+    {
+      "id": "med327",
+      "pharmacyId": "pharm86",
+      "name": "Aspirin 100mg",
+      "category": "Allergy",
+      "price": 24.02,
+      "description": "Helps manage cholesterol levels."
+    },
+    {
+      "id": "med328",
+      "pharmacyId": "pharm65",
+      "name": "Aspirin 100mg",
+      "category": "Pain Relief",
+      "price": 3.75,
+      "description": "Helps manage cholesterol levels."
+    },
+    {
+      "id": "med329",
+      "pharmacyId": "pharm71",
+      "name": "Omeprazole 20mg",
+      "category": "Digestive Health",
+      "price": 21.28,
+      "description": "Treats acid reflux and heartburn."
+    },
+    {
+      "id": "med330",
+      "pharmacyId": "pharm118",
+      "name": "Amoxicillin 250mg",
+      "category": "Cholesterol",
+      "price": 20.55,
+      "description": "Helps manage cholesterol levels."
+    },
+    {
+      "id": "med331",
+      "pharmacyId": "pharm21",
+      "name": "Azithromycin 500mg",
+      "category": "Cholesterol",
+      "price": 11.04,
+      "description": "Used for treating pain and fever."
+    },
+    {
+      "id": "med332",
+      "pharmacyId": "pharm48",
+      "name": "Paracetamol 500mg",
+      "category": "Digestive Health",
+      "price": 21.47,
+      "description": "Treats acid reflux and heartburn."
+    },
+    {
+      "id": "med333",
+      "pharmacyId": "pharm144",
+      "name": "Cetirizine 10mg",
+      "category": "Antibiotic",
+      "price": 20.85,
+      "description": "Helps manage cholesterol levels."
+    },
+    {
+      "id": "med334",
+      "pharmacyId": "pharm130",
+      "name": "Atorvastatin 10mg",
+      "category": "Cholesterol",
+      "price": 16.68,
+      "description": "Used for treating pain and fever."
+    },
+    {
+      "id": "med335",
+      "pharmacyId": "pharm109",
+      "name": "Loratadine 10mg",
+      "category": "Cholesterol",
+      "price": 24.72,
+      "description": "Used for bacterial infections."
+    },
+    {
+      "id": "med336",
+      "pharmacyId": "pharm42",
+      "name": "Metformin 500mg",
+      "category": "Antibiotic",
+      "price": 12.22,
+      "description": "Relieves allergy symptoms."
+    },
+    {
+      "id": "med337",
+      "pharmacyId": "pharm119",
+      "name": "Ibuprofen 200mg",
+      "category": "Antibiotic",
+      "price": 7.27,
+      "description": "Treats acid reflux and heartburn."
+    },
+    {
+      "id": "med338",
+      "pharmacyId": "pharm9",
+      "name": "Loratadine 10mg",
+      "category": "Cholesterol",
+      "price": 21.44,
+      "description": "Relieves allergy symptoms."
+    },
+    {
+      "id": "med339",
+      "pharmacyId": "pharm87",
+      "name": "Azithromycin 500mg",
+      "category": "Cholesterol",
+      "price": 7.28,
+      "description": "Helps manage cholesterol levels."
+    },
+    {
+      "id": "med340",
+      "pharmacyId": "pharm31",
+      "name": "Metformin 500mg",
+      "category": "Pain Relief",
+      "price": 16.31,
+      "description": "Used for treating pain and fever."
+    },
+    {
+      "id": "med341",
+      "pharmacyId": "pharm129",
+      "name": "Atorvastatin 10mg",
+      "category": "Allergy",
+      "price": 10.32,
+      "description": "Relieves allergy symptoms."
+    },
+    {
+      "id": "med342",
+      "pharmacyId": "pharm45",
+      "name": "Metformin 500mg",
+      "category": "Digestive Health",
+      "price": 20.41,
+      "description": "Treats acid reflux and heartburn."
+    },
+    {
+      "id": "med343",
+      "pharmacyId": "pharm75",
+      "name": "Cetirizine 10mg",
+      "category": "Cholesterol",
+      "price": 12.36,
+      "description": "Used for bacterial infections."
+    },
+    {
+      "id": "med344",
+      "pharmacyId": "pharm148",
+      "name": "Metformin 500mg",
+      "category": "Cholesterol",
+      "price": 5.24,
+      "description": "Used for treating pain and fever."
+    },
+    {
+      "id": "med345",
+      "pharmacyId": "pharm73",
+      "name": "Aspirin 100mg",
+      "category": "Pain Relief",
+      "price": 23.56,
+      "description": "Used for treating pain and fever."
+    },
+    {
+      "id": "med346",
+      "pharmacyId": "pharm126",
+      "name": "Ibuprofen 200mg",
+      "category": "Allergy",
+      "price": 23.99,
+      "description": "Helps manage cholesterol levels."
+    },
+    {
+      "id": "med347",
+      "pharmacyId": "pharm124",
+      "name": "Omeprazole 20mg",
+      "category": "Cholesterol",
+      "price": 9.33,
+      "description": "Relieves allergy symptoms."
+    },
+    {
+      "id": "med348",
+      "pharmacyId": "pharm140",
+      "name": "Atorvastatin 10mg",
+      "category": "Pain Relief",
+      "price": 23.58,
+      "description": "Used for bacterial infections."
+    },
+    {
+      "id": "med349",
+      "pharmacyId": "pharm143",
+      "name": "Aspirin 100mg",
+      "category": "Allergy",
+      "price": 4.62,
+      "description": "Used for treating pain and fever."
+    },
+    {
+      "id": "med350",
+      "pharmacyId": "pharm101",
+      "name": "Paracetamol 500mg",
+      "category": "Pain Relief",
+      "price": 14.56,
+      "description": "Used for bacterial infections."
+    },
+    {
+      "id": "med351",
+      "pharmacyId": "pharm59",
+      "name": "Cetirizine 10mg",
+      "category": "Allergy",
+      "price": 7.37,
+      "description": "Treats acid reflux and heartburn."
+    },
+    {
+      "id": "med352",
+      "pharmacyId": "pharm16",
+      "name": "Loratadine 10mg",
+      "category": "Pain Relief",
+      "price": 4.24,
+      "description": "Used for treating pain and fever."
+    },
+    {
+      "id": "med353",
+      "pharmacyId": "pharm117",
+      "name": "Azithromycin 500mg",
+      "category": "Allergy",
+      "price": 18.55,
+      "description": "Relieves allergy symptoms."
+    },
+    {
+      "id": "med354",
+      "pharmacyId": "pharm104",
+      "name": "Ibuprofen 200mg",
+      "category": "Allergy",
+      "price": 14.85,
+      "description": "Treats acid reflux and heartburn."
+    },
+    {
+      "id": "med355",
+      "pharmacyId": "pharm84",
+      "name": "Amoxicillin 250mg",
+      "category": "Digestive Health",
+      "price": 7.16,
+      "description": "Treats acid reflux and heartburn."
+    },
+    {
+      "id": "med356",
+      "pharmacyId": "pharm26",
+      "name": "Atorvastatin 10mg",
+      "category": "Antibiotic",
+      "price": 13.91,
+      "description": "Helps manage cholesterol levels."
+    },
+    {
+      "id": "med357",
+      "pharmacyId": "pharm27",
+      "name": "Aspirin 100mg",
+      "category": "Digestive Health",
+      "price": 19.57,
+      "description": "Helps manage cholesterol levels."
+    },
+    {
+      "id": "med358",
+      "pharmacyId": "pharm27",
+      "name": "Aspirin 100mg",
+      "category": "Antibiotic",
+      "price": 14.54,
+      "description": "Treats acid reflux and heartburn."
+    },
+    {
+      "id": "med359",
+      "pharmacyId": "pharm46",
+      "name": "Cetirizine 10mg",
+      "category": "Antibiotic",
+      "price": 20.89,
+      "description": "Used for bacterial infections."
+    },
+    {
+      "id": "med360",
+      "pharmacyId": "pharm117",
+      "name": "Loratadine 10mg",
+      "category": "Allergy",
+      "price": 20.77,
+      "description": "Used for treating pain and fever."
+    },
+    {
+      "id": "med361",
+      "pharmacyId": "pharm18",
+      "name": "Aspirin 100mg",
+      "category": "Antibiotic",
+      "price": 24.8,
+      "description": "Used for treating pain and fever."
+    },
+    {
+      "id": "med362",
+      "pharmacyId": "pharm30",
+      "name": "Amoxicillin 250mg",
+      "category": "Allergy",
+      "price": 9.2,
+      "description": "Treats acid reflux and heartburn."
+    },
+    {
+      "id": "med363",
+      "pharmacyId": "pharm144",
+      "name": "Paracetamol 500mg",
+      "category": "Digestive Health",
+      "price": 13.81,
+      "description": "Used for treating pain and fever."
+    },
+    {
+      "id": "med364",
+      "pharmacyId": "pharm98",
+      "name": "Loratadine 10mg",
+      "category": "Cholesterol",
+      "price": 19.87,
+      "description": "Helps manage cholesterol levels."
+    },
+    {
+      "id": "med365",
+      "pharmacyId": "pharm15",
+      "name": "Loratadine 10mg",
+      "category": "Antibiotic",
+      "price": 5.36,
+      "description": "Treats acid reflux and heartburn."
+    },
+    {
+      "id": "med366",
+      "pharmacyId": "pharm62",
+      "name": "Loratadine 10mg",
+      "category": "Antibiotic",
+      "price": 23.35,
+      "description": "Used for bacterial infections."
+    },
+    {
+      "id": "med367",
+      "pharmacyId": "pharm131",
+      "name": "Azithromycin 500mg",
+      "category": "Digestive Health",
+      "price": 19.61,
+      "description": "Helps manage cholesterol levels."
+    },
+    {
+      "id": "med368",
+      "pharmacyId": "pharm86",
+      "name": "Metformin 500mg",
+      "category": "Pain Relief",
+      "price": 13.54,
+      "description": "Used for treating pain and fever."
+    },
+    {
+      "id": "med369",
+      "pharmacyId": "pharm127",
+      "name": "Aspirin 100mg",
+      "category": "Cholesterol",
+      "price": 23.53,
+      "description": "Used for bacterial infections."
+    },
+    {
+      "id": "med370",
+      "pharmacyId": "pharm149",
+      "name": "Atorvastatin 10mg",
+      "category": "Pain Relief",
+      "price": 19.54,
+      "description": "Used for bacterial infections."
+    },
+    {
+      "id": "med371",
+      "pharmacyId": "pharm19",
+      "name": "Cetirizine 10mg",
+      "category": "Cholesterol",
+      "price": 23.75,
+      "description": "Relieves allergy symptoms."
+    },
+    {
+      "id": "med372",
+      "pharmacyId": "pharm56",
+      "name": "Paracetamol 500mg",
+      "category": "Cholesterol",
+      "price": 23.83,
+      "description": "Used for bacterial infections."
+    },
+    {
+      "id": "med373",
+      "pharmacyId": "pharm121",
+      "name": "Paracetamol 500mg",
+      "category": "Cholesterol",
+      "price": 23.7,
+      "description": "Treats acid reflux and heartburn."
+    },
+    {
+      "id": "med374",
+      "pharmacyId": "pharm134",
+      "name": "Ibuprofen 200mg",
+      "category": "Pain Relief",
+      "price": 21.19,
+      "description": "Relieves allergy symptoms."
+    },
+    {
+      "id": "med375",
+      "pharmacyId": "pharm102",
+      "name": "Metformin 500mg",
+      "category": "Digestive Health",
+      "price": 19.51,
+      "description": "Treats acid reflux and heartburn."
+    },
+    {
+      "id": "med376",
+      "pharmacyId": "pharm84",
+      "name": "Metformin 500mg",
+      "category": "Digestive Health",
+      "price": 19.28,
+      "description": "Relieves allergy symptoms."
+    },
+    {
+      "id": "med377",
+      "pharmacyId": "pharm141",
+      "name": "Atorvastatin 10mg",
+      "category": "Cholesterol",
+      "price": 8.94,
+      "description": "Helps manage cholesterol levels."
+    },
+    {
+      "id": "med378",
+      "pharmacyId": "pharm66",
+      "name": "Ibuprofen 200mg",
+      "category": "Cholesterol",
+      "price": 14.92,
+      "description": "Used for treating pain and fever."
+    },
+    {
+      "id": "med379",
+      "pharmacyId": "pharm18",
+      "name": "Atorvastatin 10mg",
+      "category": "Allergy",
+      "price": 19.02,
+      "description": "Treats acid reflux and heartburn."
+    },
+    {
+      "id": "med380",
+      "pharmacyId": "pharm47",
+      "name": "Paracetamol 500mg",
+      "category": "Allergy",
+      "price": 11.13,
+      "description": "Relieves allergy symptoms."
+    },
+    {
+      "id": "med381",
+      "pharmacyId": "pharm18",
+      "name": "Atorvastatin 10mg",
+      "category": "Cholesterol",
+      "price": 21.96,
+      "description": "Helps manage cholesterol levels."
+    },
+    {
+      "id": "med382",
+      "pharmacyId": "pharm67",
+      "name": "Omeprazole 20mg",
+      "category": "Antibiotic",
+      "price": 5.04,
+      "description": "Treats acid reflux and heartburn."
+    },
+    {
+      "id": "med383",
+      "pharmacyId": "pharm81",
+      "name": "Amoxicillin 250mg",
+      "category": "Cholesterol",
+      "price": 3.8,
+      "description": "Helps manage cholesterol levels."
+    },
+    {
+      "id": "med384",
+      "pharmacyId": "pharm27",
+      "name": "Azithromycin 500mg",
+      "category": "Pain Relief",
+      "price": 23.82,
+      "description": "Used for bacterial infections."
+    },
+    {
+      "id": "med385",
+      "pharmacyId": "pharm146",
+      "name": "Azithromycin 500mg",
+      "category": "Antibiotic",
+      "price": 13.47,
+      "description": "Helps manage cholesterol levels."
+    },
+    {
+      "id": "med386",
+      "pharmacyId": "pharm117",
+      "name": "Atorvastatin 10mg",
+      "category": "Pain Relief",
+      "price": 16.44,
+      "description": "Relieves allergy symptoms."
+    },
+    {
+      "id": "med387",
+      "pharmacyId": "pharm58",
+      "name": "Loratadine 10mg",
+      "category": "Pain Relief",
+      "price": 20.3,
+      "description": "Used for treating pain and fever."
+    },
+    {
+      "id": "med388",
+      "pharmacyId": "pharm49",
+      "name": "Aspirin 100mg",
+      "category": "Allergy",
+      "price": 13.69,
+      "description": "Used for bacterial infections."
+    },
+    {
+      "id": "med389",
+      "pharmacyId": "pharm42",
+      "name": "Loratadine 10mg",
+      "category": "Antibiotic",
+      "price": 13.32,
+      "description": "Helps manage cholesterol levels."
+    },
+    {
+      "id": "med390",
+      "pharmacyId": "pharm80",
+      "name": "Atorvastatin 10mg",
+      "category": "Digestive Health",
+      "price": 4.83,
+      "description": "Used for treating pain and fever."
+    },
+    {
+      "id": "med391",
+      "pharmacyId": "pharm78",
+      "name": "Amoxicillin 250mg",
+      "category": "Digestive Health",
+      "price": 20.01,
+      "description": "Used for bacterial infections."
+    },
+    {
+      "id": "med392",
+      "pharmacyId": "pharm22",
+      "name": "Amoxicillin 250mg",
+      "category": "Antibiotic",
+      "price": 18.77,
+      "description": "Used for bacterial infections."
+    },
+    {
+      "id": "med393",
+      "pharmacyId": "pharm138",
+      "name": "Atorvastatin 10mg",
+      "category": "Pain Relief",
+      "price": 24.25,
+      "description": "Helps manage cholesterol levels."
+    },
+    {
+      "id": "med394",
+      "pharmacyId": "pharm48",
+      "name": "Omeprazole 20mg",
+      "category": "Pain Relief",
+      "price": 7.07,
+      "description": "Used for bacterial infections."
+    },
+    {
+      "id": "med395",
+      "pharmacyId": "pharm71",
+      "name": "Cetirizine 10mg",
+      "category": "Allergy",
+      "price": 21.81,
+      "description": "Relieves allergy symptoms."
+    },
+    {
+      "id": "med396",
+      "pharmacyId": "pharm143",
+      "name": "Omeprazole 20mg",
+      "category": "Allergy",
+      "price": 3.85,
+      "description": "Used for bacterial infections."
+    },
+    {
+      "id": "med397",
+      "pharmacyId": "pharm136",
+      "name": "Cetirizine 10mg",
+      "category": "Allergy",
+      "price": 18.69,
+      "description": "Helps manage cholesterol levels."
+    },
+    {
+      "id": "med398",
+      "pharmacyId": "pharm71",
+      "name": "Loratadine 10mg",
+      "category": "Digestive Health",
+      "price": 24.81,
+      "description": "Relieves allergy symptoms."
+    },
+    {
+      "id": "med399",
+      "pharmacyId": "pharm80",
+      "name": "Cetirizine 10mg",
+      "category": "Pain Relief",
+      "price": 5.73,
+      "description": "Used for bacterial infections."
+    },
+    {
+      "id": "med400",
+      "pharmacyId": "pharm99",
+      "name": "Loratadine 10mg",
+      "category": "Pain Relief",
+      "price": 24.1,
+      "description": "Relieves allergy symptoms."
+    },
+    {
+      "id": "med401",
+      "pharmacyId": "pharm117",
+      "name": "Aspirin 100mg",
+      "category": "Cholesterol",
+      "price": 4.61,
+      "description": "Helps manage cholesterol levels."
+    },
+    {
+      "id": "med402",
+      "pharmacyId": "pharm29",
+      "name": "Aspirin 100mg",
+      "category": "Cholesterol",
+      "price": 12.02,
+      "description": "Helps manage cholesterol levels."
+    },
+    {
+      "id": "med403",
+      "pharmacyId": "pharm28",
+      "name": "Cetirizine 10mg",
+      "category": "Pain Relief",
+      "price": 4.91,
+      "description": "Treats acid reflux and heartburn."
+    },
+    {
+      "id": "med404",
+      "pharmacyId": "pharm84",
+      "name": "Metformin 500mg",
+      "category": "Allergy",
+      "price": 9.26,
+      "description": "Treats acid reflux and heartburn."
+    },
+    {
+      "id": "med405",
+      "pharmacyId": "pharm146",
+      "name": "Azithromycin 500mg",
+      "category": "Antibiotic",
+      "price": 19.31,
+      "description": "Helps manage cholesterol levels."
+    },
+    {
+      "id": "med406",
+      "pharmacyId": "pharm69",
+      "name": "Metformin 500mg",
+      "category": "Digestive Health",
+      "price": 17.26,
+      "description": "Treats acid reflux and heartburn."
+    },
+    {
+      "id": "med407",
+      "pharmacyId": "pharm70",
+      "name": "Azithromycin 500mg",
+      "category": "Digestive Health",
+      "price": 9.5,
+      "description": "Treats acid reflux and heartburn."
+    },
+    {
+      "id": "med408",
+      "pharmacyId": "pharm113",
+      "name": "Paracetamol 500mg",
+      "category": "Digestive Health",
+      "price": 20.28,
+      "description": "Used for bacterial infections."
+    },
+    {
+      "id": "med409",
+      "pharmacyId": "pharm97",
+      "name": "Cetirizine 10mg",
+      "category": "Antibiotic",
+      "price": 20.06,
+      "description": "Treats acid reflux and heartburn."
+    },
+    {
+      "id": "med410",
+      "pharmacyId": "pharm118",
+      "name": "Paracetamol 500mg",
+      "category": "Allergy",
+      "price": 4.71,
+      "description": "Helps manage cholesterol levels."
+    },
+    {
+      "id": "med411",
+      "pharmacyId": "pharm11",
+      "name": "Azithromycin 500mg",
+      "category": "Digestive Health",
+      "price": 7.34,
+      "description": "Relieves allergy symptoms."
+    },
+    {
+      "id": "med412",
+      "pharmacyId": "pharm27",
+      "name": "Azithromycin 500mg",
+      "category": "Antibiotic",
+      "price": 13.56,
+      "description": "Treats acid reflux and heartburn."
+    },
+    {
+      "id": "med413",
+      "pharmacyId": "pharm97",
+      "name": "Amoxicillin 250mg",
+      "category": "Digestive Health",
+      "price": 17.18,
+      "description": "Treats acid reflux and heartburn."
+    },
+    {
+      "id": "med414",
+      "pharmacyId": "pharm145",
+      "name": "Aspirin 100mg",
+      "category": "Allergy",
+      "price": 5.55,
+      "description": "Relieves allergy symptoms."
+    },
+    {
+      "id": "med415",
+      "pharmacyId": "pharm119",
+      "name": "Azithromycin 500mg",
+      "category": "Digestive Health",
+      "price": 12.44,
+      "description": "Treats acid reflux and heartburn."
+    },
+    {
+      "id": "med416",
+      "pharmacyId": "pharm129",
+      "name": "Metformin 500mg",
+      "category": "Pain Relief",
+      "price": 5.65,
+      "description": "Helps manage cholesterol levels."
+    },
+    {
+      "id": "med417",
+      "pharmacyId": "pharm149",
+      "name": "Azithromycin 500mg",
+      "category": "Antibiotic",
+      "price": 12.13,
+      "description": "Relieves allergy symptoms."
+    },
+    {
+      "id": "med418",
+      "pharmacyId": "pharm91",
+      "name": "Metformin 500mg",
+      "category": "Antibiotic",
+      "price": 15.49,
+      "description": "Relieves allergy symptoms."
+    },
+    {
+      "id": "med419",
+      "pharmacyId": "pharm81",
+      "name": "Atorvastatin 10mg",
+      "category": "Cholesterol",
+      "price": 17.72,
+      "description": "Treats acid reflux and heartburn."
+    },
+    {
+      "id": "med420",
+      "pharmacyId": "pharm24",
+      "name": "Atorvastatin 10mg",
+      "category": "Digestive Health",
+      "price": 5.78,
+      "description": "Treats acid reflux and heartburn."
+    },
+    {
+      "id": "med421",
+      "pharmacyId": "pharm88",
+      "name": "Paracetamol 500mg",
+      "category": "Digestive Health",
+      "price": 5.08,
+      "description": "Used for treating pain and fever."
+    },
+    {
+      "id": "med422",
+      "pharmacyId": "pharm26",
+      "name": "Metformin 500mg",
+      "category": "Antibiotic",
+      "price": 21.25,
+      "description": "Used for treating pain and fever."
+    },
+    {
+      "id": "med423",
+      "pharmacyId": "pharm128",
+      "name": "Aspirin 100mg",
+      "category": "Digestive Health",
+      "price": 10.84,
+      "description": "Used for treating pain and fever."
+    },
+    {
+      "id": "med424",
+      "pharmacyId": "pharm147",
+      "name": "Azithromycin 500mg",
+      "category": "Pain Relief",
+      "price": 9.39,
+      "description": "Treats acid reflux and heartburn."
+    },
+    {
+      "id": "med425",
+      "pharmacyId": "pharm145",
+      "name": "Azithromycin 500mg",
+      "category": "Digestive Health",
+      "price": 15.78,
+      "description": "Helps manage cholesterol levels."
+    },
+    {
+      "id": "med426",
+      "pharmacyId": "pharm63",
+      "name": "Atorvastatin 10mg",
+      "category": "Pain Relief",
+      "price": 4.64,
+      "description": "Treats acid reflux and heartburn."
+    },
+    {
+      "id": "med427",
+      "pharmacyId": "pharm121",
+      "name": "Omeprazole 20mg",
+      "category": "Allergy",
+      "price": 5.33,
+      "description": "Treats acid reflux and heartburn."
+    },
+    {
+      "id": "med428",
+      "pharmacyId": "pharm67",
+      "name": "Aspirin 100mg",
+      "category": "Antibiotic",
+      "price": 9.52,
+      "description": "Used for bacterial infections."
+    },
+    {
+      "id": "med429",
+      "pharmacyId": "pharm81",
+      "name": "Aspirin 100mg",
+      "category": "Allergy",
+      "price": 21.13,
+      "description": "Used for treating pain and fever."
+    },
+    {
+      "id": "med430",
+      "pharmacyId": "pharm136",
+      "name": "Azithromycin 500mg",
+      "category": "Cholesterol",
+      "price": 20.87,
+      "description": "Helps manage cholesterol levels."
+    },
+    {
+      "id": "med431",
+      "pharmacyId": "pharm64",
+      "name": "Azithromycin 500mg",
+      "category": "Allergy",
+      "price": 19.68,
+      "description": "Used for treating pain and fever."
+    },
+    {
+      "id": "med432",
+      "pharmacyId": "pharm90",
+      "name": "Metformin 500mg",
+      "category": "Digestive Health",
+      "price": 19.15,
+      "description": "Helps manage cholesterol levels."
+    },
+    {
+      "id": "med433",
+      "pharmacyId": "pharm37",
+      "name": "Paracetamol 500mg",
+      "category": "Allergy",
+      "price": 6.65,
+      "description": "Relieves allergy symptoms."
+    },
+    {
+      "id": "med434",
+      "pharmacyId": "pharm74",
+      "name": "Atorvastatin 10mg",
+      "category": "Allergy",
+      "price": 11.36,
+      "description": "Helps manage cholesterol levels."
+    },
+    {
+      "id": "med435",
+      "pharmacyId": "pharm37",
+      "name": "Loratadine 10mg",
+      "category": "Digestive Health",
+      "price": 5.34,
+      "description": "Relieves allergy symptoms."
+    },
+    {
+      "id": "med436",
+      "pharmacyId": "pharm81",
+      "name": "Atorvastatin 10mg",
+      "category": "Cholesterol",
+      "price": 23.09,
+      "description": "Helps manage cholesterol levels."
+    },
+    {
+      "id": "med437",
+      "pharmacyId": "pharm91",
+      "name": "Cetirizine 10mg",
+      "category": "Allergy",
+      "price": 16.03,
+      "description": "Relieves allergy symptoms."
+    },
+    {
+      "id": "med438",
+      "pharmacyId": "pharm121",
+      "name": "Azithromycin 500mg",
+      "category": "Cholesterol",
+      "price": 16.59,
+      "description": "Used for bacterial infections."
+    },
+    {
+      "id": "med439",
+      "pharmacyId": "pharm44",
+      "name": "Azithromycin 500mg",
+      "category": "Allergy",
+      "price": 18.35,
+      "description": "Helps manage cholesterol levels."
+    },
+    {
+      "id": "med440",
+      "pharmacyId": "pharm92",
+      "name": "Omeprazole 20mg",
+      "category": "Allergy",
+      "price": 22.15,
+      "description": "Used for bacterial infections."
+    },
+    {
+      "id": "med441",
+      "pharmacyId": "pharm27",
+      "name": "Paracetamol 500mg",
+      "category": "Pain Relief",
+      "price": 18.15,
+      "description": "Used for bacterial infections."
+    },
+    {
+      "id": "med442",
+      "pharmacyId": "pharm63",
+      "name": "Aspirin 100mg",
+      "category": "Antibiotic",
+      "price": 14.58,
+      "description": "Relieves allergy symptoms."
+    },
+    {
+      "id": "med443",
+      "pharmacyId": "pharm42",
+      "name": "Aspirin 100mg",
+      "category": "Antibiotic",
+      "price": 4.6,
+      "description": "Helps manage cholesterol levels."
+    },
+    {
+      "id": "med444",
+      "pharmacyId": "pharm98",
+      "name": "Loratadine 10mg",
+      "category": "Antibiotic",
+      "price": 21.31,
+      "description": "Used for treating pain and fever."
+    },
+    {
+      "id": "med445",
+      "pharmacyId": "pharm21",
+      "name": "Paracetamol 500mg",
+      "category": "Allergy",
+      "price": 3.57,
+      "description": "Treats acid reflux and heartburn."
+    },
+    {
+      "id": "med446",
+      "pharmacyId": "pharm138",
+      "name": "Omeprazole 20mg",
+      "category": "Digestive Health",
+      "price": 16.92,
+      "description": "Relieves allergy symptoms."
+    },
+    {
+      "id": "med447",
+      "pharmacyId": "pharm28",
+      "name": "Aspirin 100mg",
+      "category": "Digestive Health",
+      "price": 10.1,
+      "description": "Treats acid reflux and heartburn."
+    },
+    {
+      "id": "med448",
+      "pharmacyId": "pharm140",
+      "name": "Paracetamol 500mg",
+      "category": "Cholesterol",
+      "price": 9.04,
+      "description": "Used for treating pain and fever."
+    },
+    {
+      "id": "med449",
+      "pharmacyId": "pharm8",
+      "name": "Omeprazole 20mg",
+      "category": "Allergy",
+      "price": 10.29,
+      "description": "Used for treating pain and fever."
+    },
+    {
+      "id": "med450",
+      "pharmacyId": "pharm106",
+      "name": "Azithromycin 500mg",
+      "category": "Allergy",
+      "price": 24.56,
+      "description": "Used for bacterial infections."
+    },
+    {
+      "id": "med451",
+      "pharmacyId": "pharm127",
+      "name": "Azithromycin 500mg",
+      "category": "Antibiotic",
+      "price": 5.03,
+      "description": "Used for treating pain and fever."
+    },
+    {
+      "id": "med452",
+      "pharmacyId": "pharm60",
+      "name": "Amoxicillin 250mg",
+      "category": "Pain Relief",
+      "price": 14.55,
+      "description": "Treats acid reflux and heartburn."
+    },
+    {
+      "id": "med453",
+      "pharmacyId": "pharm104",
+      "name": "Cetirizine 10mg",
+      "category": "Pain Relief",
+      "price": 19.51,
+      "description": "Treats acid reflux and heartburn."
+    },
+    {
+      "id": "med454",
+      "pharmacyId": "pharm143",
+      "name": "Cetirizine 10mg",
+      "category": "Digestive Health",
+      "price": 23.73,
+      "description": "Helps manage cholesterol levels."
+    },
+    {
+      "id": "med455",
+      "pharmacyId": "pharm96",
+      "name": "Azithromycin 500mg",
+      "category": "Digestive Health",
+      "price": 20.67,
+      "description": "Used for treating pain and fever."
+    },
+    {
+      "id": "med456",
+      "pharmacyId": "pharm114",
+      "name": "Paracetamol 500mg",
+      "category": "Antibiotic",
+      "price": 16.41,
+      "description": "Helps manage cholesterol levels."
+    },
+    {
+      "id": "med457",
+      "pharmacyId": "pharm133",
+      "name": "Ibuprofen 200mg",
+      "category": "Pain Relief",
+      "price": 6.86,
+      "description": "Used for treating pain and fever."
+    },
+    {
+      "id": "med458",
+      "pharmacyId": "pharm77",
+      "name": "Paracetamol 500mg",
+      "category": "Pain Relief",
+      "price": 8.23,
+      "description": "Used for bacterial infections."
+    },
+    {
+      "id": "med459",
+      "pharmacyId": "pharm150",
+      "name": "Aspirin 100mg",
+      "category": "Digestive Health",
+      "price": 8.41,
+      "description": "Relieves allergy symptoms."
+    },
+    {
+      "id": "med460",
+      "pharmacyId": "pharm66",
+      "name": "Metformin 500mg",
+      "category": "Antibiotic",
+      "price": 18.11,
+      "description": "Helps manage cholesterol levels."
+    },
+    {
+      "id": "med461",
+      "pharmacyId": "pharm55",
+      "name": "Cetirizine 10mg",
+      "category": "Allergy",
+      "price": 24.08,
+      "description": "Treats acid reflux and heartburn."
+    },
+    {
+      "id": "med462",
+      "pharmacyId": "pharm129",
+      "name": "Ibuprofen 200mg",
+      "category": "Antibiotic",
+      "price": 23.83,
+      "description": "Used for treating pain and fever."
+    },
+    {
+      "id": "med463",
+      "pharmacyId": "pharm100",
+      "name": "Amoxicillin 250mg",
+      "category": "Cholesterol",
+      "price": 23.05,
+      "description": "Treats acid reflux and heartburn."
+    },
+    {
+      "id": "med464",
+      "pharmacyId": "pharm39",
+      "name": "Omeprazole 20mg",
+      "category": "Allergy",
+      "price": 23.54,
+      "description": "Relieves allergy symptoms."
+    },
+    {
+      "id": "med465",
+      "pharmacyId": "pharm24",
+      "name": "Omeprazole 20mg",
+      "category": "Cholesterol",
+      "price": 14.71,
+      "description": "Helps manage cholesterol levels."
+    },
+    {
+      "id": "med466",
+      "pharmacyId": "pharm22",
+      "name": "Ibuprofen 200mg",
+      "category": "Digestive Health",
+      "price": 10.17,
+      "description": "Relieves allergy symptoms."
+    },
+    {
+      "id": "med467",
+      "pharmacyId": "pharm84",
+      "name": "Metformin 500mg",
+      "category": "Digestive Health",
+      "price": 5.57,
+      "description": "Used for treating pain and fever."
+    },
+    {
+      "id": "med468",
+      "pharmacyId": "pharm54",
+      "name": "Paracetamol 500mg",
+      "category": "Digestive Health",
+      "price": 8.86,
+      "description": "Helps manage cholesterol levels."
+    },
+    {
+      "id": "med469",
+      "pharmacyId": "pharm15",
+      "name": "Paracetamol 500mg",
+      "category": "Digestive Health",
+      "price": 20.71,
+      "description": "Helps manage cholesterol levels."
+    },
+    {
+      "id": "med470",
+      "pharmacyId": "pharm72",
+      "name": "Ibuprofen 200mg",
+      "category": "Digestive Health",
+      "price": 18.95,
+      "description": "Used for treating pain and fever."
+    },
+    {
+      "id": "med471",
+      "pharmacyId": "pharm51",
+      "name": "Cetirizine 10mg",
+      "category": "Cholesterol",
+      "price": 8.97,
+      "description": "Treats acid reflux and heartburn."
+    },
+    {
+      "id": "med472",
+      "pharmacyId": "pharm95",
+      "name": "Cetirizine 10mg",
+      "category": "Allergy",
+      "price": 20.77,
+      "description": "Relieves allergy symptoms."
+    },
+    {
+      "id": "med473",
+      "pharmacyId": "pharm92",
+      "name": "Loratadine 10mg",
+      "category": "Cholesterol",
+      "price": 22.63,
+      "description": "Helps manage cholesterol levels."
+    },
+    {
+      "id": "med474",
+      "pharmacyId": "pharm82",
+      "name": "Amoxicillin 250mg",
+      "category": "Allergy",
+      "price": 24.85,
+      "description": "Used for treating pain and fever."
+    },
+    {
+      "id": "med475",
+      "pharmacyId": "pharm62",
+      "name": "Metformin 500mg",
+      "category": "Pain Relief",
+      "price": 23.17,
+      "description": "Used for bacterial infections."
+    },
+    {
+      "id": "med476",
+      "pharmacyId": "pharm78",
+      "name": "Ibuprofen 200mg",
+      "category": "Cholesterol",
+      "price": 9.66,
+      "description": "Relieves allergy symptoms."
+    },
+    {
+      "id": "med477",
+      "pharmacyId": "pharm43",
+      "name": "Amoxicillin 250mg",
+      "category": "Pain Relief",
+      "price": 6.18,
+      "description": "Used for treating pain and fever."
+    },
+    {
+      "id": "med478",
+      "pharmacyId": "pharm30",
+      "name": "Paracetamol 500mg",
+      "category": "Pain Relief",
+      "price": 16.09,
+      "description": "Relieves allergy symptoms."
+    },
+    {
+      "id": "med479",
+      "pharmacyId": "pharm24",
+      "name": "Ibuprofen 200mg",
+      "category": "Pain Relief",
+      "price": 20.32,
+      "description": "Relieves allergy symptoms."
+    },
+    {
+      "id": "med480",
+      "pharmacyId": "pharm69",
+      "name": "Azithromycin 500mg",
+      "category": "Digestive Health",
+      "price": 13.98,
+      "description": "Used for bacterial infections."
+    },
+    {
+      "id": "med481",
+      "pharmacyId": "pharm93",
+      "name": "Loratadine 10mg",
+      "category": "Pain Relief",
+      "price": 13.58,
+      "description": "Relieves allergy symptoms."
+    },
+    {
+      "id": "med482",
+      "pharmacyId": "pharm91",
+      "name": "Cetirizine 10mg",
+      "category": "Digestive Health",
+      "price": 10.37,
+      "description": "Used for bacterial infections."
+    },
+    {
+      "id": "med483",
+      "pharmacyId": "pharm128",
+      "name": "Paracetamol 500mg",
+      "category": "Allergy",
+      "price": 10.13,
+      "description": "Helps manage cholesterol levels."
+    },
+    {
+      "id": "med484",
+      "pharmacyId": "pharm43",
+      "name": "Cetirizine 10mg",
+      "category": "Pain Relief",
+      "price": 9.6,
+      "description": "Treats acid reflux and heartburn."
+    },
+    {
+      "id": "med485",
+      "pharmacyId": "pharm18",
+      "name": "Aspirin 100mg",
+      "category": "Allergy",
+      "price": 11.79,
+      "description": "Relieves allergy symptoms."
+    },
+    {
+      "id": "med486",
+      "pharmacyId": "pharm63",
+      "name": "Paracetamol 500mg",
+      "category": "Cholesterol",
+      "price": 10.42,
+      "description": "Treats acid reflux and heartburn."
+    },
+    {
+      "id": "med487",
+      "pharmacyId": "pharm33",
+      "name": "Loratadine 10mg",
+      "category": "Allergy",
+      "price": 21.13,
+      "description": "Helps manage cholesterol levels."
+    },
+    {
+      "id": "med488",
+      "pharmacyId": "pharm59",
+      "name": "Metformin 500mg",
+      "category": "Cholesterol",
+      "price": 17.74,
+      "description": "Relieves allergy symptoms."
+    },
+    {
+      "id": "med489",
+      "pharmacyId": "pharm49",
+      "name": "Metformin 500mg",
+      "category": "Allergy",
+      "price": 12.69,
+      "description": "Helps manage cholesterol levels."
+    },
+    {
+      "id": "med490",
+      "pharmacyId": "pharm130",
+      "name": "Atorvastatin 10mg",
+      "category": "Allergy",
+      "price": 16.36,
+      "description": "Helps manage cholesterol levels."
+    },
+    {
+      "id": "med491",
+      "pharmacyId": "pharm71",
+      "name": "Paracetamol 500mg",
+      "category": "Allergy",
+      "price": 15.49,
+      "description": "Used for treating pain and fever."
+    },
+    {
+      "id": "med492",
+      "pharmacyId": "pharm138",
+      "name": "Cetirizine 10mg",
+      "category": "Antibiotic",
+      "price": 13.28,
+      "description": "Helps manage cholesterol levels."
+    },
+    {
+      "id": "med493",
+      "pharmacyId": "pharm132",
+      "name": "Metformin 500mg",
+      "category": "Pain Relief",
+      "price": 15.33,
+      "description": "Treats acid reflux and heartburn."
+    },
+    {
+      "id": "med494",
+      "pharmacyId": "pharm134",
+      "name": "Aspirin 100mg",
+      "category": "Cholesterol",
+      "price": 20.63,
+      "description": "Used for treating pain and fever."
+    },
+    {
+      "id": "med495",
+      "pharmacyId": "pharm104",
+      "name": "Cetirizine 10mg",
+      "category": "Pain Relief",
+      "price": 4.94,
+      "description": "Treats acid reflux and heartburn."
+    },
+    {
+      "id": "med496",
+      "pharmacyId": "pharm78",
+      "name": "Omeprazole 20mg",
+      "category": "Antibiotic",
+      "price": 10.75,
+      "description": "Helps manage cholesterol levels."
+    },
+    {
+      "id": "med497",
+      "pharmacyId": "pharm115",
+      "name": "Azithromycin 500mg",
+      "category": "Antibiotic",
+      "price": 14.23,
+      "description": "Helps manage cholesterol levels."
+    },
+    {
+      "id": "med498",
+      "pharmacyId": "pharm131",
+      "name": "Ibuprofen 200mg",
+      "category": "Digestive Health",
+      "price": 20.46,
+      "description": "Helps manage cholesterol levels."
+    },
+    {
+      "id": "med499",
+      "pharmacyId": "pharm113",
+      "name": "Ibuprofen 200mg",
+      "category": "Antibiotic",
+      "price": 15.25,
+      "description": "Treats acid reflux and heartburn."
+    },
+    {
+      "id": "med500",
+      "pharmacyId": "pharm129",
+      "name": "Amoxicillin 250mg",
+      "category": "Cholesterol",
+      "price": 5.56,
+      "description": "Used for treating pain and fever."
     }
   ]
 }
