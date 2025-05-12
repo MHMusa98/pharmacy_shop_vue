@@ -30,3 +30,8 @@ src/router/index copy.js
 src/main copy.js
 src/components/PharmacyList_Search.vue
 
+src/assets/CheckoutNow1.vue
+src/assets/MedicineList.vue
+src/assets/MedicineList1.vue
+src/assets/MedicineList2.vue
+src/assets/PharmacyList(old).vue

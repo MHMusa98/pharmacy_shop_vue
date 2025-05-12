@@ -2,10 +2,6 @@
  
 <template>
   <div class="pharmacy-app">
-    <!-- Header with status bar -->
-    <div class="status-bar">
-    </div>
-
     <!-- Header -->
     <div class="header">
       <h1>Nearby Pharmacies</h1>
@@ -14,49 +10,43 @@
       </div>
     </div>
 
-    <!-- Filter options -->
-    <div class="filter-options">
-      <div class="filter-item" @click="toggleDropdown('city')">
-        <span>{{ selectedCity }}</span>
-        <i class="down-arrow" :class="{ 'rotated': activeDropdown === 'city' }"></i>
-        <div class="dropdown-menu" v-show="activeDropdown === 'city'">
-          <div class="dropdown-item" @click.stop="selectCity('All City')">All City</div>
-          <div class="dropdown-item" @click.stop="selectCity('Dhaka')"> Dhaka </div>
-          <div class="dropdown-item" @click.stop="selectCity('Chittagong')">Chittagong</div>
-          <div class="dropdown-item" @click.stop="selectCity('Sylhet')">Sylhet</div>
+    <!-- Filter and search controls -->
+    <div class="control-panel">
+      <div class="filter-city">
+        <div class="filter-item" @click="toggleDropdown('city')">
+          <span>{{ selectedCity }}</span>
+          <i class="down-arrow" :class="{ 'rotated': activeDropdown === 'city' }"></i>
+          <div class="dropdown-menu" v-show="activeDropdown === 'city'">
+            <div class="dropdown-item" @click.stop="selectCity('All City')">All City</div>
+            <div class="dropdown-item" @click.stop="selectCity('Dhaka')">Dhaka</div>
+            <div class="dropdown-item" @click.stop="selectCity('Chittagong')">Chittagong</div>
+            <div class="dropdown-item" @click.stop="selectCity('Sylhet')">Sylhet</div>
+          </div>
         </div>
+        <button class="location-button" @click="requestLocation" :disabled="isLocationLoading">
+          <span v-if="isLocationLoading">Getting...</span>
+          <span v-else>{{ userLocation ? 'Refresh' : 'Use my location' }}</span>
+        </button>
       </div>
       <div class="search-bar">
         <input type="text" placeholder="Search pharmacies..." v-model="searchQuery" />
       </div>
-      <div>
-      </div>
-      <div>
-      </div>
+    </div>
+   
+    <!-- Loading indicator for API -->
+    <div v-if="isLoading" class="loading-indicator">
+      <div class="loading-spinner"></div>
+      <p>Loading pharmacy data...</p>
     </div>
 
-    <!-- Location controls -->
-    <div class="location-controls">
-      <button class="location-button" @click="requestLocation" :disabled="isLocationLoading">
-        <span v-if="isLocationLoading">Getting location...</span>
-        <span v-else>{{ userLocation ? 'Refresh location' : 'Use my location' }}</span>
-      </button>
-      <div v-if="userLocation" class="location-info">
-        <span class="location-label">Showing nearby pharmacies</span>
-        <!-- <span class="location-label">Showing pharmacies within {{ maxDistance }}km</span> -->
-        <input 
-          type="range" 
-          min="0" 
-          max="250" 
-          v-model.number="maxDistance" 
-          class="distance-slider"
-          @change="updatePharmacyDistances"
-        />
-      </div>
+    <!-- Error message for API -->
+    <div v-else-if="apiError" class="no-results">
+      <p>{{ apiError }}</p>
+      <button class="order-button" @click="fetchPharmacies">Retry</button>
     </div>
 
     <!-- Pharmacy listings -->
-    <div class="pharmacy-list">
+    <div v-else class="pharmacy-list">
       <div v-if="isLocationLoading" class="loading-indicator">
         <div class="loading-spinner"></div>
         <p>Finding nearby pharmacies...</p>
@@ -66,36 +56,31 @@
       </div>
       <div v-else v-for="pharmacy in filteredPharmacies" :key="pharmacy.id" class="pharmacy-item">
         <div class="pharmacy-img">
-          <img :src="pharmacy.logo" alt="Pharmacy image" class="placeholder-img"/>
+          <img :src="pharmacy.logo || '/assets/pharmacy-placeholder.png'" alt="Pharmacy image" class="placeholder-img"/>
         </div>
         
         <div class="pharmacy-info">
           <div class="pharmacy-header">
             <h3>{{ pharmacy.name }}</h3>
             <div class="pharmacy-badges">
-              <span class="badge delivery">Delivery</span>
               <span v-if="pharmacy.distance" class="badge distance">{{ pharmacy.distance.toFixed(1) }}km</span>
             </div>
           </div>
-          <div class="rating">
-            <div class="stars">★★★★★</div>
-            <span class="score">{{ pharmacy.rating }}</span>
-            <span class="reviews">({{ pharmacy.reviews }} reviews)</span>
-          </div>
           <div class="address">{{ pharmacy.address }}</div>
-          <div class="badges">
-            <span class="open-now">Open Now</span>
-            <span class="hours">{{ pharmacy.hours }}</span>
-          </div>
           <button class="order-button" @click="orderNow(pharmacy)">Order Now</button>
         </div>
       </div>
+    </div>
+    
+    <!-- Footer -->
+    <div class="footer">
+      <p>© {{ new Date().getFullYear() }} Pharmacy App</p>
     </div>
   </div>
 </template>
   
 <script>
-import pharmacyData from '@/pharmacy-data.json'
+import PharmacyApiService from '@/services/PharmacyApiService';
 
 export default {
   name: 'PharmacyList',
@@ -104,15 +89,14 @@ export default {
       selectedCity: 'All City',
       pharmacies: [],
       searchQuery: '',
-      activeCategory: 'medicines',
       activeDropdown: null,
-      selectedService: 'All Services',
-      selectedSorting: 'Rating',
-      activeFilters: ['Open Now'],
       userLocation: null,
       isLocationLoading: false,
       locationStatus: null,
-      maxDistance: 250 // Default 5km radius
+      maxDistance: 250, // Default 5km radius
+      isLoading: true, // Loading state for API
+      apiError: null, // Error message for API
+      apiUrl: 'http://127.0.0.1:8000/pharmacy_api/data' // Your actual API endpoint
     }
   },
   computed: {
@@ -147,8 +131,31 @@ export default {
     }
   },
   methods: {
+    // Fetch pharmacy data from API
+    fetchPharmacies() {
+      this.isLoading = true;
+      this.apiError = null;
+
+      PharmacyApiService.fetchPharmacies()
+        .then(pharmacies => {
+          this.pharmacies = pharmacies;
+          console.log('Loaded', this.pharmacies.length, 'pharmacies from API');
+          
+          // Calculate distances if user location is available
+          if (this.userLocation) {
+            this.updatePharmacyDistances();
+          }
+        })
+        .catch(error => {
+          console.error('Error fetching pharmacy data:', error);
+          this.apiError = 'Failed to load pharmacy data. Please try again.';
+        })
+        .finally(() => {
+          this.isLoading = false;
+        });
+    },
     orderNow(pharmacy) {
-      console.log('Order button clicked for pharmacy:', pharmacy.name, 'ID:', pharmacy.id)
+      console.log('Order button clicked for pharmacy:', pharmacy.name, 'ID:', pharmacy.id);
       // Navigate to medicine list with pharmacy information
       this.$router.push({
         name: 'MedicineList',
@@ -156,7 +163,7 @@ export default {
           pharmacyId: pharmacy.id,
           pharmacy: pharmacy
         }
-      })
+      });
     },
     toggleDropdown(dropdown) {
       if (this.activeDropdown === dropdown) {
@@ -272,34 +279,11 @@ export default {
     }
   },
   created() {
-    // Load pharmacy data when component is created
-    if (pharmacyData && pharmacyData.pharmacies) {
-      this.pharmacies = pharmacyData.pharmacies.map(pharmacy => {
-        // Ensure each pharmacy has an ID
-        if (!pharmacy.id) {
-          pharmacy.id = 'pharm' + Math.floor(Math.random() * 1000)
-          console.warn('Added missing ID to pharmacy:', pharmacy.name)
-        }
-        
-        // Use the pharmacy's latitude and longitude data
-        // The data is already in pharmacy-data.json
-        pharmacy.coordinates = {
-          lat: pharmacy.latitude || 23.8103,
-          lng: pharmacy.longitude || 90.4125
-        };
-        
-        return pharmacy
-      })
-      console.log('Loaded', this.pharmacies.length, 'pharmacies')
-      
-      // Location permission will be requested in the created hook
-    } else {
-      console.error('Pharmacy data not found or has incorrect format')
-      this.pharmacies = []
-    }
-    
     // Add event listener to close dropdowns when clicking outside
     document.addEventListener('click', this.closeDropdowns);
+    
+    // Fetch pharmacy data from API
+    this.fetchPharmacies();
     
     // Check if the browser supports geolocation
     if (navigator.geolocation) {
@@ -310,6 +294,9 @@ export default {
     } else {
       this.locationStatus = { type: 'error', message: 'Geolocation is not supported by your browser' };
     }
+    
+    // Update document title
+    document.title = 'Nearby Pharmacies';
   },
   beforeUnmount() {
     // Remove event listener when component is destroyed
@@ -317,7 +304,7 @@ export default {
   }
 }
 </script>
-  
+
 <style scoped>
 .pharmacy-app {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
@@ -325,32 +312,11 @@ export default {
   color: #fff;
   max-width: 480px;
   margin: 0 auto;
-}
-  
-.status-bar {
-  display: flex;
-  justify-content: space-between;
-  padding: 8px 16px;
-  font-size: 14px;
-}
-  
-.network {
-  display: flex;
-  gap: 4px;
-  align-items: center;
-}
-  
-.battery {
-  background-color: #fff;
-  color: #000;
-  border-radius: 8px;
-  padding: 0 4px;
+  padding: 0 8px;
 }
   
 .header {
-  padding: 5px;
-  margin-bottom: 0px;
-  padding-bottom: 0px;
+  padding: 8px 0;
 }
   
 .header h1 {
@@ -361,9 +327,9 @@ export default {
 
 .location-status {
   font-size: 12px;
-  padding: 6px 10px;
+  padding: 4px 8px;
   border-radius: 4px;
-  margin-bottom: 10px;
+  margin-bottom: 8px;
 }
 
 .location-status.info {
@@ -377,16 +343,27 @@ export default {
 .location-status.error {
   background-color: #e74c3c;
 }
+
+.control-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.filter-city {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
   
 .search-bar {
-  width: 85%;
-  margin-bottom: 12px;
-  height: 20px;
+  width: 100%;
 }
   
 .search-bar input {
   width: 100%;
-  padding: 10px;
+  padding: 8px;
   border-radius: 4px;
   border: none;
   background-color: #333;
@@ -394,22 +371,15 @@ export default {
   box-sizing: border-box;
 }
 
-.location-controls {
-  display: flex;
-  flex-direction: column;
-  padding: 0 8px 12px;
-  border-bottom: 1px solid #333;
-}
-
 .location-button {
-  background-color: #2d4e9a;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  padding: 8px 16px;
-  font-size: 14px;
+  padding: 6px 12px;
+  font-size: 12px;
   cursor: pointer;
-  margin-bottom: 8px;
+  border: none;
+  background-color: #333;
+  color: white;
+  border-radius: 4px;
+  white-space: nowrap;
 }
 
 .location-button:disabled {
@@ -417,60 +387,22 @@ export default {
   cursor: not-allowed;
 }
 
-.location-info {
-  display: flex;
-  flex-direction: column;
-  font-size: 12px;
-  color: #ccc;
-}
-
-.location-label {
-  margin-bottom: 4px;
-}
-
-.distance-slider {
-  width: 100%;
-  background-color: #333;
-  height: 4px;
-  outline: none;
-  -webkit-appearance: none;
-  border-radius: 2px;
-}
-
-.distance-slider::-webkit-slider-thumb {
-  -webkit-appearance: none;
-  width: 16px;
-  height: 16px;
-  border-radius: 50%;
-  background: #3aa757;
-  cursor: pointer;
-}
-
-.distance-slider::-moz-range-thumb {
-  width: 16px;
-  height: 16px;
-  border-radius: 50%;
-  background: #3aa757;
-  cursor: pointer;
-  border: none;
-}
-
 .loading-indicator {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 40px 0;
+  padding: 20px 0;
 }
 
 .loading-spinner {
-  width: 40px;
-  height: 40px;
+  width: 30px;
+  height: 30px;
   border: 3px solid #333;
   border-top: 3px solid #3aa757;
   border-radius: 50%;
   animation: spin 1s linear infinite;
-  margin-bottom: 16px;
+  margin-bottom: 12px;
 }
 
 @keyframes spin {
@@ -479,49 +411,9 @@ export default {
 }
 
 .no-results {
-  padding: 40px 20px;
+  padding: 20px;
   text-align: center;
   color: #ccc;
-}
-  
-.category-nav {
-  display: flex;
-  padding: 12px 8px;
-  gap: 16px;
-}
-  
-.category-item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 4px;
-}
-  
-.category-item.active {
-  color: #3aa757;
-}
-  
-.icon {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 32px;
-  height: 32px;
-  background-color: #333;
-  border-radius: 4px;
-  font-size: 16px;
-}
-  
-.icon.medicine-icon {
-  background-color: #3aa757;
-}
-  
-.filter-options {
-  display: flex;
-  justify-content: space-between;
-  padding: 8px;
-  border-bottom: 1px solid #333;
-  position: relative;
 }
   
 .filter-item {
@@ -533,7 +425,7 @@ export default {
   padding: 4px 8px;
   border-radius: 4px;
   position: relative;
-  transition: background-color 0.2s;
+  background-color: #333;
 }
   
 .down-arrow {
@@ -571,47 +463,29 @@ export default {
   background-color: #333;
 }
   
-.secondary-filters {
-  display: flex;
-  padding: 8px;
-  gap: 12px;
-  overflow-x: auto;
-  border-bottom: 1px solid #333;
-}
-  
-.filter-tag {
-  font-size: 12px;
-  white-space: nowrap;
-  padding: 2px 0;
-}
-  
-.filter-tag.active {
-  color: #3aa757;
-  border-bottom: 2px solid #3aa757;
-}
-  
-.filter-tag.featured {
-  color: #f90;
-}
-  
 .pharmacy-list {
-  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }
   
 .pharmacy-item {
   display: flex;
-  margin-bottom: 16px;
-  padding-bottom: 16px;
-  border-bottom: 1px solid #333;
+  background-color: #1a1a1a;
+  border: 1px solid #333;
+  border-radius: 6px;
+  padding: 6px;
+  box-shadow: none;
 }
   
 .pharmacy-img {
-  width: 80px;
-  height: 80px;
+  width: 50px;
+  height: 50px;
   overflow: hidden;
   border-radius: 4px;
-  margin-right: 12px;
+  margin-right: 8px;
   background-color: #333;
+  flex-shrink: 0;
 }
   
 .placeholder-img {
@@ -620,33 +494,41 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 40px;
+  font-size: 24px;
+  object-fit: cover;
 }
   
 .pharmacy-info {
   flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-width: 0;
 }
   
 .pharmacy-header {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 4px;
+  align-items: center;
+  margin-bottom: 2px;
 }
   
 .pharmacy-header h3 {
   font-size: 14px;
   margin: 0;
-  font-weight: bold;
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
   
 .pharmacy-badges {
-  display: flex;
-  gap: 4px;
+  flex-shrink: 0;
 }
   
 .badge {
   font-size: 10px;
-  padding: 2px 4px;
+  padding: 1px 4px;
   border-radius: 2px;
   background-color: #3aa757;
   color: #fff;
@@ -656,81 +538,39 @@ export default {
   background-color: #2d4e9a;
 }
   
-.rating {
-  display: flex;
-  align-items: center;
-  gap: 4px;
-  font-size: 12px;
-  margin-bottom: 4px;
-}
-  
-.stars {
-  color: #f90;
-}
-  
-.score {
-  color: #f90;
-}
-  
 .address {
-  font-size: 12px;
+  font-size: 11px;
   color: #ccc;
-  margin-bottom: 8px;
-  line-height: 1.4;
+  margin-bottom: 4px;
+  line-height: 1.2;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
-  
-.badges {
-  display: flex;
-  gap: 8px;
-  font-size: 10px;
-  margin-bottom: 8px;
-}
-  
-.badges span {
-  background-color: #333;
-  padding: 2px 4px;
-  border-radius: 2px;
-}
-  
-.open-now {
-  color: #3aa757;
-}
-  
-.services {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  margin-bottom: 12px;
-}
-  
-.service-pill {
-  background-color: #333;
-  padding: 2px 8px;
-  border-radius: 12px;
-  font-size: 10px;
-  color: #ccc;
-}
-  
+
 .order-button {
   background-color: #3aa757;
   color: white;
   border: none;
   border-radius: 4px;
-  padding: 8px 16px;
-  font-size: 14px;
+  padding: 4px 8px;
+  font-size: 11px;
   font-weight: bold;
   cursor: pointer;
+  transition: background-color 0.3s ease;
+  align-self: flex-start;
+}
+
+.order-button:hover {
+  background-color: #2a9a47;
 }
 
 .footer {
-  background-color: #000000;
   text-align: center;
-  padding: 20px;
-  margin-top: 40px;
-  font-size: 14px;
-}
-  
-.footer p {
-  margin: 5px 0;
+  padding: 12px 0;
+  margin-top: 16px;
+  font-size: 12px;
+  color: #999;
+  border-top: 1px solid #333;
 }
 </style>

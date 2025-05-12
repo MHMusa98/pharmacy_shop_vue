@@ -3,46 +3,32 @@
 <template>
   <div class="medicine-list-view">
     <div class="header">
-      <!-- <div class="back-button" @click="goBack">
-        <span>&larr;</span>
-      </div> -->
-      <!-- <h1>{{ localSelectedPharmacy.name || selectedPharmacy.name }} - Medicines</h1> -->
        <h1>Search Medicines</h1>
     </div>
-
-    <!-- Debug info - remove in production -->
-    <!-- <div class="debug-info" v-if="debugMode">
-      <p>Selected Pharmacy ID: {{ selectedPharmacyId }}</p>
-      <p>Total Medicines Loaded: {{ allMedicines.length }}</p>
-      <p>Filtered Medicines: {{ medicines.length }}</p>
-      <button @click="loadAllMedicines">Show All Medicines</button>
-    </div> -->
-
     <div class="search-bar">
       <input type="text" placeholder="Search medicines..." v-model="searchQuery" />
     </div>
 
-    <!-- <div class="category-filters" v-if="categories.length > 0">
-      <div 
-        v-for="(category, index) in categories" 
-        :key="index"
-        :class="['category-pill', selectedCategory === category ? 'active' : '']"
-        @click="selectedCategory = category"
-      >
-        {{ category }}
-      </div>
-      <div class="category-pill" @click="selectedCategory = null">All</div>
-    </div> -->
+    <!-- Loading indicator -->
+    <div class="loading-message" v-if="loading">
+      <p>Loading medicines...</p>
+    </div>
+
+    <!-- Error message -->
+    <div class="error-message" v-else-if="error">
+      <p>{{ error }}</p>
+      <button @click="fetchMedicines" class="load-all-button">Try Again</button>
+    </div>
 
     <!-- No medicines message -->
-    <div class="no-medicines" v-if="filteredMedicines.length === 0">
-      <p>No medicines found for this pharmacy.</p>
-      <button @click="loadAllMedicines" class="load-all-button">Show All Available Medicines</button>
+    <div class="no-medicines" v-else-if="filteredMedicines.length === 0">
+      <p>No medicines found matching your search.</p>
+      <button @click="searchQuery = ''" class="load-all-button">Clear Search</button>
     </div>
 
     <div class="medicine-grid" v-else>
       <div 
-        v-for="medicine in filteredMedicines" 
+        v-for="medicine in paginatedMedicines" 
         :key="medicine.id" 
         class="medicine-card"
       >
@@ -52,26 +38,44 @@
         <div class="medicine-info">
           <h3>{{ medicine.name }}</h3>
           <div class="medicine-meta">
-            <span class="category">{{ medicine.category }}</span>
-            <span class="price">${{ medicine.price.toFixed(2) }}</span>
+            <span class="medicine-subinfo">{{ medicine.generic }} || {{ medicine.company }}</span>
+            <span class="price">${{ parseFloat(medicine.tp_amount || 0).toFixed(2) }}</span>
           </div>
-          <p class="description">{{ medicine.description }}</p>
-          <div>
-            <p class="medicine_quantity_details">10 Tablets (1 strips)</p>
-          </div>
+
           <div class="medicine-actions">
-            <div class="quantity-selector">
-              <button @click="decreaseQuantity(medicine)">-</button>
-              <span>{{ getQuantity(medicine) }}</span>
-              <button @click="increaseQuantity(medicine)">+</button>
+            <div class="left-actions">
+              <div class="quantity-selector">
+                <button @click="decreaseQuantity(medicine)">-</button>
+                <span>{{ getQuantity(medicine) }}</span>
+                <button @click="increaseQuantity(medicine)">+</button>
+              </div>
               <p class="medicine_quantity">Strips</p>
+              <p class="medicine_quantity_details">10 Tab:1 strips</p>
             </div>
-            <button class="add-to-cart" @click="addToCart(medicine)">
-              Add to Cart
-            </button>
+
+            <button class="add-to-cart" @click="addToCart(medicine)">Add to Cart</button>
           </div>
         </div>
       </div>
+    </div>
+
+    <!-- Pagination controls -->
+    <div class="pagination-controls" v-if="totalPages > 1">
+      <button 
+        @click="currentPage = Math.max(1, currentPage - 1)" 
+        :disabled="currentPage === 1"
+        class="pagination-button"
+      >
+        Previous
+      </button>
+      <span class="page-indicator">{{ currentPage }} / {{ totalPages }}</span>
+      <button 
+        @click="currentPage = Math.min(totalPages, currentPage + 1)" 
+        :disabled="currentPage === totalPages"
+        class="pagination-button"
+      >
+        Next
+      </button>
     </div>
 
     <div class="cart-preview" v-if="cartItems.length > 0">
@@ -79,14 +83,15 @@
         <span>{{ totalItems }} items</span>
         <span class="total-price">${{ totalPrice.toFixed(2) }}</span>
       </div>
-      <button class="checkout-button" @click="proceedToCheckout">Proceed to Checkout</button>
+      <div class="cart-buttons">
+        <button class="clear-cart-button" @click="clearCart">Clear Cart</button>
+        <button class="checkout-button" @click="proceedToCheckout">Proceed to Checkout</button>
+      </div>
     </div>
   </div>
 </template>
   
 <script>
-import medicineData from '@/medicine-data.json'
-  
 export default {
   name: 'MedicineList',
   props: {
@@ -102,13 +107,13 @@ export default {
   },
   data() {
     return {
-      allMedicines: [],
       medicines: [],
       searchQuery: '',
-      selectedCategory: null,
       cartItems: [],
-      categories: [],
-      debugMode: true, // Set to false in production
+      loading: true,
+      error: null,
+      currentPage: 1,
+      itemsPerPage: 20,
       localSelectedPharmacy: {}
     }
   },
@@ -121,14 +126,8 @@ export default {
         const query = this.searchQuery.toLowerCase()
         filtered = filtered.filter(medicine => 
           medicine.name.toLowerCase().includes(query) || 
-          medicine.description.toLowerCase().includes(query)
-        )
-      }
-  
-      // Filter by category
-      if (this.selectedCategory) {
-        filtered = filtered.filter(medicine => 
-          medicine.category === this.selectedCategory
+          medicine.generic.toLowerCase().includes(query) ||
+          medicine.company.toLowerCase().includes(query)
         )
       }
   
@@ -138,12 +137,52 @@ export default {
       return this.cartItems.reduce((total, item) => total + item.quantity, 0)
     },
     totalPrice() {
-      return this.cartItems.reduce((total, item) => total + (item.medicine.price * item.quantity), 0)
+      return this.cartItems.reduce((total, item) => 
+        total + (parseFloat(item.medicine.tp_amount || 0) * item.quantity), 0)
+    },
+    totalPages() {
+      return Math.ceil(this.filteredMedicines.length / this.itemsPerPage)
+    },
+    paginatedMedicines() {
+      const start = (this.currentPage - 1) * this.itemsPerPage
+      const end = start + this.itemsPerPage
+      return this.filteredMedicines.slice(start, end)
     }
   },
   methods: {
-    goBack() {
-      this.$router.go(-1)
+    fetchMedicines() {
+      this.loading = true
+      this.error = null
+      
+      fetch('http://127.0.0.1:8000/pharmacy_api/medicine_list')
+        .then(response => {
+          if (!response.ok) {
+            throw new Error('Network response was not ok')
+          }
+          return response.json()
+        })
+        .then(data => {
+          if (data.status === 'success') {
+            // Process the medicine list to ensure all have proper price values
+            this.medicines = data.medicine_list.map(medicine => {
+              return {
+                ...medicine,
+                // Ensure tp_amount is a string that can be parsed to a number
+                tp_amount: medicine.tp_amount ? String(medicine.tp_amount) : "0.00"
+              }
+            })
+            console.log('Medicines loaded:', this.medicines.length)
+          } else {
+            throw new Error(data.message || 'Failed to load medicines')
+          }
+        })
+        .catch(error => {
+          console.error('Error fetching medicines:', error)
+          this.error = `Failed to load medicines: ${error.message}`
+        })
+        .finally(() => {
+          this.loading = false
+        })
     },
     getQuantity(medicine) {
       const cartItem = this.cartItems.find(item => item.medicine.id === medicine.id)
@@ -174,7 +213,6 @@ export default {
       }
     },
     addToCart(medicine) {
-      //this.//increaseQuantity(medicine)
       const existingItem = this.cartItems.find(item => item.medicine.id === medicine.id)
       if (!existingItem) {
         this.cartItems.push({
@@ -183,16 +221,6 @@ export default {
         })     
       }
     },
-    loadAllMedicines() {
-      // Show all medicines regardless of pharmacy
-      this.medicines = [...this.allMedicines]
-      this.updateCategories()
-    },
-    updateCategories() {
-      // Extract unique categories from current medicines
-      const uniqueCategories = new Set(this.medicines.map(medicine => medicine.category))
-      this.categories = Array.from(uniqueCategories)
-    },
     proceedToCheckout() {
       // Only proceed if cart has items
       if (this.cartItems.length === 0) {
@@ -200,62 +228,73 @@ export default {
         return
       }
       
+      // Make sure cartItems have proper price data
+      const verifiedCartItems = this.cartItems.map(item => {
+        // Ensure price is a valid number
+        if (!item.medicine.tp_amount || isNaN(parseFloat(item.medicine.tp_amount))) {
+          item.medicine.tp_amount = "0.00"
+        }
+        return item
+      })
+      
       // Store cart items and pharmacy in session storage to persist between routes
-      sessionStorage.setItem('cartItems', JSON.stringify(this.cartItems))
+      sessionStorage.setItem('cartItems', JSON.stringify(verifiedCartItems))
       sessionStorage.setItem('pharmacy', JSON.stringify(this.localSelectedPharmacy.id ? this.localSelectedPharmacy : this.selectedPharmacy))
+      
+      // Log for debugging
+      console.log('Proceeding to checkout with items:', verifiedCartItems)
+      console.log('Using route:', '/checkout')
       
       // Navigate to checkout page
       this.$router.push('/checkout')
+    },
+    
+    clearCart() {
+      if (this.cartItems.length === 0) {
+        alert('Cart is already empty')
+        return
+      }
+      
+      if (confirm('Are you sure you want to clear your cart?')) {
+        this.cartItems = []
+        sessionStorage.removeItem('cartItems')
+      }
     }
   },
   created() {
-    // Get params from route if not provided as props
+    // Get params from route if available
     const routePharmacyId = this.$route.params.pharmacyId
-    const routePharmacy = this.$route.params.pharmacy
+    const pharmacyName = this.$route.params.pharmacy || "All Medicines"
     
-    // Use either props or route params
-    const currentPharmacyId = this.selectedPharmacyId || routePharmacyId
-    
-    // Initialize localSelectedPharmacy with the prop data
-    this.localSelectedPharmacy = { ...this.selectedPharmacy }
-    
-    // Update local selectedPharmacy if routePharmacy exists
-    if (routePharmacy && !this.selectedPharmacy.id) {
-      this.localSelectedPharmacy = { ...routePharmacy }
-      this.$emit('update:selectedPharmacy', this.localSelectedPharmacy)
+    // Initialize localSelectedPharmacy with the prop data or route params
+    this.localSelectedPharmacy = { 
+      ...this.selectedPharmacy,
+      name: pharmacyName 
     }
     
-    console.log('Using pharmacy ID:', currentPharmacyId)
-    console.log('Using pharmacy:', this.localSelectedPharmacy)
+    console.log('Current route:', this.$route.path)
+    console.log('Pharmacy info:', pharmacyName, routePharmacyId)
     
-    // Load all medicine data first
-    if (medicineData && medicineData.medicines) {
-      this.allMedicines = medicineData.medicines
-      
-      // Check if the selected pharmacy ID matches any medicines
-      if (currentPharmacyId) {
-        this.medicines = this.allMedicines.filter(medicine => 
-          medicine.pharmacyId === currentPharmacyId
-        )
-        
-        console.log('Selected Pharmacy ID:', currentPharmacyId)
-        console.log('Total Medicines:', this.allMedicines.length)
-        console.log('Filtered Medicines:', this.medicines.length)
-        
-        // If no medicines found for this pharmacy, just load all
-        if (this.medicines.length === 0) {
-          console.warn('No medicines found for pharmacy ID:', currentPharmacyId)
-          // Don't auto-load all medicines, let the user click the button instead
-        }
-      } else {
-        // No pharmacy ID, load all medicines
-        this.medicines = [...this.allMedicines]
-        console.warn('No pharmacy ID provided, loading all medicines')
+    // Update document title to reflect the current view
+    document.title = `Medicine List - ${pharmacyName}`
+    
+    // Fetch medicines from API
+    this.fetchMedicines()
+    
+    // Check if there are cart items in session storage
+    const storedCartItems = sessionStorage.getItem('cartItems')
+    if (storedCartItems) {
+      try {
+        this.cartItems = JSON.parse(storedCartItems)
+      } catch (e) {
+        console.error('Error parsing stored cart items:', e)
       }
-      
-      this.updateCategories()
-    } else {
-      console.error('Medicine data not found or has incorrect format')
+    }
+  },
+  watch: {
+    // Reset to first page when search query changes
+    searchQuery() {
+      this.currentPage = 1
     }
   }
 }
@@ -270,7 +309,7 @@ export default {
   margin: 0 auto;
   min-height: 100vh;
   position: relative;
-  padding-bottom: 60px;
+  padding-bottom: 80px; /* Increased to accommodate pagination */
 }
   
 .header {
@@ -310,46 +349,26 @@ export default {
   box-sizing: border-box;
 }
   
-.category-filters {
-  display: flex;
-  padding: 8px 16px;
-  gap: 8px;
-  overflow-x: auto;
-  border-bottom: 1px solid #333;
-}
-  
-.category-pill {
-  background-color: #333;
-  color: #ccc;
-  padding: 6px 12px;
-  border-radius: 16px;
-  font-size: 12px;
-  white-space: nowrap;
-  cursor: pointer;
-}
-  
-.category-pill.active {
-  background-color: #3aa757;
-  color: #fff;
-}
-  
 .medicine-grid {
-  padding: 16px;
+  padding: 8px;
 }
   
 .medicine-card {
   display: flex;
-  margin-bottom: 20px;
-  padding-bottom: 20px;
-  border-bottom: 1px solid #333;
+  background-color: #1a1a1a;
+  border: 1px solid #444;
+  border-radius: 7px;
+  margin: 5px;
+  padding: 5px 5px 5px 2px;
+  gap: 0.7rem; /* Reduced gap for more compact layout */
 }
   
 .medicine-img {
-  width: 80px;
-  height: 80px;
+  width: 60px; /* Made slightly smaller */
+  height: 60px; /* Made slightly smaller */
   overflow: hidden;
   border-radius: 4px;
-  margin-right: 12px;
+  margin-right: 8px; /* Reduced margin */
   background-color: #333;
 }
   
@@ -359,39 +378,45 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 40px;
+  font-size: 32px; /* Slightly smaller font */
 }
   
 .medicine-info {
   flex: 1;
+  transform: translateY(-5px);
 }
-  
+
+.medicine-subinfo {
+  color: #c7c09c;
+  font-size: 11px; /* Smaller font size */
+  font-style: italic;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 190px; /* Constrain width */
+  display: inline-block;
+}
+
 .medicine-info h3 {
-  margin: 0 0 8px 0;
-  font-size: 16px;
+  margin: 0 0 6px 0; /* Reduced margin */
+  font-size: 15px; /* Slightly smaller */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 230px;
 }
   
 .medicine-meta {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 8px;
-  font-size: 14px;
-}
-  
-.category {
-  color: #ccc;
+  margin-bottom: 6px; /* Reduced margin */
+  font-size: 13px; /* Slightly smaller */
 }
   
 .price {
   font-weight: bold;
   color: #3aa757;
-}
-  
-.description {
-  font-size: 12px;
-  color: #ccc;
-  margin: 0 0 8px 0;  
-  line-height: 1.4;
+  margin-left: auto;
 }
   
 .medicine-actions {
@@ -399,38 +424,75 @@ export default {
   justify-content: space-between;
   align-items: center;
 }
+
+.left-actions {
+  display: flex;
+  align-items: center;
+  gap: 4px; /* Reduced gap */
+  flex-wrap: wrap;
+}
+
+.medicine_quantity,.medicine_quantity_details {
+  font-size: 10px; /* Smaller font */
+  margin: 0;
+  padding: 0 2px; /* Reduced padding */
+  text-align: center;
+  color: #ccc;
+}
+
+.medicine_quantity_details {
+  font-size: 9px; /* Even smaller font */
+  color: #999;
+  text-align: left;
+  transform: translateY(0);
+}
+
+.medicine-actions > * {
+  margin-top: -5px;
+}
   
 .quantity-selector {
   display: flex;
   align-items: center;
+  gap: 2px; /* Reduced gap */
+  font-size: 11px; /* Smaller font */
+  height: 22px; /* Slightly shorter */
 }
-  
+
 .quantity-selector button {
-  width: 24px;
-  height: 24px;
+  width: 22px; /* Slightly smaller */
+  height: 22px; /* Slightly smaller */
   background-color: #333;
   color: #fff;
   border: none;
   border-radius: 4px;
-  font-size: 16px;
+  font-size: 14px; /* Smaller font */
   cursor: pointer;
 }
   
 .quantity-selector span {
-  padding: 0 12px;
+  padding: 0 8px; /* Reduced padding */
 }
   
 .add-to-cart {
   background-color: #3aa757;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  padding: 6px 12px;
-  font-size: 12px;
+  color: rgb(255, 255, 255);
+  border: 4px solid #3aa757; /* Slightly thinner border */
+  border-radius: 6px; /* Slightly less rounded */
+  padding: 4px 10px; /* Reduced padding */
+  font-size: 9px;
   font-weight: bold;
   cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+  box-sizing: border-box;
 }
-  
+
+.add-to-cart:hover,.checkout-button:hover {
+  background-color: #308de4;
+  border-color: #2f74b4;
+  color: #fff;
+}
+
 .cart-preview {
   position: fixed;
   bottom: 0;
@@ -444,6 +506,7 @@ export default {
   max-width: 480px;
   margin: 0 auto;
   border-top: 1px solid #333;
+  z-index: 15; /* Ensure it's above pagination */
 }
   
 .cart-info {
@@ -456,27 +519,44 @@ export default {
   font-size: 16px;
   color: #3aa757;
 }
-  
+
+.cart-buttons {
+  display: flex;
+  gap: 8px;
+}
+
 .checkout-button {
   background-color: #3aa757;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  padding: 8px 16px;
-  font-size: 14px;
+  color: rgb(255, 255, 255);
+  border: 5px solid #3aa757;
+  border-radius: 8px;
+  padding: 6px 14px;
+  font-size: 9px;
   font-weight: bold;
   cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+  box-sizing: border-box;
+}
+
+.clear-cart-button {
+  background-color: #e74c3c;
+  color: white;
+  border: 5px solid #e74c3c;
+  border-radius: 8px;
+  padding: 6px 14px;
+  font-size: 9px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+  box-sizing: border-box;
+}
+
+.clear-cart-button:hover {
+  background-color: #c0392b;
+  border-color: #c0392b;
 }
   
-.debug-info {
-  background-color: #333;
-  padding: 10px;
-  margin: 10px 16px;
-  border-radius: 4px;
-  font-size: 12px;
-}
-  
-.no-medicines {
+.no-medicines, .loading-message, .error-message {
   padding: 40px 16px;
   text-align: center;
   color: #ccc;
@@ -493,20 +573,45 @@ export default {
   cursor: pointer;
 }
 
-.medicine_quantity_details {
-  font-size: 12px;
-  font-weight: bold;
+.medicine_quantity {
+  font-size: 11px;
   color: #ccc;
-  margin: auto;
-  text-align: left;
+  padding-bottom: 10px; /* Slightly reduced */
+  text-align: center;
+  transform: translateY(5px);
 }
 
-.medicine_quantity {
-  font-size: 12px;
+/* Pagination styles */
+.pagination-controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 16px 0;
+  padding: 10px 0;
+  gap: 16px;
+}
+
+.pagination-button {
+  background-color: #333;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 6px 12px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.pagination-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.pagination-button:hover:not(:disabled) {
+  background-color: #444;
+}
+
+.page-indicator {
+  font-size: 14px;
   color: #ccc;
-  margin-top: 6px;
-  padding-top: 4px;
-  padding-left: 4px;
-  text-align: center;
 }
 </style>

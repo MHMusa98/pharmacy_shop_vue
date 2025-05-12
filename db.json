@@ -27,9 +27,7 @@
       "payment": {
         "method": "cash",
         "subtotal": 100.12,
-        "deliveryFee": 5,
-        "tax": 5.006,
-        "total": 110.126
+        "total": 100.12
       },
       "orderDate": "2025-05-03T04:19:23.835Z",
       "deliveryDate": "2025-05-03",
@@ -81,6 +79,41 @@
         "total": 109.643
       },
       "orderDate": "2025-05-03T04:24:08.281Z",
+      "deliveryDate": "2025-05-03",
+      "status": "pending"
+    },
+    {
+      "id": "4239",
+      "orderId": "ORD-229135",
+      "customer": {
+        "mobileNumber": "sdvgsds",
+        "deliveryAddress": "dsdv ss"
+      },
+      "pharmacy": {},
+      "items": [
+        {
+          "medicineId": "med100",
+          "medicineName": "Cetirizine 10mg",
+          "price": 9.95,
+          "quantity": 1,
+          "subtotal": 9.95
+        },
+        {
+          "medicineId": "med129",
+          "medicineName": "Omeprazole 20mg",
+          "price": 17.77,
+          "quantity": 1,
+          "subtotal": 17.77
+        }
+      ],
+      "payment": {
+        "method": "mobile",
+        "subtotal": 27.72,
+        "deliveryFee": 5,
+        "tax": 1.3860000000000001,
+        "total": 34.106
+      },
+      "orderDate": "2025-05-03T09:39:59.744Z",
       "deliveryDate": "2025-05-03",
       "status": "pending"
     }
