@@ -228,12 +228,16 @@ export default {
         return
       }
       
-      // Make sure cartItems have proper price data
+      // Make sure cartItems have proper price data and add price property compatible with CheckoutNow.vue
       const verifiedCartItems = this.cartItems.map(item => {
-        // Ensure price is a valid number
+        // Ensure tp_amount is a valid number
         if (!item.medicine.tp_amount || isNaN(parseFloat(item.medicine.tp_amount))) {
           item.medicine.tp_amount = "0.00"
         }
+        
+        // Add price property that CheckoutNow.vue expects
+        item.medicine.price = parseFloat(item.medicine.tp_amount || 0)
+        
         return item
       })
       

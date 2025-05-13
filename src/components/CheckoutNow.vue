@@ -14,43 +14,39 @@
       <div class="cart-items">
         <div v-for="item in localCartItems" :key="item.medicine.id" class="cart-item">
           <div class="item-details">
-            <h4>{{ item.medicine.name }}</h4>
-            <div class="item-meta">
-              <span class="category">{{ item.medicine.category }}</span>
-              
-            </div>
-            
-            <div class="item-meta2">
+            <div class="item-info">
+              <h4>{{ item.medicine.name }}</h4>
+              <span class="category">{{ item.medicine.category || 'Medicine' }}</span>
               <span class="medicine_quantity_details">10 Tablets (1 strips)</span>
-              <span class="price">${{ item.medicine.price.toFixed(2) }}</span>
             </div>
-          </div>
-          <div class="item-quantity">
-            <div class="quantity-selector">
-              <button @click="decreaseQuantity(item.medicine)">-</button>
-              <span>{{ item.quantity }}</span>
-              <button @click="increaseQuantity(item.medicine)">+</button>
-              <p class="medicine_quantity">Strips</p>
+            <div class="item-price">
+              <span class="price">${{ parseFloat(item.medicine.price || 0).toFixed(2) }}</span>
+              <div class="quantity-selector">
+                <button @click="decreaseQuantity(item.medicine)">-</button>
+                <span>{{ item.quantity }}</span>
+                <button @click="increaseQuantity(item.medicine)">+</button>
+              </div>
+              <span class="item-total">${{ (parseFloat(item.medicine.price || 0) * item.quantity).toFixed(2) }}</span>
             </div>
-            <div class="item-total">${{ (item.medicine.price * item.quantity).toFixed(2) }}</div>
           </div>
         </div>
       </div>
 
       <!-- Order totals -->
+      
+        <!-- <div class="totals-row">
+          <div class="totals-label">
+            <span>Subtotal</span>
+            <span>Delivery Fee</span>
+            <span>Tax</span>
+          </div>
+          <div class="totals-amount">
+            <span>${{ subtotal.toFixed(2) }}</span>
+            <span>${{ deliveryFee.toFixed(2) }}</span>
+            <span>${{ tax.toFixed(2) }}</span>
+          </div>
+        </div> -->
       <div class="order-totals">
-        <div class="subtotal">
-          <span>Subtotal</span>
-          <span>${{ subtotal.toFixed(2) }}</span>
-        </div>
-        <div class="delivery-fee">
-          <span>Delivery Fee</span>
-          <span>${{ deliveryFee.toFixed(2) }}</span>
-        </div>
-        <div class="tax">
-          <span>Tax</span>
-          <span>${{ tax.toFixed(2) }}</span>
-        </div>
         <div class="total">
           <span>Total</span>
           <span>${{ total.toFixed(2) }}</span>
@@ -58,52 +54,54 @@
       </div>
     </div>
 
-    <!-- Delivery Information -->
-    <div class="delivery-info">
-      <h2>Delivery Information</h2>
-      <div class="contact-number">
-        <label>Mobile Number</label>
-        <div>
+    <div class="sections-container">
+      <!-- Delivery Information -->
+      <div class="delivery-info">
+        <h2>Delivery Information</h2>
+        <div class="form-group">
+          <label>Mobile Number</label>
           <input type="tel" v-model="mobileNumber" placeholder="Enter your mobile number"/>
         </div>
+        <div class="form-group">
+          <label>Shipping Address</label>
+          <textarea 
+            v-model="deliveryAddress" 
+            placeholder="Enter your shipping address"
+            rows="2"
+          ></textarea>
+        </div>
       </div>
-      <div class="address-field">
-        <label>Shipping Address</label>
-        <textarea 
-          v-model="deliveryAddress" 
-          placeholder="Enter your shipping address"
-          rows="3"
-        ></textarea>
-      </div>
-    </div>
 
-    <!-- Payment Method -->
-    <div class="payment-method">
-      <h2>Payment Method</h2>
-      <div class="payment-options">
-        <div 
-          class="payment-option" 
-          :class="{ active: paymentMethod === 'cash' }"
-          @click="paymentMethod = 'cash'"
-        >
-          <div class="payment-icon">💵</div>
-          <span>Cash on Delivery</span>
-        </div>
-        <div 
-          class="payment-option" 
-          :class="{ active: paymentMethod === 'card' }"
-          @click="paymentMethod = 'card'"
-        >
-          <div class="payment-icon">💳</div>
-          <span>Credit/Debit Card</span>
-        </div>
-        <div 
-          class="payment-option" 
-          :class="{ active: paymentMethod === 'mobile' }"
-          @click="paymentMethod = 'mobile'"
-        >
-          <div class="payment-icon">📱</div>
-          <span>Mobile Banking</span>
+      <!-- Payment Method -->
+      <div class="payment-method">
+        <h2>Payment Method</h2>
+        <div class="payment-options">
+          <div 
+            class="payment-option" 
+            :class="{ active: paymentMethod === 'cash' }"
+            @click="paymentMethod = 'cash'"
+          >
+            <div class="payment-icon">💵</div>
+            <span>Cash on Delivery</span>
+          </div>
+          <!-- <div 
+            class="payment-option" 
+            :class="{ active: paymentMethod === 'card' }"
+            @click="paymentMethod = 'card'"
+          >
+            <div class="payment-icon">💳</div>
+            <span>Card</span>
+          </div> -->
+          <div 
+            class="payment-option" 
+            :class="{ active: paymentMethod === 'mobile' }"
+            @click="paymentMethod = 'mobile'"
+          >
+            <div class="payment-icon">
+              <img class="payment-icon" src="/image/BKash-Icon-Logo.svg" alt="Bkash">
+            </div>
+            <span>Bkash</span>
+          </div>
         </div>
       </div>
     </div>
@@ -120,7 +118,7 @@
       <div class="modal-content">
         <div class="success-icon">✅</div>
         <h2>Order Placed Successfully!</h2>
-        <p>Your order has been confirmed and will be delivered on {{ formattedDeliveryDate }}</p>
+        <p>Your order will be delivered on {{ formattedDeliveryDate }}</p>
         <p class="order-id">Order ID: {{ orderId }}</p>
         <button class="close-button" @click="closeModal">Continue Shopping</button>
       </div>
@@ -169,13 +167,13 @@ export default {
       errorMessage: '',
       orderId: '',
       isSubmitting: false,
-      apiBaseUrl: apiConfig.apiBaseUrl
+      apiBaseUrl: apiConfig?.apiBaseUrl || 'http://localhost:3000/api'
     }
   },
   computed: {
     subtotal() {
       return this.localCartItems.reduce((total, item) => 
-        total + (item.medicine.price * item.quantity), 0)
+        total + (parseFloat(item.medicine.price || 0) * item.quantity), 0)
     },
     tax() {
       return this.subtotal * this.taxRate
@@ -245,9 +243,9 @@ export default {
           items: this.localCartItems.map(item => ({
             medicineId: item.medicine.id,
             medicineName: item.medicine.name,
-            price: item.medicine.price,
+            price: parseFloat(item.medicine.price || 0),
             quantity: item.quantity,
-            subtotal: item.medicine.price * item.quantity
+            subtotal: parseFloat(item.medicine.price || 0) * item.quantity
           })),
           payment: {
             method: this.paymentMethod,
@@ -338,10 +336,22 @@ export default {
       
       if (storedCartItems) {
         try {
-          this.localCartItems = JSON.parse(storedCartItems)
+          const parsedItems = JSON.parse(storedCartItems);
+          
+          // Ensure each medicine has a price property
+          this.localCartItems = parsedItems.map(item => {
+            if (!item.medicine.price && item.medicine.tp_amount) {
+              item.medicine.price = parseFloat(item.medicine.tp_amount);
+            } else if (!item.medicine.price) {
+              item.medicine.price = 0;
+            }
+            return item;
+          });
+          
           console.log('Loaded cart items from session storage:', this.localCartItems.length)
         } catch (error) {
           console.error('Error parsing cart items from session storage:', error)
+          this.localCartItems = [];
         }
       }
       
@@ -351,22 +361,38 @@ export default {
           console.log('Loaded pharmacy from session storage:', this.localPharmacy.name)
         } catch (error) {
           console.error('Error parsing pharmacy from session storage:', error)
+          this.localPharmacy = {};
         }
       }
     }
   },
   created() {
     // Initialize local copies of props
-    this.localCartItems = [...this.cartItems]
-    this.localPharmacy = { ...this.pharmacy }
+    this.localCartItems = [...this.cartItems].map(item => {
+      // Ensure price property exists
+      if (!item.medicine.price && item.medicine.tp_amount) {
+        item.medicine.price = parseFloat(item.medicine.tp_amount);
+      } else if (!item.medicine.price) {
+        item.medicine.price = 0;
+      }
+      return item;
+    });
+    
+    this.localPharmacy = { ...this.pharmacy };
     
     // Load data from session storage
-    this.loadDataFromSessionStorage()
+    this.loadDataFromSessionStorage();
     
     // If still no cart items are available, redirect back
     if (!this.localCartItems || this.localCartItems.length === 0) {
-      console.warn('No cart items found, returning to pharmacy list')
-      this.$router.push('/')
+      console.warn('No cart items found, returning to pharmacy list');
+      this.$router.push('/');
+    }
+    
+    // Set a default for apiBaseUrl in case apiConfig import fails
+    if (!this.apiBaseUrl) {
+      console.warn('API base URL not found in config, using default');
+      this.apiBaseUrl = 'http://localhost:3000/api';
     }
   }
 }
@@ -381,14 +407,14 @@ export default {
   margin: 0 auto;
   min-height: 100vh;
   position: relative;
-  padding-bottom: 80px; /* Space for the place order button */
+  padding-bottom: 70px; /* Reduced space for the place order button */
 }
 
 .header {
   display: flex;
   color: #3aa757;
   align-items: center;
-  padding: 16px;
+  padding: 12px 16px; /* Reduced padding */
   position: sticky;
   top: 0;
   background-color: #000;
@@ -396,210 +422,165 @@ export default {
   border-bottom: 1px solid #333;
 }
 
-.back-button {
-  margin-right: 16px;
-  font-size: 24px;
-  cursor: pointer;
-}
-
 .header h1 {
   margin: 0;
-  font-size: 20px;
+  font-size: 18px; /* Smaller font */
   flex: 1;
 }
 
 h2 {
-  font-size: 18px;
-  margin: 16px 0;
+  font-size: 16px; /* Smaller heading */
+  margin: 12px 0 8px; /* Reduced margins */
   padding: 0 16px;
 }
 
 .order-summary, .delivery-info, .payment-method {
-  margin-bottom: 24px;
+  margin-bottom: 16px; /* Reduced margin */
   border-bottom: 1px solid #333;
-  padding-bottom: 16px;
-}
-
-.pharmacy-info {
-  display: flex;
-  padding: 0 16px 16px;
-  border-bottom: 1px solid #333;
-  margin-bottom: 16px;
-}
-
-.pharmacy-img {
-  width: 60px;
-  height: 60px;
-  overflow: hidden;
-  border-radius: 4px;
-  margin-right: 12px;
-  background-color: #333;
-}
-
-.placeholder-img {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 30px;
-}
-
-.pharmacy-info h3 {
-  margin: 0 0 8px 0;
-  font-size: 16px;
-}
-
-.address {
-  font-size: 12px;
-  color: #ccc;
-  margin: 0;
+  padding-bottom: 12px; /* Reduced padding */
 }
 
 .cart-items {
-  padding: 0 16px;
+  padding: 0 12px; /* Reduced padding */
 }
 
 .cart-item {
-  display: flex;
-  flex-direction: column;
-  padding: 12px 0;
+  padding: 8px 0; /* Reduced padding */
   border-bottom: 1px solid #222;
 }
 
 .item-details {
   display: flex;
-  flex-direction: column;
-  margin-bottom: 8px;
+  justify-content: space-between;
 }
 
-.item-details h4 {
-  margin: 0 0 4px 0;
+.item-info {
+  flex: 3;
+  display: flex;
+  flex-direction: column;
+}
+
+.item-info h4 {
+  margin: 0 0 2px 0; /* Reduced margin */
   font-size: 14px;
 }
 
-.item-meta {
+.item-price {
+  flex: 2;
   display: flex;
-  justify-content: space-between;
-  font-size: 12px;
-}
-
-.item-meta2 {
-  display: flex;
-  justify-content: space-between;
-  font-size: 12px;
-  margin: 0 0 0 0;
-  text-align: left;
-}
-
-.item-meta2 span {
-  margin: 3px 0 0 0;
+  flex-direction: column;
+  align-items: flex-end;
 }
 
 .category {
   color: #ccc;
+  font-size: 11px; /* Smaller font */
+  margin-bottom: 2px;
 }
 
 .price {
   font-weight: bold;
   color: #3aa757;
-}
-
-.item-quantity {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  font-size: 14px;
+  margin-bottom: 4px;
 }
 
 .quantity-selector {
   display: flex;
   align-items: center;
+  margin: 2px 0;
 }
 
 .quantity-selector button {
-  width: 24px;
-  height: 24px;
+  width: 22px;
+  height: 22px;
   background-color: #333;
   color: #fff;
   border: none;
   border-radius: 4px;
-  font-size: 16px;
+  font-size: 14px;
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .quantity-selector span {
-  padding: 0 12px;
+  padding: 0 8px;
+  font-size: 14px;
 }
 
 .item-total {
   font-weight: bold;
   color: #3aa757;
-}
-
-.order-totals {
-  padding: 16px;
-  background-color: #111;
-  border-radius: 4px;
-  margin: 16px;
-}
-
-.order-totals > div {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 8px;
   font-size: 14px;
 }
 
+.order-totals {
+  padding: 12px;
+  background-color: #111;
+  border-radius: 4px;
+  margin: 12px;
+}
+
+.totals-row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.totals-label, .totals-amount {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 13px;
+}
+
+.totals-amount {
+  text-align: right;
+}
+
 .total {
+  display: flex;
+  justify-content: space-between;
   margin-top: 8px;
   padding-top: 8px;
   border-top: 1px solid #333;
   font-weight: bold;
-  font-size: 16px !important;
+  font-size: 15px;
 }
 
 .total span:last-child {
   color: #3aa757;
 }
 
-.delivery-info, .payment-method {
-  padding: 0 0 16px 0;
+.sections-container {
+  padding: 0 12px;
 }
 
-.delivery-date, .delivery-time, .address-field, .notes-field {
-  padding: 0 16px;
-  margin-bottom: 16px;
+.delivery-info, .payment-method {
+  background-color: #111;
+  border-radius: 8px;
+  padding: 12px;
+  margin-bottom: 12px;
+}
+
+.form-group {
+  margin-bottom: 12px;
 }
 
 label {
   display: block;
-  margin-bottom: 8px;
-  font-size: 14px;
+  margin-bottom: 4px;
+  font-size: 13px;
   color: #ccc;
 }
 
-.date-selector input, .time-selector select, textarea {
+input, textarea {
   width: 100%;
-  padding: 10px;
+  padding: 8px 10px;
   border-radius: 4px;
   border: none;
-  background-color: #333;
-  color: #fff;
-  box-sizing: border-box;
-  font-size: 14px;
-}
-
-.contact-number {
-  padding: 0 16px;
-  margin-bottom: 16px;
-}
-
-.contact-number input, .time-selector select, textarea {
-  width: 100%;
-  padding: 10px;
-  border-radius: 4px;
-  border: none;
-  background-color: #333;
+  background-color: #222;
   color: #fff;
   box-sizing: border-box;
   font-size: 14px;
@@ -607,21 +588,22 @@ label {
 
 .payment-options {
   display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-  padding: 0 16px;
+  gap: 8px;
+  margin-top: 8px;
 }
 
 .payment-option {
   flex: 1;
-  min-width: 100px;
   background-color: #222;
-  border-radius: 8px;
-  padding: 12px;
+  border-radius: 6px;
+  padding: 8px 6px;
   text-align: center;
   cursor: pointer;
   border: 2px solid transparent;
   transition: all 0.2s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .payment-option.active {
@@ -630,8 +612,14 @@ label {
 }
 
 .payment-icon {
-  font-size: 24px;
-  margin-bottom: 8px;
+  font-size: 20px;
+  height: 25px;
+  width: 25px;
+  margin-bottom: 4px;
+}
+
+.payment-option span {
+  font-size: 12px;
 }
 
 .place-order {
@@ -640,9 +628,10 @@ label {
   left: 0;
   right: 0;
   background-color: #111;
-  padding: 16px;
+  padding: 12px 16px;
   max-width: 480px;
   margin: 0 auto;
+  box-shadow: 0 -2px 10px rgba(0,0,0,0.3);
 }
 
 .place-order-button {
@@ -651,8 +640,8 @@ label {
   color: white;
   border: none;
   border-radius: 4px;
-  padding: 12px;
-  font-size: 16px;
+  padding: 10px;
+  font-size: 15px;
   font-weight: bold;
   cursor: pointer;
 }
@@ -673,33 +662,35 @@ label {
 .modal-content {
   background-color: #111;
   border-radius: 8px;
-  padding: 24px;
+  padding: 20px;
   width: 80%;
-  max-width: 400px;
+  max-width: 320px;
   text-align: center;
 }
 
 .success-icon {
-  font-size: 48px;
-  margin-bottom: 16px;
+  font-size: 40px;
+  margin-bottom: 12px;
 }
 
 .modal-content h2 {
-  margin: 8px 0 16px;
+  margin: 8px 0;
   padding: 0;
 }
 
 .modal-content p {
-  margin-bottom: 16px;
+  margin-bottom: 12px;
   color: #ccc;
+  font-size: 14px;
 }
 
 .order-id {
   font-family: monospace;
   background-color: #222;
-  padding: 8px;
+  padding: 6px;
   border-radius: 4px;
-  margin: 16px 0;
+  margin: 12px 0;
+  font-size: 13px;
 }
 
 .close-button {
@@ -707,27 +698,34 @@ label {
   color: white;
   border: none;
   border-radius: 4px;
-  padding: 10px 20px;
+  padding: 8px 16px;
   font-size: 14px;
   font-weight: bold;
   cursor: pointer;
-  margin-top: 16px;
+  margin-top: 12px;
 }
 
 .medicine_quantity_details {
-  font-size: 12px;
-  font-weight: bold;
+  font-size: 11px;
   color: #ccc;
-  margin: auto;
-  text-align: left;
+  margin-top: 2px;
 }
 
-.medicine_quantity {
-  font-size: 12px;
-  color: #ccc;
-  margin-top: 6px;
-  padding-top: 4px;
-  padding-left: 4px;
-  text-align: center;
+/* Add a bit of responsiveness for very small screens */
+@media (max-width: 340px) {
+  .item-details {
+    flex-direction: column;
+  }
+  
+  .item-price {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 8px;
+  }
+  
+  .price, .item-total {
+    margin: 0;
+  }
 }
 </style>
