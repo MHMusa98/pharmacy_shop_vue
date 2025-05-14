@@ -33,19 +33,6 @@
       </div>
 
       <!-- Order totals -->
-      
-        <!-- <div class="totals-row">
-          <div class="totals-label">
-            <span>Subtotal</span>
-            <span>Delivery Fee</span>
-            <span>Tax</span>
-          </div>
-          <div class="totals-amount">
-            <span>${{ subtotal.toFixed(2) }}</span>
-            <span>${{ deliveryFee.toFixed(2) }}</span>
-            <span>${{ tax.toFixed(2) }}</span>
-          </div>
-        </div> -->
       <div class="order-totals">
         <div class="total">
           <span>Total</span>
@@ -84,14 +71,6 @@
             <div class="payment-icon">💵</div>
             <span>Cash on Delivery</span>
           </div>
-          <!-- <div 
-            class="payment-option" 
-            :class="{ active: paymentMethod === 'card' }"
-            @click="paymentMethod = 'card'"
-          >
-            <div class="payment-icon">💳</div>
-            <span>Card</span>
-          </div> -->
           <div 
             class="payment-option" 
             :class="{ active: paymentMethod === 'mobile' }"
@@ -118,7 +97,7 @@
       <div class="modal-content">
         <div class="success-icon">✅</div>
         <h2>Order Placed Successfully!</h2>
-        <p>Your order will be delivered on {{ formattedDeliveryDate }}</p>
+        <!-- <p>Your order will be delivered on {{ formattedDeliveryDate }}</p> -->
         <p class="order-id">Order ID: {{ orderId }}</p>
         <button class="close-button" @click="closeModal">Continue Shopping</button>
       </div>
@@ -137,7 +116,6 @@
 </template>
 
 <script>
-import apiConfig from '/apiConfig.js'; // Update this path to match your project structure
 export default {
   name: 'CheckoutNow',
   props: {
@@ -167,7 +145,7 @@ export default {
       errorMessage: '',
       orderId: '',
       isSubmitting: false,
-      apiBaseUrl: apiConfig?.apiBaseUrl || 'http://localhost:3000/api'
+      apiBaseUrl: 'http://127.0.0.1:8000/pharmacy_api/orders'
     }
   },
   computed: {
@@ -227,69 +205,55 @@ export default {
         return
       }
 
+      // Create orderData variable at the top level of the function so it's available in all scopes
+      let orderData = null;
+      
       try {
         this.isSubmitting = true;
         // Generate a random order ID
         this.orderId = 'ORD-' + Math.floor(100000 + Math.random() * 900000)
         
-        // Prepare order data to send to backend
-        const orderData = {
-          orderId: this.orderId,
-          customer: {
-            mobileNumber: this.mobileNumber,
-            deliveryAddress: this.deliveryAddress
-          },
-          pharmacy: this.localPharmacy,
-          items: this.localCartItems.map(item => ({
-            medicineId: item.medicine.id,
-            medicineName: item.medicine.name,
-            price: parseFloat(item.medicine.price || 0),
-            quantity: item.quantity,
-            subtotal: parseFloat(item.medicine.price || 0) * item.quantity
-          })),
-          payment: {
-            method: this.paymentMethod,
-            subtotal: this.subtotal,
-            deliveryFee: this.deliveryFee,
-            tax: this.tax,
-            total: this.total
-          },
-          orderDate: new Date().toISOString(),
-          deliveryDate: this.deliveryDate,
-          status: 'pending'
+        // Prepare order data using flat structure as requested
+        orderData = {
+          order_id: this.orderId,
+          user_mobile: this.mobileNumber,
+          user_address: this.deliveryAddress,
+          customer_name: this.localPharmacy,
+          item_id: this.localCartItems.map(item => item.medicine.id),
+          item_name: this.localCartItems.map(item => item.medicine.name),
+          item_tp: this.localCartItems.map(item => item.medicine.tp_amount || item.medicine.price || 0),
+          qty: this.localCartItems.map(item => item.quantity),
+          payment_method: this.paymentMethod,
+          delivery_fee: this.deliveryFee,
+          total_vat: this.tax,
+          total_tp: this.subtotal,
+          total_amount: this.total,
+          order_date: new Date().toISOString(),
+          delivery_date: this.deliveryDate,
+          order_status: 'pending'
         }
 
         // Log for debugging
         console.log('Sending order data:', orderData);
 
-        try {
-          // Try to send order data to mock API or real backend
-          const response = await fetch(`${this.apiBaseUrl}/orders`, {
-            method: 'POST',
-            headers: {
-              'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(orderData)
-          });
+        // Send order data to backend
+        const response = await fetch(this.apiBaseUrl, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(orderData)
+        });
 
-          if (!response.ok) {
-            throw new Error(`Server responded with status: ${response.status}`);
-          }
-
-          const data = await response.json();
-          console.log('Order placed successfully:', data);
-          
-        } catch (apiError) {
-          console.warn('API request failed. Falling back to localStorage:', apiError);
-          
-          // Store in localStorage as fallback
-          const savedOrders = JSON.parse(localStorage.getItem('savedOrders') || '[]');
-          savedOrders.push(orderData);
-          localStorage.setItem('savedOrders', JSON.stringify(savedOrders));
-          console.log('Order saved to localStorage. Total orders:', savedOrders.length);
+        if (!response.ok) {
+          const errorData = await response.json();
+          throw new Error(errorData.message || `Server responded with status: ${response.status}`);
         }
+
+        const data = await response.json();
+        console.log('Order placed successfully:', data);
         
-        // Show success modal regardless - for development purposes
+        // Show success modal
         this.showOrderSuccess = true;
         
         // Clear session storage after successful order
@@ -298,8 +262,16 @@ export default {
 
       } catch (error) {
         console.error('Error placing order:', error);
-        this.errorMessage = 'Failed to place your order. Please try again later.';
+        this.errorMessage = error.message || 'Failed to place your order. Please try again later.';
         this.showErrorModal = true;
+        
+        // Store in localStorage as fallback if server is unavailable
+        if (orderData && (error.message.includes('Failed to fetch') || error.message.includes('Network Error'))) {
+          const savedOrders = JSON.parse(localStorage.getItem('savedOrders') || '[]');
+          savedOrders.push(orderData);
+          localStorage.setItem('savedOrders', JSON.stringify(savedOrders));
+          console.log('Order saved to localStorage. Total orders:', savedOrders.length);
+        }
       } finally {
         this.isSubmitting = false;
       }
@@ -311,23 +283,6 @@ export default {
     },
     closeErrorModal() {
       this.showErrorModal = false;
-    },
-    
-    // Method to fetch all past orders - for testing purposes
-    async fetchPastOrders() {
-      try {
-        const response = await fetch(`${this.apiBaseUrl}/orders`);
-        if (!response.ok) {
-          throw new Error(`Failed to fetch orders: ${response.status}`);
-        }
-        
-        const orders = await response.json();
-        console.log('Past orders:', orders);
-        return orders;
-      } catch (error) {
-        console.error('Error fetching past orders:', error);
-        return [];
-      }
     },
     loadDataFromSessionStorage() {
       // Try to get cart items from session storage
@@ -388,12 +343,6 @@ export default {
       console.warn('No cart items found, returning to pharmacy list');
       this.$router.push('/');
     }
-    
-    // Set a default for apiBaseUrl in case apiConfig import fails
-    if (!this.apiBaseUrl) {
-      console.warn('API base URL not found in config, using default');
-      this.apiBaseUrl = 'http://localhost:3000/api';
-    }
   }
 }
 </script>
@@ -441,7 +390,7 @@ h2 {
 }
 
 .cart-items {
-  padding: 0 12px; /* Reduced padding */
+  padding: 012px 12px; /* Reduced padding */
 }
 
 .cart-item {

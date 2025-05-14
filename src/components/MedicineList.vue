@@ -90,7 +90,8 @@
     </div>
   </div>
 </template>
-  
+
+<!-- MedicineList.vue -->
 <script>
 export default {
   name: 'MedicineList',
@@ -340,7 +341,7 @@ export default {
 }
   
 .search-bar {
-  padding: 8px 16px 8px;
+  padding: 0 14px 0px;
 }
   
 .search-bar input {
@@ -590,8 +591,8 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 16px 0;
-  padding: 10px 0;
+  margin: 0 0 0 0;
+  padding: 0 0 0 0;
   gap: 16px;
 }
 
