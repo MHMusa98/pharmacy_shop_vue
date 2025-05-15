@@ -137,7 +137,7 @@ export default {
       deliveryAddress: '',
       mobileNumber: '',
       orderNotes: '',
-      paymentMethod: 'cash',
+      paymentMethod: 'cash', // Default to cash
       deliveryFee: 5.00,
       taxRate: 0.05,
       showOrderSuccess: false,
@@ -193,6 +193,7 @@ export default {
         this.$emit('update:cartItems', [...this.localCartItems])
       }
     },
+    // Function to place the order
     async placeOrder() {
       // Validate form fields
       if (!this.deliveryAddress) {
@@ -205,35 +206,48 @@ export default {
         return
       }
 
-      // Create orderData variable at the top level of the function so it's available in all scopes
-      let orderData = null;
-      
+      if (!this.paymentMethod) {
+        alert('Please select a payment method')
+        return
+      }
+
       try {
         this.isSubmitting = true;
         // Generate a random order ID
-        this.orderId = 'ORD-' + Math.floor(100000 + Math.random() * 900000)
+        this.orderId = 'ORD-' + Date.now() + Math.floor(Math.random() * 1000);
         
-        // Prepare order data using flat structure as requested
-        orderData = {
-          order_id: this.orderId,
-          user_mobile: this.mobileNumber,
-          user_address: this.deliveryAddress,
-          customer_name: this.localPharmacy,
-          item_id: this.localCartItems.map(item => item.medicine.id),
-          item_name: this.localCartItems.map(item => item.medicine.name),
-          item_tp: this.localCartItems.map(item => item.medicine.tp_amount || item.medicine.price || 0),
-          qty: this.localCartItems.map(item => item.quantity),
-          payment_method: this.paymentMethod,
-          delivery_fee: this.deliveryFee,
-          total_vat: this.tax,
-          total_tp: this.subtotal,
-          total_amount: this.total,
-          order_date: new Date().toISOString(),
-          delivery_date: this.deliveryDate,
-          order_status: 'pending'
+        // Process order items to include all necessary details for order_details table
+        const orderItems = this.localCartItems.map(item => ({
+          medicineId: item.medicine.id,
+          medicineName: item.medicine.name || '',
+          medicineCategory: item.medicine.generic || 'Medicine',
+          quantity: item.quantity,
+          price: parseFloat(item.medicine.price || 0)
+        }));
+        
+        // Prepare order data with fields needed for both tables
+        const orderData = {
+          id: this.orderId,
+          userId: '', // Empty string as default
+          userName: '', // Empty string as default
+          userMobile: this.mobileNumber,
+          userAddress: this.deliveryAddress,
+          customerId: '', // Empty string as default
+          customerName: this.localPharmacy.name || '',
+          paymentMethod: this.paymentMethod,
+          orderNotes: this.orderNotes,
+          orderStatus: 'pending',
+          orderDate: new Date().toISOString(),
+          orderTime: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
+          deliveryDate: this.deliveryDate,
+          deliveryFee: this.deliveryFee,
+          subtotal: this.subtotal,
+          tax: this.tax,
+          totalAmount: this.total,
+          // pharmacyId: this.localPharmacy.id || '',
+          // pharmacyName: this.localPharmacy.name || '',
+          orderItems: orderItems
         }
-
-        // Log for debugging
         console.log('Sending order data:', orderData);
 
         // Send order data to backend
@@ -255,6 +269,7 @@ export default {
         
         // Show success modal
         this.showOrderSuccess = true;
+        this.orderId = data.order_id || this.orderId;
         
         // Clear session storage after successful order
         sessionStorage.removeItem('cartItems');
@@ -264,14 +279,6 @@ export default {
         console.error('Error placing order:', error);
         this.errorMessage = error.message || 'Failed to place your order. Please try again later.';
         this.showErrorModal = true;
-        
-        // Store in localStorage as fallback if server is unavailable
-        if (orderData && (error.message.includes('Failed to fetch') || error.message.includes('Network Error'))) {
-          const savedOrders = JSON.parse(localStorage.getItem('savedOrders') || '[]');
-          savedOrders.push(orderData);
-          localStorage.setItem('savedOrders', JSON.stringify(savedOrders));
-          console.log('Order saved to localStorage. Total orders:', savedOrders.length);
-        }
       } finally {
         this.isSubmitting = false;
       }

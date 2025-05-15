@@ -535,7 +535,7 @@ export default {
 }
 
 .badge.distance {
-  background-color: #2d4e9a;
+  background-color: #005500;
 }
   
 .address {
