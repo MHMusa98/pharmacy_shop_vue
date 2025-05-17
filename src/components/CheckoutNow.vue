@@ -27,7 +27,14 @@
                 <button @click="increaseQuantity(item.medicine)">+</button>
               </div>
               <span class="item-total">${{ (parseFloat(item.medicine.price || 0) * item.quantity).toFixed(2) }}</span>
+              <!-- <button class="remove-button" @click="removeItem(item.medicine)">Remove</button> -->
             </div>
+            <div>
+              <button class="remove-button" @click="removeItem(item.medicine)" aria-label="Remove item">
+                <img src="/image/delete_icon.png" alt="Delete" width="15" height="15">
+              </button>
+            </div>
+
           </div>
         </div>
       </div>
@@ -179,6 +186,7 @@ export default {
       if (item) {
         item.quantity++
         this.$emit('update:cartItems', [...this.localCartItems])
+        this.updateSessionStorage()
       }
     },
     decreaseQuantity(medicine) {
@@ -186,12 +194,31 @@ export default {
       if (item && item.quantity > 1) {
         item.quantity--
         this.$emit('update:cartItems', [...this.localCartItems])
+        this.updateSessionStorage()
       } else if (item && item.quantity === 1) {
         // Remove item if quantity becomes 0
-        const index = this.localCartItems.indexOf(item)
+        this.removeItem(medicine)
+      }
+    },
+    removeItem(medicine) {
+      const index = this.localCartItems.findIndex(item => item.medicine.id === medicine.id)
+      if (index !== -1) {
         this.localCartItems.splice(index, 1)
         this.$emit('update:cartItems', [...this.localCartItems])
+        this.updateSessionStorage()
+        
+        // If cart becomes empty, go back to medicine list
+        if (this.localCartItems.length === 0) {
+          setTimeout(() => {
+            alert('Your cart is now empty.')
+            this.$router.push('/')
+          }, 300)
+        }
       }
+    },
+    updateSessionStorage() {
+      // Update cart items in session storage
+      sessionStorage.setItem('cartItems', JSON.stringify(this.localCartItems))
     },
     // Function to place the order
     async placeOrder() {
@@ -232,8 +259,8 @@ export default {
           userName: '', // Empty string as default
           userMobile: this.mobileNumber,
           userAddress: this.deliveryAddress,
-          customerId: '', // Empty string as default
-          customerName: this.localPharmacy.name || '',
+          customerId: this.localPharmacy.id || '', // Fix for issue #1: Set pharmacy ID as customer ID
+          customerName: this.localPharmacy.name || '', // Fix for issue #1: Set pharmacy name as customer name
           paymentMethod: this.paymentMethod,
           orderNotes: this.orderNotes,
           orderStatus: 'pending',
@@ -244,8 +271,6 @@ export default {
           subtotal: this.subtotal,
           tax: this.tax,
           totalAmount: this.total,
-          // pharmacyId: this.localPharmacy.id || '',
-          // pharmacyName: this.localPharmacy.name || '',
           orderItems: orderItems
         }
         console.log('Sending order data:', orderData);
@@ -355,6 +380,41 @@ export default {
 </script>
 
 <style scoped>
+.remove-button {
+  background-color: #ff4d4f;
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  padding: 4px 4px;
+  margin: 26px 0 0 0px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.25s ease, transform 0.15s ease;
+}
+
+.remove-button:hover {
+  background-color: #ff7875;
+  transform: scale(1.05);
+}
+
+.remove-button img {
+  width: 12px;
+  height: 12px;
+  object-fit: contain;
+}
+
+.item-price {
+  display: flex;
+  padding: 0 20px 0 0;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.item-total {
+  margin: 0 0;
+}
 .checkout-view {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
   background-color: #000;
@@ -507,6 +567,7 @@ h2 {
 
 .total span:last-child {
   color: #3aa757;
+  margin-right: 30px;
 }
 
 .sections-container {
